@@ -14,6 +14,11 @@ book:
   chapters:
     - index.qmd
     - intro.qmd
+    - Phänomenologie.qmd
+    - Ioe.qmd
+    - Geschichte.qmd
+    - Spieltheorie.qmd # Evolution?
+    - Governance.qmd
     - literatur.qmd
     - Uebungsfragen.qmd
 

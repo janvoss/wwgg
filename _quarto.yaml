@@ -15,8 +15,8 @@ book:
     - index.qmd
     - intro.qmd
     - Phänomenologie.qmd
-    - Ioe.qmd
-    - Geschichte.qmd
+    - Ioe.qmd # Institutionenökonomik
+    - Geschichte.qmd # die Revolutionen?
     - Spieltheorie.qmd # Evolution?
     - Governance.qmd
     - literatur.qmd

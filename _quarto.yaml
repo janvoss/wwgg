@@ -19,9 +19,7 @@ book:
     - Treiber.qmd # Treiber des Wandels, Schumpeter, Boyer, Alston, ...?
     - Spieltheorie.qmd # Evolution?
     - Governance.qmd # Hier Ideologie und Reform
-    - Migration.qmd
-    - Klimaschutz.qmd
-    - Sicherheit.qmd
+    - Anwendungsfaelle.qmd
     - literatur.qmd
     - Uebungsfragen.qmd
 

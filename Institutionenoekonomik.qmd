@@ -4,6 +4,12 @@
 
 [Hier auch Aokis doppelte Natur von Institutionen: Beschränkung und Freiheit durch Erwartungssicherheit]::
 
+Institution
+
+- Regelkomponente
+
+- Überwachungskompinente
+
 ```{r Regeln, echo=F, message=F, warning=F, cache=F}
 
 library(tidyverse)

@@ -1,0 +1,122 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Wirtschaftlicher Wandel und Global Givernance",
+    "section": "",
+    "text": "\\({}\\)\n\\({}\\)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOrganisatorisches\n\n\n\n\n\n\nUnterlagen: https://janvoss.github.io/wwgg/\nModul: 209-034 Governance und Transformation (Modulhandbuch)\nWeitere Veranstaltung im ModuL:\n\nWirtschaftsethik\nChange Management\n\nPrüfungsleistung: M15, diese VL 6 Min (40% der Notengewichtung)",
+    "crumbs": [
+      "Organisatorisches"
+    ]
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "1  Einleitung",
+    "section": "",
+    "text": "Wirtschaftlicher Wandel als stabiles Phänomen\nInstitutioneller Wandel als Begleiterscheinung\nGlobal Governance als selbst in die Krise gekommenen Instrument zur Krisenbewältigung.\n\n\n\nCode\nfrom graphviz import Digraph\nfrom IPython.display import display\n\ndot = Digraph()\n\n# Layout des gesamten Graphen\ndot.attr(rankdir='LR')\n\n# Funktion zur Erstellung eines Clusters mit \\l für Linksbündigkeit\ndef create_cluster(dot, name, label, color, fillcolor, nodes, max_nodes):\n    with dot.subgraph(name=name) as c:\n        c.attr(label=label,\n               fontname=\"times-bold\",\n               style='filled,rounded',\n               fillcolor=fillcolor,\n               color=color,\n               penwidth='1.5')\n\n        # Standardknoten mit \\l für Linksbündigkeit\n        for node_id, node_label in nodes:\n            # \\n durch \\l ersetzen und am Ende \\l hinzufügen\n            formatted_label = node_label.replace('\\n', '\\\\l') + '\\\\l'\n            c.node(node_id,\n                   label=formatted_label,\n                   width=\"3\",\n                   height=\"1\",\n                   shape='none',\n                   )  # Schriftart für bessere Lesbarkeit\n\n        # Unsichtbare Platzhalterknoten\n        for i in range(len(nodes), max_nodes):\n            c.node(f'{name}_placeholder_{i}', '', style='invis', width=\"3\", height=\"1\")\n\n# Clusterdefinitionen (unverändert)\nclusters = [\n    ('cluster_wirtschaft', 'Wirtschaftlicher Wandel', '#0000ff', '#0000ff33', [\n        ('a1', 'Technologiepfade'),\n        ('a2', 'Schumpeterscher Wettbewerb'),\n        ('a3', 'Strukturwandel'),\n        ('a4', 'Permanente Anpassung')\n    ]),\n    ('cluster_institutionen', 'Institutioneller Wandel', '#ff0000', '#ff000033', [\n        ('b1', 'gesteuert vs. evolutionär'),\n        ('b2', 'graduell vs. drastisch'),\n        ('b3', ' Reformblockaden')\n    ]),\n    ('cluster_governance', 'Global Governance', '#00ff00', '#00ff0033', [\n        ('c1', 'Internationale Koordination'),\n        ('c2', 'Kooperationsgeflecht\\nstatt zentraler Steuerung'),\n        ('c3', 'Liberale Weltordnung vs. \\n regelbasierte Ordnung'),\n        ('c4', 'Erosion vs.\\nNeuordnung'),\n        ('C5', 'Klimaschutzpolitik, Migration, \\nKI, internationale Sicherheit, ...')\n    ])\n]\n\nmax_nodes = max(len(cluster[4]) for cluster in clusters)\n\n# Cluster erstellen\nfor name, label, color, fillcolor, nodes in clusters:\n    create_cluster(dot, name, label, color, fillcolor, nodes, max_nodes)\n\n# Unsichtbare Kanten für vertikale Anordnung\ndot.edge('a1', 'b1', style='invis')\ndot.edge('b1', 'c1', style='invis')\n\n# Ausgabe\ndisplay(dot)",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Einleitung</span>"
+    ]
+  },
+  {
+    "objectID": "Institutionenoekonomik.html",
+    "href": "Institutionenoekonomik.html",
+    "title": "2  Institutionenökonomik",
+    "section": "",
+    "text": "2.1 Institutionenbegriff\nInstitution\nRegel\nÜberwachung\nInstitutionenkategorie\nBeispiel\n\n\n\n\nKonvention\nSelbstüberwachung\nintern vom Typ 1\nRegeln der Sprache\n\n\nEthische Regel\nimperative Selbstbindung\nintern vom Typ 2\nKategorischer Imperativ, privater Trainingsplan\n\n\nSitte\ninformelle Überwachung durch andere Akteure\nintern vom Typ 3\ngesellschaftliche Umgangsformen\n\n\nFormelle private Regel\norganisierte private Überwachung\nintern vom Typ 4\nRegeln des Sports\n\n\nRegel positiven Rechts\norganisierte staatliche Überwachung\nextern\nPrivat- und Strafrecht, öffentliches Recht",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Institutionenökonomik</span>"
+    ]
+  },
+  {
+    "objectID": "Institutionenoekonomik.html#institutionenbegriff",
+    "href": "Institutionenoekonomik.html#institutionenbegriff",
+    "title": "2  Institutionenökonomik",
+    "section": "",
+    "text": "Regelkomponente\nÜberwachungskomponente",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Institutionenökonomik</span>"
+    ]
+  },
+  {
+    "objectID": "Institutionenoekonomik.html#verhältnis-von-institutionen-zueinander",
+    "href": "Institutionenoekonomik.html#verhältnis-von-institutionen-zueinander",
+    "title": "2  Institutionenökonomik",
+    "section": "2.2 Verhältnis von Institutionen zueinander",
+    "text": "2.2 Verhältnis von Institutionen zueinander\n\n2.2.1 Substitutives Verhältnis\nDer gleiche Zweck kann durch verschiedene (Arten von) Informationen erreicht werden.\nBeispiele?\n\n\n2.2.2 Komplementäres Verhältnis\nEine Institution hat eine stärkere Regelungswirkung, wenn eine (passende) zweite Institution ebenfalls vorhanden ist.\n\\[F(x_1, y_1) - F(x_2, y_1) \\geq F(x_1, y_2) - F(x_2, y_2)\\]\n\\(\\Rightarrow\\) Institutioneller log-in Effekt möglich.\nBeispiele?\n\n\n2.2.3 Konfligierendes Verhältnis\nEs ist nicht möglich zwei bestimmte Institutionen gleichzeitig zu befolgen.\nBeispiele?\n\n\n2.2.4 Neutrales Verhältnis\nZwei Institutionen sind völlig unabhängig voneinander.\nBeispiele?",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Institutionenökonomik</span>"
+    ]
+  },
+  {
+    "objectID": "Institutionenoekonomik.html#zur-änderbarkeit-von-institutionen-erste-überlegungen",
+    "href": "Institutionenoekonomik.html#zur-änderbarkeit-von-institutionen-erste-überlegungen",
+    "title": "2  Institutionenökonomik",
+    "section": "2.3 Zur Änderbarkeit von Institutionen: Erste Überlegungen",
+    "text": "2.3 Zur Änderbarkeit von Institutionen: Erste Überlegungen",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Institutionenökonomik</span>"
+    ]
+  },
+  {
+    "objectID": "Institutionenoekonomik.html#konstitutionenökonomik",
+    "href": "Institutionenoekonomik.html#konstitutionenökonomik",
+    "title": "2  Institutionenökonomik",
+    "section": "2.4 Konstitutionenökonomik",
+    "text": "2.4 Konstitutionenökonomik\nGrundidee: Rationale Individuen können sich einstimmig auf gute Regeln einigen.\nAber Eigeninteresse blockiert bei Interessenheterogenität evtl. Konsens.\nLösungsidee: Schleier des Nichtwissens. Individuen haben (zutreffendes) Wissen über positive Eigenschaften der Welt, aber kein Wissen über individuelle Charakteristika (oder abstrahieren davon).",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Institutionenökonomik</span>"
+    ]
+  },
+  {
+    "objectID": "Treiber.html",
+    "href": "Treiber.html",
+    "title": "4  Treiber des technologischen und des wirtschaftlichen Wandels",
+    "section": "",
+    "text": "4.1 Technologische Paradigmen und Paradigmenwechsel\nCode\nfrom graphviz import Digraph\nfrom IPython.display import display\n\ndot = Digraph()\n\n# Layout\ndot.attr(rankdir='LR')\n\n# Hauptcluster erstellen\nwith dot.subgraph(name='cluster_abc') as cluster:\n    cluster.attr(label='Paradigma', style='rounded', bgcolor='#F0F0F0')\n\n    # Knoten außerhalb des Subclusters\n    cluster.node('a', 'Basisdesign')\n    cluster.node('c', 'Engpass')\n\n    # Subcluster für \"Weiterentwicklung\"\n    with cluster.subgraph(name='cluster_b') as subcluster:\n        subcluster.attr(label='Weiterentwicklung', style='rounded', bgcolor='#E8E8E8')\n        for node_id, label in {'b': 'inkrementelle Innovationen',\n                               'b1': 'learning by doing',\n                               'b2': 'implizites Wissen'}.items():\n            subcluster.node(node_id, label)\n\n# Einzelner Knoten außerhalb des Hauptclusters\ndot.node('d', 'Paradigmenwechsel')\n\n# Kanten definieren\nedges = [('a', 'b'), ('b', 'c'), ('c', 'd')]\nfor edge in edges:\n    dot.edge(*edge)\n\n# Letzte Kante mit Label unterhalb der Kante\ndot.edge('d', 'a', constraint='false')\n\n# Display\ndisplay(dot)",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Treiber des technologischen und des wirtschaftlichen Wandels</span>"
+    ]
+  },
+  {
+    "objectID": "Anwendungsfaelle.html",
+    "href": "Anwendungsfaelle.html",
+    "title": "7  Anwendungsfälle",
+    "section": "",
+    "text": "7.1 Klimaschutz",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Anwendungsfälle</span>"
+    ]
+  },
+  {
+    "objectID": "Anwendungsfaelle.html#migration",
+    "href": "Anwendungsfaelle.html#migration",
+    "title": "7  Anwendungsfälle",
+    "section": "7.2 Migration",
+    "text": "7.2 Migration",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Anwendungsfälle</span>"
+    ]
+  },
+  {
+    "objectID": "Anwendungsfaelle.html#internationale-sicherheit",
+    "href": "Anwendungsfaelle.html#internationale-sicherheit",
+    "title": "7  Anwendungsfälle",
+    "section": "7.3 Internationale Sicherheit",
+    "text": "7.3 Internationale Sicherheit",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Anwendungsfälle</span>"
+    ]
+  },
+  {
+    "objectID": "literatur.html",
+    "href": "literatur.html",
+    "title": "Literatur",
+    "section": "",
+    "text": "Growiec, Jakub. 2022. Accelerating Economic Growth: Lessons from 200,000 Years of Technological Progress and Human Development. Frontiers in Economic History. Cham: Springer International Publishing. https://doi.org/10.1007/978-3-031-07195-9.\n\n\nHarwick, Cameron, and Hilton Root. 2019. “The Feudal Origins of the Western Legal Tradition.” ORDO 70 (1): 3–20. https://doi.org/10.1515/ordo-2020-0004.\n\n\nOrenstein, Mitchell A., and R. Daniel Kelemen. 2017. “Trojan Horses in EU Foreign Policy.” JCMS: Journal of Common Market Studies 55 (1): 87–102. https://doi.org/10.1111/jcms.12441.\n\n\nPleijt, Alexandra de, Alessandro Nuvolari, and Jacob Weisdorf. 2020. “Human Capital Formation During the First Industrial Revolution: Evidence from the Use of Steam Engines.” Journal of the European Economic Association 18 (2): 829–89. http://www.redi-bw.de/db/ebsco.php/search.ebscohost.com/login.aspx%3fdirect%3dtrue%26db%3deoh%26AN%3d1831825%26site%3dehost-live.\n\n\nPosth, Cosimo, He Yu, Ayshin Ghalichi, Hélène Rougier, Isabelle Crevecoeur, Yilei Huang, Harald Ringbauer, et al. 2023. “Palaeogenomics of Upper Palaeolithic to Neolithic European Hunter-Gatherers.” Nature 615 (7950): 117–26. https://doi.org/10.1038/s41586-023-05726-0.\n\n\nSquicciarini, Mara P., and Nico Voigtlander. 2015. “Human Capital and Industrialization: Evidence from the Age of Enlightenment.” Quarterly Journal of Economics 130 (4): 1825–83. http://www.redi-bw.de/db/ebsco.php/search.ebscohost.com/login.aspx%3fdirect%3dtrue%26db%3deoh%26AN%3d1633646%26site%3dehost-live.\n\n\nVillalba-Mouco, Vanessa, Marieke S. van de Loosdrecht, Adam B. Rohrlach, Helen Fewlass, Sahra Talamo, He Yu, Franziska Aron, et al. 2023. “A 23,000-Year-Old Southern Iberian Individual Links Human Groups That Lived in Western Europe Before and After the Last Glacial Maximum.” Nature Ecology & Evolution, March, 1–13. https://doi.org/10.1038/s41559-023-01987-0.",
+    "crumbs": [
+      "Literatur"
+    ]
+  }
+]

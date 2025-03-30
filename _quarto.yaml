@@ -23,7 +23,7 @@ book:
     - literatur.qmd
     - Uebungsfragen.qmd
 
-bibliography: wwgg.bib
+bibliography: WWGG.bib
 #csl: dresden.csl #Ohne funktioniert es gut, mit nicht. 
 # Aber warum? Und was ist mit Herausgeberwerken (Hrsg vs. Ed?)
 

@@ -44,7 +44,7 @@ Beispiele?
 
 Eine Institution hat eine stärkere Regelungswirkung, wenn eine (passende) zweite Institution ebenfalls vorhanden ist.
 
-$$F(x_1, y_1) - F(x_1, y_2) \geq F(x_2, y_2) - F(x_2, y_1)$$
+$$F(x_1, y_1) - F(x_2, y_1) \geq F(x_1, y_2) - F(x_2, y_2)$$
 
 ### Konfligierendes Verhältnis 
 

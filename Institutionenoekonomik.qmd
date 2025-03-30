@@ -46,9 +46,21 @@ Eine Institution hat eine stärkere Regelungswirkung, wenn eine (passende) zweit
 
 $$F(x_1, y_1) - F(x_2, y_1) \geq F(x_1, y_2) - F(x_2, y_2)$$
 
+$\Rightarrow$ Institutioneller log-in Effekt möglich.
+
+Beispiele?
+
 ### Konfligierendes Verhältnis 
 
+Es ist nicht möglich zwei bestimmte Institutionen gleichzeitig zu befolgen. 
+
+Beispiele?
+
 ### Neutrales Verhältnis
+
+Zwei Institutionen sind völlig unabhängig voneinander.
+
+Beispiele?
 
 ## Zur Änderbarkeit von Institutionen: Erste Überlegungen 
 

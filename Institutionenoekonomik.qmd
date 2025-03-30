@@ -53,3 +53,9 @@ $$F(x_1, y_1) - F(x_2, y_1) \geq F(x_1, y_2) - F(x_2, y_2)$$
 ## Zur Änderbarkeit von Institutionen: Erste Überlegungen 
 
 ## Konstitutionenökonomik
+
+Grundidee: Rationale Individuen können sich einstimmig auf gute Regeln einigen.
+
+Aber Eigeninteresse blockiert bei Interessenheterogenität evtl. Konsens.
+
+Lösungsidee: Schleier des Nichtwissens. Individuen haben (zutreffendes) Wissen über positive Eigenschaften der Welt, aber kein Wissen über individuelle Charakteristika (oder abstrahieren davon).

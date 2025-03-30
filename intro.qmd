@@ -6,3 +6,75 @@
 
 - Global Governance als selbst in die Krise gekommenen Instrument zur Krisenbewältigung.
 
+```{python}
+
+from graphviz import Digraph
+from IPython.display import display
+
+dot = Digraph()
+
+# Layout des gesamten Graphen
+dot.attr(rankdir='LR')
+
+# Funktion zur Erstellung eines Clusters mit \l für Linksbündigkeit
+def create_cluster(dot, name, label, color, fillcolor, nodes, max_nodes):
+    with dot.subgraph(name=name) as c:
+        c.attr(label=label,
+               fontname="times-bold",
+               style='filled,rounded',
+               fillcolor=fillcolor,
+               color=color,
+               penwidth='1.5')
+
+        # Standardknoten mit \l für Linksbündigkeit
+        for node_id, node_label in nodes:
+            # \n durch \l ersetzen und am Ende \l hinzufügen
+            formatted_label = node_label.replace('\n', '\\l') + '\\l'
+            c.node(node_id,
+                   label=formatted_label,
+                   width="3",
+                   height="1",
+                   shape='none',
+                   )  # Schriftart für bessere Lesbarkeit
+
+        # Unsichtbare Platzhalterknoten
+        for i in range(len(nodes), max_nodes):
+            c.node(f'{name}_placeholder_{i}', '', style='invis', width="3", height="1")
+
+# Clusterdefinitionen (unverändert)
+clusters = [
+    ('cluster_wirtschaft', 'Wirtschaftlicher Wandel', '#0000ff', '#0000ff33', [
+        ('a1', 'Technologiepfade'),
+        ('a2', 'Schumpeterscher Wettbewerb'),
+        ('a3', 'Strukturwandel'),
+        ('a4', 'Permanente Anpassung')
+    ]),
+    ('cluster_institutionen', 'Institutioneller Wandel', '#ff0000', '#ff000033', [
+        ('b1', 'gesteuert vs. evolutionär'),
+        ('b2', 'graduell vs. drastisch'),
+        ('b3', ' Reformblockaden')
+    ]),
+    ('cluster_governance', 'Global Governance', '#00ff00', '#00ff0033', [
+        ('c1', 'Internationale Koordination'),
+        ('c2', 'Kooperationsgeflecht\nstatt zentraler Steuerung'),
+        ('c3', 'Liberale Weltordnung vs. \n regelbasierte Ordnung'),
+        ('c4', 'Erosion vs.\nNeuordnung'),
+        ('C5', 'Klimaschutzpolitik, Migration, \nKI, internationale Sicherheit, ...')
+    ])
+]
+
+max_nodes = max(len(cluster[4]) for cluster in clusters)
+
+# Cluster erstellen
+for name, label, color, fillcolor, nodes in clusters:
+    create_cluster(dot, name, label, color, fillcolor, nodes, max_nodes)
+
+# Unsichtbare Kanten für vertikale Anordnung
+dot.edge('a1', 'b1', style='invis')
+dot.edge('b1', 'c1', style='invis')
+
+# Ausgabe
+display(dot)
+
+```
+

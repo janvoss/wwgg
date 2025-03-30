@@ -8,7 +8,7 @@ Institution
 
 - Regelkomponente
 
-- Überwachungskompinente
+- Überwachungskomponente
 
 ```{r Regeln, echo=F, message=F, warning=F, cache=F}
 
@@ -33,6 +33,10 @@ kable(df) #%>%
 ## Verhältnis von Institutionen zueinander
 
 ### Substitutives Verhältnis 
+
+Der gleiche Zweck kann durch verschiedene (Arten von) Informationen erreicht werden.
+
+Beispiele? 
 
 ### Komplementäres Verhältnis
 

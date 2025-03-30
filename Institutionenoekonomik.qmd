@@ -4,6 +4,26 @@
 
 [Hier auch Aokis doppelte Natur von Institutionen: Beschränkung und Freiheit durch Erwartungssicherheit]::
 
+```{r Regeln, echo=F, message=F, warning=F, cache=F}
+
+library(tidyverse)
+
+df <- data.frame(Regel=c("Konvention", "Ethische Regel", "Sitte", "Formelle private Regel", "Regel positiven Rechts"),
+                 "Überwachung" = c("Selbstüberwachung", "imperative Selbstbindung","informelle Überwachung durch andere Akteure", "organisierte private Überwachung", "organisierte staatliche Überwachung"),
+                 'Institutionenkategorie'= c("intern vom Typ 1", "intern vom Typ 2",
+                                             "intern vom Typ 3", "intern vom Typ 4",
+                                             "extern"),
+                 'Beispiel'=c("Regeln der Sprache", "Kategorischer Imperativ, privater Trainingsplan", "gesellschaftliche Umgangsformen", "Regeln des Sports", "Privat- und Strafrecht, öffentliches Recht"))
+
+
+library(knitr)
+# library(kableExtra)
+kable(df) #%>% 
+  #kable_styling(#bootstrap_options = c("responsive")
+   # )
+
+```
+
 ## Verhältnis von Institutionen zueinander
 
 ### Substitutives Verhältnis 

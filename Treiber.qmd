@@ -1,4 +1,49 @@
 # Treiber des technologischen und des wirtschaftlichen Wandels
 
 
+## Technologische Paradigmen und Paradigmenwechsel
+
+```{python}
+
+from graphviz import Digraph
+from IPython.display import display
+
+dot = Digraph()
+
+# Layout
+dot.attr(rankdir='LR')
+
+# Hauptcluster erstellen
+with dot.subgraph(name='cluster_abc') as cluster:
+    cluster.attr(label='Paradigma', style='rounded', bgcolor='#F0F0F0')
+
+    # Knoten außerhalb des Subclusters
+    cluster.node('a', 'Basisdesign')
+    cluster.node('c', 'Engpass')
+
+    # Subcluster für "Weiterentwicklung"
+    with cluster.subgraph(name='cluster_b') as subcluster:
+        subcluster.attr(label='Weiterentwicklung', style='rounded', bgcolor='#E8E8E8')
+        for node_id, label in {'b': 'inkrementelle Innovationen',
+                               'b1': 'learning by doing',
+                               'b2': 'implizites Wissen'}.items():
+            subcluster.node(node_id, label)
+
+# Einzelner Knoten außerhalb des Hauptclusters
+dot.node('d', 'Paradigmenwechsel')
+
+# Kanten definieren
+edges = [('a', 'b'), ('b', 'c'), ('c', 'd')]
+for edge in edges:
+    dot.edge(*edge)
+
+# Letzte Kante mit Label unterhalb der Kante
+dot.edge('d', 'a', constraint='false')
+
+# Display
+display(dot)
+
+```
+
+
 # Treiber des institutionellen Wandels

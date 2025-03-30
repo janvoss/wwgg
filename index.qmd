@@ -29,6 +29,6 @@ generate_svg(qr, filename = "qr-titel.svg")
 
   - Change Management
 
-- Prüfungsleistung: M12, diese VL  5 Min (50% der Notengewichtung)
+- Prüfungsleistung: M15, diese VL  6 Min (40% der Notengewichtung)
 
 :::

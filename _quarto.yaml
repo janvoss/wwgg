@@ -8,7 +8,7 @@ book:
   # date: "2024"
   subtitle: "Sommersemester 2025"
   #lang: de
-  language:  _language.yml
+  language:  _language.yaml
   repo-url: https://github.com/janvoss/wwgg.git
 #  issued: "Sommersemester 2024"
   chapters:

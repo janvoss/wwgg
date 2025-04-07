@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Wirtschaftlicher Wandel und Global Givernance - 4&nbsp; Treiber des technologischen und des wirtschaftlichen Wandels</title>
+<title>Wirtschaftlicher Wandel und Global Governance - 4&nbsp; Treiber des technologischen und des wirtschaftlichen Wandels</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -130,7 +130,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Wirtschaftlicher Wandel und Global Givernance</a> 
+      <a href="./">Wirtschaftlicher Wandel und Global Governance</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/janvoss/wwgg.git" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
 </div>
@@ -210,7 +210,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
+    <h2 id="toc-title">Überblick</h2>
    
   <ul>
   <li><a href="#technologische-paradigmen-und-paradigmenwechsel" id="toc-technologische-paradigmen-und-paradigmenwechsel" class="nav-link active" data-scroll-target="#technologische-paradigmen-und-paradigmenwechsel"><span class="header-section-number">4.1</span> Technologische Paradigmen und Paradigmenwechsel</a></li>
@@ -242,7 +242,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="technologische-paradigmen-und-paradigmenwechsel" class="level2" data-number="4.1">
 <h2 data-number="4.1" class="anchored" data-anchor-id="technologische-paradigmen-und-paradigmenwechsel"><span class="header-section-number">4.1</span> Technologische Paradigmen und Paradigmenwechsel</h2>
-<div id="d5a8775a" class="cell" data-execution_count="1">
+<div id="1872ee22" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> graphviz <span class="im">import</span> Digraph</span>
@@ -269,19 +269,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>                               <span class="st">'b2'</span>: <span class="st">'implizites Wissen'</span>}.items():</span>
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>            subcluster.node(node_id, label)</span>
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Einzelner Knoten außerhalb des Hauptclusters</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>dot.node(<span class="st">'d'</span>, <span class="st">'Paradigmenwechsel'</span>)</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Vertikale Anordnung der Knoten im Subcluster</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>        subcluster.body.append(<span class="st">'{rank=same; b2 -&gt; b1 -&gt; b[style=invis]}'</span>)</span>
 <span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Kanten definieren</span></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>edges <span class="op">=</span> [(<span class="st">'a'</span>, <span class="st">'b'</span>), (<span class="st">'b'</span>, <span class="st">'c'</span>), (<span class="st">'c'</span>, <span class="st">'d'</span>)]</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> edge <span class="kw">in</span> edges:</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    dot.edge(<span class="op">*</span>edge)</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Letzte Kante mit Label unterhalb der Kante</span></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>dot.edge(<span class="st">'d'</span>, <span class="st">'a'</span>, constraint<span class="op">=</span><span class="st">'false'</span>)</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Einzelner Knoten außerhalb des Hauptclusters</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>dot.node(<span class="st">'d'</span>, <span class="st">'Paradigmenwechsel'</span>)</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Kanten definieren</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>edges <span class="op">=</span> [(<span class="st">'a'</span>, <span class="st">'b'</span>), (<span class="st">'b'</span>, <span class="st">'c'</span>), (<span class="st">'c'</span>, <span class="st">'d'</span>)]</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> edge <span class="kw">in</span> edges:</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>    dot.edge(<span class="op">*</span>edge)</span>
 <span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Display</span></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>display(dot)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Letzte Kante mit Label unterhalb der Kante</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>dot.edge(<span class="st">'d'</span>, <span class="st">'a'</span>, constraint<span class="op">=</span><span class="st">'false'</span>)</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="co"># Display</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>display(dot)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div>

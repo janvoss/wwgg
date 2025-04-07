@@ -1,1 +1,93 @@
-# Ein kurzer Blick in die Menschheitsgeschichte 
+# Ein kurzer Blick in die Menschheitsgeschichte
+
+## Wendepunkte der Menschheitsgeschichte
+
+```{python}
+#| label: fig-growth-phases
+#| fig-cap: "Menschheitsgeschichtliche Wendepunkte"
+#| message: false
+#| output: false
+#| include: false
+
+from graphviz import Digraph
+
+dot = Digraph()
+
+# Set common attributes
+dot.attr('node', width='3', shape='box')
+dot.attr(label='Menschheitsgeschichtliche Wachstumsphasen', 
+         labelloc='t', 
+         labeljust='c', 
+         fontsize='20', 
+         fontname='Times-Bold')
+
+# Increase the vertical distance between title and text
+dot.node('invis1', '', shape='none', width='0')
+
+# Sub-nodes with text wrapping
+sub_nodes_b = [
+    'Vor 70.000 Jahren',
+    'Vor 10.000 Jahren',
+    '16. Jh',
+    '19. Jh',
+    'Gegenwart'
+]
+
+sub_nodes_a = [
+    'Kognitive Revolution:\l Besiedelung der Welt\l',
+    'Neolithische Revolution:\l Sesshaftigkeit und\l Ackerbau\l',
+    'Wissenschaftliche Revolution:\l Systematische Forschung\l',
+    'Industrielle Revolution:\l Industrielle Produktion\l',
+    'Digitale Revolution:\l EDV, IKT, KI\l'
+]
+
+sub_notes = ['Räumliche Ausdehnung', 'Bevölkerungswachstum', 'Wissenszuwachs', 'Produktionswachstum', '?']
+
+# Create nodes and edges
+for i in range(len(sub_nodes_a)):
+    a_node = f'A{i}'
+    dot.node(a_node, sub_nodes_a[i])
+
+    b_node = f'B{i}'
+    dot.node(b_node, f'{sub_nodes_b[i]}\r', shape='none', width='2.5')
+
+    c_node = f'C{i}'
+    dot.node(c_node, sub_notes[i], shape='none')
+
+    # Position nodes in same rank
+    with dot.subgraph() as s:
+        s.attr(rank='same')
+        s.node(a_node)
+        s.node(b_node)
+        s.node(c_node)
+
+    # Invisible edges for alignment
+    if i > 0:
+        dot.edge(f'A{i-1}', a_node, style='invis', weight='10')
+        dot.edge(f'B{i-1}', b_node, weight='10')
+        dot.edge(f'C{i-1}', c_node, style='invis', weight='10')
+
+dot.edge('invis1', 'B0', style='invis', weight='10')
+
+# Add caption
+dot.node('invis', '', shape='none', width='0')
+dot.node('caption', label='Darstellung: Jan S. Voßwinkel in Anlehnung an Groviec (2022)', 
+         shape='none', width='7', fontsize='10')
+
+with dot.subgraph() as s:
+    s.attr(rank='same')
+    s.node('caption')
+    s.node('invis')
+
+dot.edge(f'A{len(sub_nodes_a)-1}', 'caption', style='invis')
+dot.edge(f'A{len(sub_nodes_a)-1}', 'invis', style='invis')
+
+#Datei erzeugen 
+dot.format = 'svg'  # Format setzen
+dot.render(filename='Phasen', cleanup=True)  # Erzeugt output.svg
+```
+![Menschheitshistorische Wendepunkte](Phasen.svg)
+
+## Technologischer Fortschritt in der Menschheitsgeschichte
+
+![Technischer Fortschritt in der Menschheitsgeschichte](https://ourworldindata.org/cdn-cgi/imagedelivery/qLq-8BTgXU8yG0N6HnOy8g/7c1b6c37-775b-4326-3bed-48a44e647f00/w=1350)

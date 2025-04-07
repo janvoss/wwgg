@@ -74,7 +74,7 @@
     "href": "Treiber.html",
     "title": "4  Treiber des technologischen und des wirtschaftlichen Wandels",
     "section": "",
-    "text": "4.1 Technologische Paradigmen und Paradigmenwechsel\nCode\nfrom graphviz import Digraph\nfrom IPython.display import display\n\ndot = Digraph()\n\n# Layout\ndot.attr(rankdir='LR')\n\n# Hauptcluster erstellen\nwith dot.subgraph(name='cluster_abc') as cluster:\n    cluster.attr(label='Paradigma', style='rounded', bgcolor='#F0F0F0')\n\n    # Knoten außerhalb des Subclusters\n    cluster.node('a', 'Basisdesign')\n    cluster.node('c', 'Engpass')\n\n    # Subcluster für \"Weiterentwicklung\"\n    with cluster.subgraph(name='cluster_b') as subcluster:\n        subcluster.attr(label='Weiterentwicklung', style='rounded', bgcolor='#E8E8E8')\n        for node_id, label in {'b': 'inkrementelle Innovationen',\n                               'b1': 'learning by doing',\n                               'b2': 'implizites Wissen'}.items():\n            subcluster.node(node_id, label)\n\n# Einzelner Knoten außerhalb des Hauptclusters\ndot.node('d', 'Paradigmenwechsel')\n\n# Kanten definieren\nedges = [('a', 'b'), ('b', 'c'), ('c', 'd')]\nfor edge in edges:\n    dot.edge(*edge)\n\n# Letzte Kante mit Label unterhalb der Kante\ndot.edge('d', 'a', constraint='false')\n\n# Display\ndisplay(dot)",
+    "text": "4.1 Technologische Paradigmen und Paradigmenwechsel\nCode\nfrom graphviz import Digraph\nfrom IPython.display import display\n\ndot = Digraph()\n\n# Layout\ndot.attr(rankdir='LR')\n\n# Hauptcluster erstellen\nwith dot.subgraph(name='cluster_abc') as cluster:\n    cluster.attr(label='Paradigma', style='rounded', bgcolor='#F0F0F0')\n\n    # Knoten außerhalb des Subclusters\n    cluster.node('a', 'Basisdesign')\n    cluster.node('c', 'Engpass')\n\n    # Subcluster für \"Weiterentwicklung\"\n    with cluster.subgraph(name='cluster_b') as subcluster:\n        subcluster.attr(label='Weiterentwicklung', style='rounded', bgcolor='#E8E8E8')\n        for node_id, label in {'b': 'inkrementelle Innovationen',\n                               'b1': 'learning by doing',\n                               'b2': 'implizites Wissen'}.items():\n            subcluster.node(node_id, label)\n\n        # Vertikale Anordnung der Knoten im Subcluster\n        subcluster.body.append('{rank=same; b2 -&gt; b1 -&gt; b[style=invis]}')\n\n# Einzelner Knoten außerhalb des Hauptclusters\ndot.node('d', 'Paradigmenwechsel')\n\n# Kanten definieren\nedges = [('a', 'b'), ('b', 'c'), ('c', 'd')]\nfor edge in edges:\n    dot.edge(*edge)\n\n# Letzte Kante mit Label unterhalb der Kante\ndot.edge('d', 'a', constraint='false')\n\n# Display\ndisplay(dot)",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Treiber des technologischen und des wirtschaftlichen Wandels</span>"
     ]
@@ -117,6 +117,36 @@
     "text": "n.d.\n\n\nAlston, Lee J. 2017. “Beyond Institutions: Beliefs and Leadership.” Journal of Economic History 77 (2): 353–72.\n\n\nErlei, Mathias, Martin Leschke, and Dirk Sauerland. 2016. Neue Institutionenökonomik. Stuttgart.\n\n\nFernandez, Raquel, and Dani Rodrik. 1991. “Resitance to Reform: Status Quo Bias in the Presence of Individual-Specific Uncertainty.” The American Economic Review 81: 1146–55.\n\n\nGrowiec, Jakub. 2022a. Accelerating Economic Growth: Lessons from 200,000 Years of Technological Progress and Human Development. Frontiers in Economic History. Cham: Springer International Publishing. https://doi.org/10.1007/978-3-031-07195-9.\n\n\n———. 2022b. Accelerating Economic Growth: Lessons from 200,000 Years of Technological Progress and Human Development. Frontiers in Economic History. Cham: Springer International Publishing. https://doi.org/10.1007/978-3-031-07195-9.\n\n\nHarwick, Cameron, and Hilton Root. 2019. “The Feudal Origins of the Western Legal Tradition.” ORDO 70 (1): 3–20. https://doi.org/10.1515/ordo-2020-0004.\n\n\nHillman, Arye L. 2004. “Nietzschean Development Failures.” Public Choice 119: 263–80.\n\n\nIkenberry, G John. 2012. Liberal Leviathan: The Origins, Crisis, and Transformation of the American World Order. Princeton, New Jersey.\n\n\nIkenberry, G. John. 2001. After Victory. Institutions, Strategic Restraint, and the Rebuilding of Order After Major Wars. Princeton, New Jersey.\n\n\nLeipold, Helmut. 2006. Kulturvergleichende Institutionenökonomik. Stuttgart.\n\n\nOrenstein, Mitchell A., and R. Daniel Kelemen. 2017. “Trojan Horses in EU Foreign Policy.” JCMS: Journal of Common Market Studies 55 (1): 87–102. https://doi.org/10.1111/jcms.12441.\n\n\nPleijt, Alexandra de, Alessandro Nuvolari, and Jacob Weisdorf. 2020. “Human Capital Formation During the First Industrial Revolution: Evidence from the Use of Steam Engines.” Journal of the European Economic Association 18 (2): 829–89. http://www.redi-bw.de/db/ebsco.php/search.ebscohost.com/login.aspx%3fdirect%3dtrue%26db%3deoh%26AN%3d1831825%26site%3dehost-live.\n\n\nPosth, Cosimo, He Yu, Ayshin Ghalichi, Hélène Rougier, Isabelle Crevecoeur, Yilei Huang, Harald Ringbauer, et al. 2023. “Palaeogenomics of Upper Palaeolithic to Neolithic European Hunter-Gatherers.” Nature 615 (7950): 117–26. https://doi.org/10.1038/s41586-023-05726-0.\n\n\n“Rules of Order: Assessing the State of Global Governance  Carnegie Endowment for International Peace.” n.d. Accessed March 31, 2025. https://carnegieendowment.org/research/2023/09/rules-of-order-assessing-the-state-of-global-governance?lang=en.\n\n\nScheuerman, Manuela. 2014. Die Vereinten Nationen. Eine Einführung. Wiesbaden.\n\n\nSquicciarini, Mara P., and Nico Voigtlander. 2015. “Human Capital and Industrialization: Evidence from the Age of Enlightenment.” Quarterly Journal of Economics 130 (4): 1825–83. http://www.redi-bw.de/db/ebsco.php/search.ebscohost.com/login.aspx%3fdirect%3dtrue%26db%3deoh%26AN%3d1633646%26site%3dehost-live.\n\n\n“The Rules-Based Order Vs. The Defense of Democracy  Carnegie Endowment for International Peace.” n.d. Accessed March 31, 2025. https://carnegieendowment.org/research/2024/09/rules-based-order-vs-the-defense-of-democracy?lang=en.\n\n\nVillalba-Mouco, Vanessa, Marieke S. van de Loosdrecht, Adam B. Rohrlach, Helen Fewlass, Sahra Talamo, He Yu, Franziska Aron, et al. 2023. “A 23,000-Year-Old Southern Iberian Individual Links Human Groups That Lived in Western Europe Before and After the Last Glacial Maximum.” Nature Ecology & Evolution, March, 1–13. https://doi.org/10.1038/s41559-023-01987-0.\n\n\nVoigt, Stefan. 2009. Institutionenökonomik. München.\n\n\nWinter, Stefan. 2019. Grundzüge Der Spieltheorie. Ein Lehr- Und Arbeitsbuch Für Das (Selbst\" )Studium. Berlin Heidelberg.",
     "crumbs": [
       "Literatur"
+    ]
+  },
+  {
+    "objectID": "Geschichte.html",
+    "href": "Geschichte.html",
+    "title": "3  Ein kurzer Blick in die Menschheitsgeschichte",
+    "section": "",
+    "text": "3.1 Wendepunkte der Menschheitsgeschichte",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Ein kurzer Blick in die Menschheitsgeschichte</span>"
+    ]
+  },
+  {
+    "objectID": "Geschichte.html#wendepunkte-der-menschheitsgeschichte",
+    "href": "Geschichte.html#wendepunkte-der-menschheitsgeschichte",
+    "title": "3  Ein kurzer Blick in die Menschheitsgeschichte",
+    "section": "",
+    "text": "Menschheitshistorische Wendepunkte",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Ein kurzer Blick in die Menschheitsgeschichte</span>"
+    ]
+  },
+  {
+    "objectID": "Geschichte.html#technologischer-fortschritt-in-der-menschheitsgeschichte",
+    "href": "Geschichte.html#technologischer-fortschritt-in-der-menschheitsgeschichte",
+    "title": "3  Ein kurzer Blick in die Menschheitsgeschichte",
+    "section": "3.2 Technologischer Fortschritt in der Menschheitsgeschichte",
+    "text": "3.2 Technologischer Fortschritt in der Menschheitsgeschichte\n\n\n\nTechnischer Fortschritt in der Menschheitsgeschichte",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Ein kurzer Blick in die Menschheitsgeschichte</span>"
     ]
   }
 ]

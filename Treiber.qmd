@@ -29,6 +29,9 @@ with dot.subgraph(name='cluster_abc') as cluster:
                                'b2': 'implizites Wissen'}.items():
             subcluster.node(node_id, label)
 
+        # Vertikale Anordnung der Knoten im Subcluster
+        subcluster.body.append('{rank=same; b2 -> b1 -> b[style=invis]}')
+
 # Einzelner Knoten außerhalb des Hauptclusters
 dot.node('d', 'Paradigmenwechsel')
 
@@ -42,6 +45,7 @@ dot.edge('d', 'a', constraint='false')
 
 # Display
 display(dot)
+
 
 ```
 

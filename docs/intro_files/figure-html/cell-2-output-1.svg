@@ -10,12 +10,12 @@
 <polygon fill="white" stroke="none" points="-4,4 -4,-493 756,-493 756,4 -4,4"/>
 <g id="clust1" class="cluster">
 <title>cluster_wirtschaft</title>
-<path fill="#0000ff" fill-opacity="0.200000" stroke="#0000ff" stroke-width="1.5" d="M20,-8C20,-8 228,-8 228,-8 234,-8 240,-14 240,-20 240,-20 240,-469 240,-469 240,-475 234,-481 228,-481 228,-481 20,-481 20,-481 14,-481 8,-475 8,-469 8,-469 8,-20 8,-20 8,-14 14,-8 20,-8"/>
+<path fill="#0000ff" fill-opacity="0.200000" stroke="#0000ff" stroke-width="1.5" d="M20,-98C20,-98 228,-98 228,-98 234,-98 240,-104 240,-110 240,-110 240,-469 240,-469 240,-475 234,-481 228,-481 228,-481 20,-481 20,-481 14,-481 8,-475 8,-469 8,-469 8,-110 8,-110 8,-104 14,-98 20,-98"/>
 <text text-anchor="middle" x="124" y="-463.7" font-family="Times,serif" font-weight="bold" font-size="14.00">Wirtschaftlicher Wandel</text>
 </g>
 <g id="clust2" class="cluster">
 <title>cluster_institutionen</title>
-<path fill="#ff0000" fill-opacity="0.200000" stroke="#ff0000" stroke-width="1.5" d="M272,-8C272,-8 480,-8 480,-8 486,-8 492,-14 492,-20 492,-20 492,-469 492,-469 492,-475 486,-481 480,-481 480,-481 272,-481 272,-481 266,-481 260,-475 260,-469 260,-469 260,-20 260,-20 260,-14 266,-8 272,-8"/>
+<path fill="#ff0000" fill-opacity="0.200000" stroke="#ff0000" stroke-width="1.5" d="M272,-188C272,-188 480,-188 480,-188 486,-188 492,-194 492,-200 492,-200 492,-469 492,-469 492,-475 486,-481 480,-481 480,-481 272,-481 272,-481 266,-481 260,-475 260,-469 260,-469 260,-200 260,-200 260,-194 266,-188 272,-188"/>
 <text text-anchor="middle" x="376" y="-463.7" font-family="Times,serif" font-weight="bold" font-size="14.00">Institutioneller Wandel</text>
 </g>
 <g id="clust3" class="cluster">
@@ -26,71 +26,77 @@
 <!-- a1 -->
 <g id="node1" class="node">
 <title>a1</title>
-<text text-anchor="start" x="24" y="-46.95" font-family="Times New Roman,serif" font-size="14.00">Technologiepfade</text>
+<text text-anchor="start" x="24" y="-406.95" font-family="Times New Roman,serif" font-size="14.00">Technologiepfade</text>
 </g>
 <!-- b1 -->
-<g id="node6" class="node">
+<g id="node5" class="node">
 <title>b1</title>
-<text text-anchor="start" x="276" y="-46.95" font-family="Times New Roman,serif" font-size="14.00">gesteuert vs. evolutionär</text>
+<text text-anchor="start" x="276" y="-406.95" font-family="Times New Roman,serif" font-size="14.00">gesteuert vs. evolutionär</text>
 </g>
 <!-- a1&#45;&gt;b1 -->
 <!-- a2 -->
 <g id="node2" class="node">
 <title>a2</title>
-<text text-anchor="start" x="24" y="-136.95" font-family="Times New Roman,serif" font-size="14.00">Schumpeterscher Wettbewerb</text>
+<text text-anchor="start" x="24" y="-316.95" font-family="Times New Roman,serif" font-size="14.00">Schumpeterscher Wettbewerb</text>
 </g>
+<!-- a2&#45;&gt;a1 -->
 <!-- a3 -->
 <g id="node3" class="node">
 <title>a3</title>
 <text text-anchor="start" x="24" y="-226.95" font-family="Times New Roman,serif" font-size="14.00">Strukturwandel</text>
 </g>
+<!-- a3&#45;&gt;a2 -->
 <!-- a4 -->
 <g id="node4" class="node">
 <title>a4</title>
-<text text-anchor="start" x="24" y="-316.95" font-family="Times New Roman,serif" font-size="14.00">Permanente Anpassung</text>
+<text text-anchor="start" x="24" y="-136.95" font-family="Times New Roman,serif" font-size="14.00">Permanente Anpassung</text>
 </g>
-<!-- cluster_wirtschaft_placeholder_4 -->
+<!-- a4&#45;&gt;a3 -->
 <!-- c1 -->
-<g id="node11" class="node">
+<g id="node8" class="node">
 <title>c1</title>
-<text text-anchor="start" x="528" y="-46.95" font-family="Times New Roman,serif" font-size="14.00">Internationale Koordination</text>
+<text text-anchor="start" x="528" y="-406.95" font-family="Times New Roman,serif" font-size="14.00">Internationale Koordination</text>
 </g>
 <!-- b1&#45;&gt;c1 -->
 <!-- b2 -->
-<g id="node7" class="node">
+<g id="node6" class="node">
 <title>b2</title>
-<text text-anchor="start" x="276" y="-136.95" font-family="Times New Roman,serif" font-size="14.00">graduell vs. drastisch</text>
+<text text-anchor="start" x="276" y="-316.95" font-family="Times New Roman,serif" font-size="14.00">graduell vs. drastisch</text>
 </g>
+<!-- b2&#45;&gt;b1 -->
 <!-- b3 -->
-<g id="node8" class="node">
+<g id="node7" class="node">
 <title>b3</title>
 <text text-anchor="start" x="276" y="-226.95" font-family="Times New Roman,serif" font-size="14.00"> Reformblockaden</text>
 </g>
-<!-- cluster_institutionen_placeholder_3 -->
-<!-- cluster_institutionen_placeholder_4 -->
+<!-- b3&#45;&gt;b2 -->
 <!-- c2 -->
-<g id="node12" class="node">
+<g id="node9" class="node">
 <title>c2</title>
-<text text-anchor="start" x="528" y="-145.2" font-family="Times New Roman,serif" font-size="14.00">Kooperationsgeflecht</text>
-<text text-anchor="start" x="528" y="-128.7" font-family="Times New Roman,serif" font-size="14.00">statt zentraler Steuerung</text>
+<text text-anchor="start" x="528" y="-325.2" font-family="Times New Roman,serif" font-size="14.00">Kooperationsgeflecht</text>
+<text text-anchor="start" x="528" y="-308.7" font-family="Times New Roman,serif" font-size="14.00">statt zentraler Steuerung</text>
 </g>
+<!-- c2&#45;&gt;c1 -->
 <!-- c3 -->
-<g id="node13" class="node">
+<g id="node10" class="node">
 <title>c3</title>
 <text text-anchor="start" x="528" y="-235.2" font-family="Times New Roman,serif" font-size="14.00">Liberale Weltordnung vs. </text>
 <text text-anchor="start" x="528" y="-218.7" font-family="Times New Roman,serif" font-size="14.00"> regelbasierte Ordnung</text>
 </g>
+<!-- c3&#45;&gt;c2 -->
 <!-- c4 -->
-<g id="node14" class="node">
+<g id="node11" class="node">
 <title>c4</title>
-<text text-anchor="start" x="528" y="-325.2" font-family="Times New Roman,serif" font-size="14.00">Erosion vs.</text>
-<text text-anchor="start" x="528" y="-308.7" font-family="Times New Roman,serif" font-size="14.00">Neuordnung</text>
+<text text-anchor="start" x="528" y="-145.2" font-family="Times New Roman,serif" font-size="14.00">Erosion vs.</text>
+<text text-anchor="start" x="528" y="-128.7" font-family="Times New Roman,serif" font-size="14.00">Neuordnung</text>
 </g>
+<!-- c4&#45;&gt;c3 -->
 <!-- C5 -->
-<g id="node15" class="node">
+<g id="node12" class="node">
 <title>C5</title>
-<text text-anchor="start" x="528" y="-415.2" font-family="Times New Roman,serif" font-size="14.00">Klimaschutzpolitik, Migration, </text>
-<text text-anchor="start" x="528" y="-398.7" font-family="Times New Roman,serif" font-size="14.00">KI, internationale Sicherheit, ...</text>
+<text text-anchor="start" x="528" y="-55.2" font-family="Times New Roman,serif" font-size="14.00">Klimaschutzpolitik, Migration, </text>
+<text text-anchor="start" x="528" y="-38.7" font-family="Times New Roman,serif" font-size="14.00">KI, internationale Sicherheit, ...</text>
 </g>
+<!-- C5&#45;&gt;c4 -->
 </g>
 </svg>

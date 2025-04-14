@@ -418,27 +418,6 @@ window.Quarto = {
 <span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a><span class="co"># Display</span></span>
 <span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>display(dot)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-stdout">
-<pre><code>digraph {
-    rankdir=LR
-    subgraph cluster_abc {
-        bgcolor="#F0F0F0" label=Paradigma style=rounded
-        a [label=Basisdesign]
-        c [label=Engpass]
-        subgraph cluster_b {
-            bgcolor="#E8E8E8" label=Weiterentwicklung style=rounded
-            b [label="inkrementelle Innovationen"]
-            b1 [label="learning by doing"]
-            b2 [label="implizites Wissen"]
-        {rank=same; b2 -&gt; b1 -&gt; b[style=invis]}     }
-    }
-    d [label=Paradigmenwechsel]
-    a -&gt; b
-    b -&gt; c
-    c -&gt; d
-    d -&gt; a [constraint=false]
-}</code></pre>
-</div>
 </div>
 
 

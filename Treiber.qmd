@@ -129,6 +129,7 @@ p1 <- ggplotly(p)%>%
 ## Technologische Paradigmen und Paradigmenwechsel
 
 ```{python}
+#| eval: false
 
 from graphviz import Digraph
 from IPython.display import display

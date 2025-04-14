@@ -36,6 +36,95 @@
   - Verbreitung über offene Produkt- und/oder Faktormärkte
   
   - Nationaler vs. internationaler Regulierungsrahmen ($\rightarrow$ Global Governance)
+  
+## Patentanmeldungen
+
+
+```{r Patente, echo=T, warning=F, message=F, cache=T, eval=T}
+
+# Patente
+
+library(tidyverse)
+library(wbstats)
+
+df <- wb_data(c("IP.PAT.RESD", "NY.GDP.MKTP.KD"))
+
+p <- df %>% 
+  filter(date==2020) %>% 
+  ggplot(aes(x=NY.GDP.MKTP.KD, y=IP.PAT.RESD, group=country #für labels in ggplotly
+             ))+
+  geom_point(color="red")+
+  geom_smooth(aes(group=NULL #, weight=NY.GDP.MKTP.KD
+                  ))+
+  scale_x_continuous(labels= function(x) format(x/1000000,scientific = F) , 
+                     trans = "log10"
+  )+
+  scale_y_continuous(labels= function(x) format(x,scientific = F) , 
+                     trans = "log10"
+  )+
+  labs(title= "Patentanmeldungen durch Einwohner, 2020",
+       x="Bruttoinlandsprodukt",
+       y= "Patentanmeldungen durch Inländer")
+                     
+# p
+
+library(plotly)
+
+ggplotly(p)%>%
+  config(displaylogo = F) %>% 
+  layout(margin = list(l = 50, r = 50, b = 100, t = 50),
+         annotations = list(x = 1, y = -0.3, text =  paste('Abbildung: Jan S. Voßwinkel; Daten: World Bank; Datenabruf:', Sys.Date(), sep = " "),
+                            xref='paper', yref='paper', showarrow = F, 
+                            xanchor='right', yanchor='auto', xshift=0, yshift=0,
+                            font = list(size = 11)))
+
+```
+
+
+```{r Patente2, echo=F, warning=F, message=F, cache=T, eval=T}
+
+# Patente
+
+library(tidyverse)
+library(wbstats)
+
+df <- wb_data(c("IP.PAT.RESD", 
+                "NY.GDP.MKTP.KD",
+                "SP.POP.TOTL"))
+
+p <- df %>% 
+  filter(date==2020) %>% 
+  ggplot(aes(x=NY.GDP.MKTP.KD/SP.POP.TOTL, y=IP.PAT.RESD/SP.POP.TOTL, group=country #für labels in ggplotly
+             ))+
+  geom_point(color="red")+
+  geom_smooth(aes(group=NULL, # weight=SP.POP.TOTL
+                  ))+
+  scale_x_continuous(labels= function(x) format(x,scientific = F) , 
+                     trans = "log10"
+  )+
+  scale_y_continuous(labels= function(x) format(x*1000000,scientific = F) , 
+                     trans = "log10"
+  )+
+  labs(title= "Patentanmeldungen durch Einwohner pro 1 Mio Einwohner, 2020",
+       x="Bruttoinlandsprodukt pro Kopf",
+       y= "Patentanmeldungen durch Inländer pro 1 Mio Einwohner")
+                     
+# p
+
+library(plotly)
+
+p1 <- ggplotly(p)%>%
+  config(displaylogo = F) %>% 
+  layout(margin = list(l = 50, r = 50, b = 100, t = 50),
+         annotations = list(x = 1, y = -0.3, text =  paste('Abbildung: Jan S. Voßwinkel; Daten: World Bank; Datenabruf:', Sys.Date(), sep = " "),
+                            xref='paper', yref='paper', showarrow = F, 
+                            xanchor='right', yanchor='auto', xshift=0, yshift=0,
+                            font = list(size = 11)))
+
+# p1
+
+```
+
 
 ## Technologische Paradigmen und Paradigmenwechsel
 

@@ -16,7 +16,8 @@ book:
     - intro.qmd
     - Institutionenoekonomik.qmd # Institutionenökonomik
     - Geschichte.qmd # die Revolutionen?
-    - Treiber.qmd # Treiber des Wandels, Schumpeter, Boyer, Alston, ...?
+    - Treiber.qmd 
+    - Treiber_Inst.qmd # Treiber des Wandels, Schumpeter, Boyer, Alston, ...?
     - Spieltheorie.qmd # Evolution?
     - Governance.qmd # Hier Ideologie und Reform
     - Anwendungsfaelle.qmd

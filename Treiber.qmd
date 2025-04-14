@@ -1,5 +1,7 @@
 # Treiber des technologischen und des wirtschaftlichen Wandels
 
+## Ökonomische Anreize und gesellschaftliche Wirkung
+
 
 ## Technologische Paradigmen und Paradigmenwechsel
 
@@ -48,6 +50,3 @@ display(dot)
 
 
 ```
-
-
-# Treiber des institutionellen Wandels

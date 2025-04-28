@@ -40,43 +40,108 @@
 ## Patentanmeldungen
 
 
-```{r Patente, echo=T, warning=F, message=F, cache=T, eval=T}
+```{r Patente, echo=T, warning=F, message=F, cache=T, eval=T, include=F}
 
 # Patente
 
 library(tidyverse)
-library(wbstats)
 
-df <- wb_data(c("IP.PAT.RESD", "NY.GDP.MKTP.KD"))
+# Fetch the data
+df <- read.csv("https://ourworldindata.org/grapher/patent-applications-per-million.csv?v=1&csvType=full&useColumnShortNames=true")
 
-p <- df %>% 
-  filter(date==2020) %>% 
-  ggplot(aes(x=NY.GDP.MKTP.KD, y=IP.PAT.RESD, group=country #für labels in ggplotly
-             ))+
-  geom_point(color="red")+
-  geom_smooth(aes(group=NULL #, weight=NY.GDP.MKTP.KD
-                  ))+
-  scale_x_continuous(labels= function(x) format(x/1000000,scientific = F) , 
-                     trans = "log10"
-  )+
-  scale_y_continuous(labels= function(x) format(x,scientific = F) , 
-                     trans = "log10"
-  )+
-  labs(title= "Patentanmeldungen durch Einwohner, 2020",
-       x="Bruttoinlandsprodukt",
-       y= "Patentanmeldungen durch Inländer")
-                     
-# p
+# Fetch the metadata
+#metadata <- fromJSON("https://ourworldindata.org/grapher/patent-applications-per-million.metadata.json?v=1&csvType=full&useColumnShortNames=true")
 
-library(plotly)
+df <- df %>% filter(!grepl('World',     Entity),
+                    !grepl('countries', Entity))
 
-ggplotly(p)%>%
-  config(displaylogo = F) %>% 
-  layout(margin = list(l = 50, r = 50, b = 100, t = 50),
-         annotations = list(x = 1, y = -0.3, text =  paste('Abbildung: Jan S. Voßwinkel; Daten: World Bank; Datenabruf:', Sys.Date(), sep = " "),
-                            xref='paper', yref='paper', showarrow = F, 
-                            xanchor='right', yanchor='auto', xshift=0, yshift=0,
-                            font = list(size = 11)))
+# Fetch the data
+df_patabs <- read.csv("https://ourworldindata.org/grapher/annual-patent-applications.csv?v=1&csvType=full&useColumnShortNames=true")
+
+# Fetch the metadata
+#metadata <- fromJSON("https://ourworldindata.org/grapher/annual-patent-applications.metadata.json?v=1&csvType=full&useColumnShortNames=true")
+
+df <- left_join(df, df_patabs)
+
+# gdp Daten herunterladen und verbinden
+
+
+# Fetch the data
+df_gdppc <- read.csv("https://ourworldindata.org/grapher/gdp-per-capita-worldbank.csv?v=1&csvType=full&useColumnShortNames=true")
+
+# Fetch the metadata
+#metadata <- fromJSON("https://ourworldindata.org/grapher/gdp-per-capita-worldbank.metadata.json?v=1&csvType=full&useColumnShortNames=true")
+
+df <- left_join(df, df_gdppc)
+
+# gdp
+
+df_gdp <- read.csv("https://ourworldindata.org/grapher/gdp-worldbank.csv?v=1&csvType=full&useColumnShortNames=true")
+
+# Fetch the metadata
+#metadata <- fromJSON("https://ourworldindata.org/grapher/gdp-worldbank.metadata.json?v=1&csvType=full&useColumnShortNames=true")
+
+df <- left_join(df, df_gdp)
+
+# labels vergeben
+
+df <- df %>%
+      group_by(Year) %>%
+      mutate(label_abs = if_else(min_rank(desc(ip_pat_resd))        <= 10, Entity, NA),
+             label_rel = if_else(min_rank(desc(patents_per_million)) <= 10, Entity, NA))
+
+```
+
+```{r}
+#| message: false
+#| warning: false
+
+library(tidyverse)
+library(ggrepel)
+
+options(scipen = 999)
+
+df %>% filter(Year== max(df$Year)) %>%
+  ggplot(aes(ny_gdp_mktp_pp_kd/1000000000, ip_pat_resd, label=label_abs)) +
+    geom_point()+
+    geom_text_repel()+
+    scale_x_log10() +
+    scale_y_log10()+
+    geom_smooth(method='lm',
+                formula = y ~ x + I(x^2))+
+    theme_light()+
+    labs(title="Patentanmeldungen in ausgewählten Staaten",
+         x="Bruttoinlandsprodukt (Mrd. $, KKP)",
+         y="Patentanmelungen von Einwohnern",
+   caption="Abbildung: Jan S. Voßwinkel, Daten: Ourworldindata.org")
+
+```
+
+
+```{r}
+#| warning: false
+#| message: false
+
+library(tidyverse)
+
+options(scipen = 999)
+
+df %>% filter(Year== max(df$Year)) %>%
+  ggplot(aes(ny_gdp_pcap_pp_kd, patents_per_million,
+             label= label_rel)) +
+    geom_point()+
+    geom_text_repel()+
+    scale_x_log10() +
+    scale_y_log10()+
+    geom_smooth(method='lm',
+                formula = y ~ x + I(x^2))+
+    theme_light()+
+    labs(title="Patentanmeldungen pro Mio Einwohner",
+         x    = "Bruttoinlandsprodukt pro Kopf ($, KKP)",
+         y    = "Patentanmeldungen pro Mio Einwohner",
+       caption= "Abbildung: Jan S. Voßwinkel, Daten: Ourworldindata.org")
+
+
 
 ```
 
@@ -125,6 +190,86 @@ p1 <- ggplotly(p)%>%
 
 ```
 
+
+## Weltwirtschaftliche` Integration
+
+```{r}
+#| include: false
+#| message: false
+#| warning: false
+
+library(tidyverse)
+
+
+#library(jsonlite)
+
+# Fetch the data
+df <- read.csv("https://ourworldindata.org/grapher/trade-as-share-of-gdp.csv?v=1&csvType=full&useColumnShortNames=true")
+
+# Fetch the metadata
+#metadata <- fromJSON("https://ourworldindata.org/grapher/trade-as-share-of-gdp.metadata.json?v=1&csvType=full&useColumnShortNames=true")
+
+# Filtern, um Ländergruppen herauszuwerfen (Achtung, dann auch World und EU 27 weg)
+
+df <- df %>% filter(!grepl('27',        Entity),
+                    !grepl('WB',        Entity),
+                    !grepl('World',     Entity),
+                    !grepl('countries', Entity))
+
+# Zeitreihen vorbereiten
+4
+Countries_of_interest <- c('United States', 'Germany', 'China', 'France',
+                            'India', 'Poland', 'Russia'#, 'European Union (27)'
+                            )
+
+
+```
+
+
+```{r}
+#| message: false
+#| warning: false
+
+library(tidyverse)
+library(ggrepel)
+library(quantreg)
+        
+        options(scipen=999)
+
+df %>% filter(Entity %in% Countries_of_interest) %>%
+        ggplot(aes(Year, ne_trd_gnfs_zs#, color= Entity
+        ))+
+ #             geom_line(data=df, aes(group=Entity),  color='gray', alpha=.5)+
+              geom_line(aes(color=Entity))+
+              #geom_quantile(data=df, aes(Year, ne_trd_gnfs_zs))+
+             # scale_y_log10()+
+              #coord_cartesian(ylim=c(5, 200))+ # nur interessant, wenn Gesamtheit der Beobachtungen abgebildet werden soll
+              theme_light()+
+              labs(title='Handelsoffenheit ausgewählter Staaten',
+                       x= 'Jahr',
+                       y= 'Handelsoffenheit ((Ex+Im)/BIP)',
+                   color= 'Staaten',
+                 caption= 'Abbildung Jan S. Voßwinkel,  Daten: Ourworldindata.org,  Tabelle trade-as-share-of-gdp')
+
+
+df %>% filter(Entity %in% Countries_of_interest) %>%
+        ggplot(aes(Year, ne_trd_gnfs_zs#, color= Entity
+        ))+
+              geom_line(data=df, aes(group=Entity),  color='gray', alpha=.5)+
+              geom_line(aes(color=Entity))+
+              geom_quantile(data=df, aes(Year, ne_trd_gnfs_zs))+
+             # scale_y_log10()+
+              coord_cartesian(ylim=c(5, 200))+ # nur interessant, wenn Gesamtheit der Beobachtungen abgebildet werden soll
+              theme_light()+
+              labs(title='Handelsoffenheit ausgewählter Staaten',
+                       x= 'Jahr',
+                       y= 'Handelsoffenheit ((Ex+Im)/BIP)',
+                   color= 'Staaten',
+                 caption= 'Abbildung Jan S. Voßwinkel,  Daten: Ourworldindata.org,  Tabelle trade-as-share-of-gdp')
+
+
+
+```
 
 ## Technologische Paradigmen und Paradigmenwechsel
 

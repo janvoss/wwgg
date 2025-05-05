@@ -40,7 +40,7 @@
 ## Patentanmeldungen
 
 
-```{r Patente, echo=T, warning=F, message=F, cache=T, eval=T, include=F}
+```{r Patente, echo=T, warning=F, message=F, cache=T, eval=T}
 
 # Patente
 
@@ -194,7 +194,6 @@ p1 <- ggplotly(p)%>%
 ## Weltwirtschaftliche` Integration
 
 ```{r}
-#| include: false
 #| message: false
 #| warning: false
 
@@ -320,4 +319,4 @@ dot.render(filename='Technolog-Paradigmen', cleanup=True)  # Erzeugt output.svg
 
 ```
 
-![Technologische Paradigmen](Technolog-Paradigmen.svg)
+![Technologische Paradigmen nach @pyka_evolutorische_2021](Technolog-Paradigmen.svg)

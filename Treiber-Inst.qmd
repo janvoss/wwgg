@@ -1,4 +1,159 @@
 # Treiber des institutionellen Wandels
+```{python}
+#| message: false
+#| warning: false
+#| output: false
+#| include: false
+
+from graphviz import Digraph
 
 
-[Notfall]::
+dot = Digraph()
+
+# Layout des gesamten Graphen
+dot.attr(rankdir='LR')
+
+# Funktion zur Erstellung eines Clusters mit \l für Linksbündigkeit
+def create_cluster(dot, name, label, color, fillcolor, nodes , max_nodes
+                   ):
+    with dot.subgraph(name=name) as c:
+        c.attr(label=label,
+               fontname="times-bold",
+               style='filled,rounded',
+               fillcolor=fillcolor,
+               color=color,
+               penwidth='0')
+
+        # Standardknoten mit \l für Linksbündigkeit
+        for node_id, node_label in nodes:
+            # \n durch \l ersetzen und am Ende \l hinzufügen
+            formatted_label = node_label.replace('\n', '\\l') + '\\l'
+            c.node(node_id,
+                   label=formatted_label,
+                   width="2.5",
+                   height="1.2",
+                   shape='none',
+                   )  # Schrift6art für bessere Lesbarkeit
+
+        # Unsichtbare Platzhalterknoten
+        for i in range(len(nodes), max_nodes):
+            c.node(f'{name}_placeholder_{i}', '',
+                  style='invis',
+                   width="1",
+                   height="1.2",  # Auf 0.3 setzen wie bei echten Knoten
+                   fixedsize='True'  # Erzwingt exakte Größe
+                    )
+
+# Clusterdefinitionen
+
+clusters = [
+    ('cluster_ziel', 'Konvention', 'blue', '#EFEFEF', [
+        ('a1', 'Variante A:\l intentionale Änderung\l (Programmiersprache)\l'),
+        ('a2', 'Variante B:\l Evolutionäre, inkre-\l mentelle Änderung\l (natürliche Sprache)\l')
+    ]),
+    ('cluster_Restriktion','Ethische Regel', 'blue', '#EFEFEF', [
+        ('b1', 'Änderung der\l - Werte\l - Restriktionen\l - Informationen\l')
+    ]),
+    ('cluster_Handlung', 'Sitte', 'blue', '#EFEFEF', [
+        ('c1', 'Änderung zunächst in \l Subpopulationen\l'),
+        ('c2', 'Eventuell Kritische\l -Masse-Phänomen'),
+        ('c3', 'Imitation vs. bewusste\l Werteänderung')
+    ]),
+    ('cluster_d', 'Formelle private Regel', 'blue', '#EFEFEF', [
+        ('d1', 'Änderung durch\l zuständige Gremien\l -Ziele\l -Restriktionen\l-Informationen')
+    ]),
+    ('cluster_e', 'Regel positiven Rechts', 'blue', '#EFEFEF', [
+        ('e1', 'Mehrheitswille'),
+        ('e2', 'Politische Ökonomie'),
+        ('e3', 'Folgt typischerweise\l Änderung der Sitten')
+    ])
+]
+
+
+max_nodes = max(len(cluster[4]) for cluster in clusters)
+
+# Cluster erstellen
+for name, label, color, fillcolor, nodes in clusters:
+    create_cluster(dot, name, label, color, fillcolor, nodes, max_nodes)
+
+# Unsichtbare Kanten für vertikale Anordnung
+nodes = ['a1', 'b1', 'c1', 'd1', 'e1']
+for i in range(len(nodes)-1):
+   dot.edge(nodes[i], nodes[i+1], style='invis')
+
+
+#Datei erzeugen 
+dot.format = 'svg'  # Format setzen
+dot.render(filename='Treiber-inst-wandel', cleanup=True)  # Erzeugt output.svg
+
+```
+
+[![Treiber des institutionellen Wandels](Treiber-inst-wandel.svg)]::
+
+
+```{python}
+#| message: false
+#| warning: false
+
+from graphviz import Digraph
+
+dot = Digraph()
+
+# Layout
+dot.attr(rankdir='LR')
+
+# Hauptknoten
+dot.node('a', 'Normalzustand')
+dot.node('d', 'Neuer Normalzustand')
+
+# Funktion zum Erstellen eines Clusters
+def create_cluster(dot, name, label, nodes, bold_node=None):
+    with dot.subgraph(name=name) as cluster:
+        cluster.attr(label=label, style='rounded', bgcolor='#F0F0F0')
+        cluster.attr(rankdir='TB')  # Vertikale Ausrichtung (mittig)
+        for node_id, node_label in nodes.items():
+            if node_id == bold_node:
+                cluster.node(node_id, f'{node_label}', fontname="times-bold")  # Fett
+            else:
+                cluster.node(node_id, f'{node_label}')
+
+# Cluster für "Krise" (b1-b5)
+crisis_nodes = {
+    'b1': 'Ideologien',
+    'b2': 'Wissenschaft',
+    'b3': 'Zweifel',
+    'b4': 'Dysfunktionalität',
+    'b5': 'Exogene Schocks'
+}
+create_cluster(dot, name='cluster_crisis', label='Krise', nodes=crisis_nodes, bold_node='b3')
+
+# Cluster für "Innovation" (c1-c5)
+innovation_nodes = {
+    'c1': 'Ideologien',
+    'c2': 'Wissenschaft',
+    'c3': 'Vertrauen',
+    'c4': 'Interaktion',
+    'c5': 'Persönlichkeiten'
+}
+create_cluster(dot, name='cluster_group', label='Innovation', nodes=innovation_nodes, bold_node='c3')
+
+# Kanten
+edges = [
+    ('a', 'b3'),  # Verbindung von "Normalzustand" zu zentralem Knoten im "Krise"-Cluster
+    ('b3', 'c3'),  # Verbindung von zentralem Knoten im "Krise"-Cluster zu zentralem Knoten im "Innovation"-Cluster
+    ('c3', 'd'),  # Verbindung von zentralem Knoten im "Innovation"-Cluster zu "Neuer Normalzustand"
+    ('d', 'a', {'constraint': 'false'})  # Rückkopplung
+]
+
+for edge in edges:
+    dot.edge(edge[0], edge[1], **edge[2] if len(edge) > 2 else {})
+
+#Datei erzeugen 
+dot.format = 'svg'  # Format setzen
+dot.render(filename='Blyth-Krise', cleanup=True)  # Erzeugt output.svg
+
+```
+
+![Institutionelle Erneuerung nach @blyth_great_2002](Blyth-Krise.svg)
+
+

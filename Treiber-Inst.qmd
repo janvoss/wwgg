@@ -3,7 +3,7 @@
 #| message: false
 #| warning: false
 #| output: false
-#| include: false
+#| include: true
 
 from graphviz import Digraph
 
@@ -94,6 +94,7 @@ dot.render(filename='Treiber-inst-wandel', cleanup=True)  # Erzeugt output.svg
 ```{python}
 #| message: false
 #| warning: false
+#| output: false
 
 from graphviz import Digraph
 

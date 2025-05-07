@@ -1,0 +1,32 @@
+---
+title: "Digraph-Test"
+---
+
+```{python}
+
+from graphviz import Digraph
+
+dot = Digraph()
+dot.attr(rankdir='TB')  # Top to Bottom
+
+with dot.subgraph(name='cluster_0') as c:
+    c.attr(style='filled', color='lightgrey', label='Cluster AB')
+    c.node('a')
+    c.node('b')
+    c.edge('a', 'b')
+
+dot.node('c')
+dot.node('d')
+
+dot.node('e')
+
+dot.edge('d', 'e')
+
+# Datei erzeugen
+dot.format = 'svg'
+dot.render(filename='Digraph-test', cleanup=True)
+
+
+```
+
+![Test](Digraph-test.svg)

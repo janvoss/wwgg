@@ -1,95 +1,6 @@
 # Treiber des institutionellen Wandels
-```{python}
-#| message: false
-#| warning: false
-#| output: false
-#| include: true
 
-from graphviz import Digraph
-
-
-dot = Digraph()
-
-# Layout des gesamten Graphen
-dot.attr(rankdir='LR')
-
-# Funktion zur Erstellung eines Clusters mit \l für Linksbündigkeit
-def create_cluster(dot, name, label, color, fillcolor, nodes , max_nodes
-                   ):
-    with dot.subgraph(name=name) as c:
-        c.attr(label=label,
-               fontname="times-bold",
-               style='filled,rounded',
-               fillcolor=fillcolor,
-               color=color,
-               penwidth='0')
-
-        # Standardknoten mit \l für Linksbündigkeit
-        for node_id, node_label in nodes:
-            # \n durch \l ersetzen und am Ende \l hinzufügen
-            formatted_label = node_label.replace('\n', '\\l') + '\\l'
-            c.node(node_id,
-                   label=formatted_label,
-                   width="2.5",
-                   height="1.2",
-                   shape='none',
-                   )  # Schrift6art für bessere Lesbarkeit
-
-        # Unsichtbare Platzhalterknoten
-        for i in range(len(nodes), max_nodes):
-            c.node(f'{name}_placeholder_{i}', '',
-                  style='invis',
-                   width="1",
-                   height="1.2",  # Auf 0.3 setzen wie bei echten Knoten
-                   fixedsize='True'  # Erzwingt exakte Größe
-                    )
-
-# Clusterdefinitionen
-
-clusters = [
-    ('cluster_ziel', 'Konvention', 'blue', '#EFEFEF', [
-        ('a1', 'Variante A:\l intentionale Änderung\l (Programmiersprache)\l'),
-        ('a2', 'Variante B:\l Evolutionäre, inkre-\l mentelle Änderung\l (natürliche Sprache)\l')
-    ]),
-    ('cluster_Restriktion','Ethische Regel', 'blue', '#EFEFEF', [
-        ('b1', 'Änderung der\l - Werte\l - Restriktionen\l - Informationen\l')
-    ]),
-    ('cluster_Handlung', 'Sitte', 'blue', '#EFEFEF', [
-        ('c1', 'Änderung zunächst in \l Subpopulationen\l'),
-        ('c2', 'Eventuell Kritische\l -Masse-Phänomen'),
-        ('c3', 'Imitation vs. bewusste\l Werteänderung')
-    ]),
-    ('cluster_d', 'Formelle private Regel', 'blue', '#EFEFEF', [
-        ('d1', 'Änderung durch\l zuständige Gremien\l -Ziele\l -Restriktionen\l-Informationen')
-    ]),
-    ('cluster_e', 'Regel positiven Rechts', 'blue', '#EFEFEF', [
-        ('e1', 'Mehrheitswille'),
-        ('e2', 'Politische Ökonomie'),
-        ('e3', 'Folgt typischerweise\l Änderung der Sitten')
-    ])
-]
-
-
-max_nodes = max(len(cluster[4]) for cluster in clusters)
-
-# Cluster erstellen
-for name, label, color, fillcolor, nodes in clusters:
-    create_cluster(dot, name, label, color, fillcolor, nodes, max_nodes)
-
-# Unsichtbare Kanten für vertikale Anordnung
-nodes = ['a1', 'b1', 'c1', 'd1', 'e1']
-for i in range(len(nodes)-1):
-   dot.edge(nodes[i], nodes[i+1], style='invis')
-
-
-#Datei erzeugen 
-dot.format = 'svg'  # Format setzen
-dot.render(filename='Treiber-inst-wandel', cleanup=True)  # Erzeugt output.svg
-
-```
-
-[![Treiber des institutionellen Wandels](Treiber-inst-wandel.svg)]::
-
+## Krise und Vertrauen
 
 ```{python}
 #| message: false
@@ -157,4 +68,163 @@ dot.render(filename='Blyth-Krise', cleanup=True)  # Erzeugt output.svg
 
 ![Institutionelle Erneuerung nach @blyth_great_2002](Blyth-Krise.svg)
 
+## Zur Änderung unterischiedlicher Arten von Institutionen
 
+```{python}
+#| message: false
+#| warning: false
+#| output: false
+
+
+
+from graphviz import Digraph
+
+
+dot = Digraph()
+dot.attr('node', width='2.2', shape='none', labeljust='c')
+#dot.attr(nodesep='.2')
+dot.attr(label='Treiber des institutionellen Wandels', labelloc='t',
+          fontname="times-bold", fontsize="24", ranksep=".5")
+
+# Konfiguration der Hauptknoten und Subnodes
+main_nodes = {
+    'A': ['Konvention', ['Variante A:\l intentionale Änderung\l (Programmiersprache)\l',
+                         'Variante B:\l Evolutionäre, inkre-\l mentelle Änderung\l (natürliche Sprache)\l'
+                         ]],
+    'B': ['Ethische Regel', ['Änderung der\l - Werte\l - Restriktionen\l - Informationen\l'
+                    ]],
+    'C': ['Sitte', ['Änderung zunächst in \l Subpopulationen\l',
+                    'Eventuell Kritische\l -Masse-Phänomen\l',
+                    'Imitation vs. bewusste\l Werteänderung\l']],
+    'D': ['Formelle private Regel',['Änderung durch\l zuständige Gremien\l -Ziele\l -Restriktionen\l -Informationen\l']],
+    'E': ['Regel positiven Rechts', ['Mehrheitswille\l',
+                             'Politische Ökonomie\l',
+                             'Folgt typischerweise\l Änderung der Sitten\l']]
+}
+
+# Hauptknoten erstellen
+for key in main_nodes:
+    dot.node(key, main_nodes[key][0], shape='underline')
+
+# Subnodes generieren und verbinden
+max_subnodes = max(len(sub) for _, (_, sub) in main_nodes.items())
+
+for i in range(max_subnodes):
+    current_nodes = []
+
+    for key, (label, subnodes) in main_nodes.items():
+        if i < len(subnodes):
+            node_id = f'{key}{i+1}'
+            dot.node(node_id, subnodes[i])
+            current_nodes.append(node_id)
+
+            # Vertikale unsichtbare Verbindungen
+            if i == 0:
+                dot.edge(key, node_id, style='invis')
+            else:
+                prev_node = f'{key}{i}'
+                dot.edge(prev_node, node_id, style='invis')
+
+    # Horizontale Ausrichtung der Subnodes
+  #  if current_nodes:
+   #     with dot.subgraph() as s:
+     #       s.attr(rank='same')
+       #     for node in current_nodes:
+        #        s.node(node)
+
+#Datei erzeugen 
+dot.format = 'svg'  # Format setzen
+dot.render(filename='Treiber-inst-wandel', cleanup=True)  # Erzeugt output.svg
+```
+
+
+![Treiber des institutionellen Wandels](Treiber-inst-wandel.svg)
+
+
+## Die Rolle von Ideen
+
+```{python}
+#| output: false
+
+import graphviz
+
+
+# Graph mit 'circo'-Engine für kreisförmige Anordnung mit kleinerem Abstand
+g = graphviz.Digraph('satelliten', engine='circo' #,
+                #  graph_attr={'nodesep': '0.01', 'ranksep': '0.01'}
+)  # Abstände angepasst
+
+# Zentraler Knoten: größer, fett, zentriert
+g.node('Zentrum', 'Ideen',
+       fontsize='20',
+       fontname='Times-Bold',  # Fett durch spezifische Schriftart
+      shape='circle',
+       width='2'
+)  # Größe angepasst
+
+# Satelliten-Knoten mit eigenen Stichpunkten
+g.node('A', 'Reduzieren\nUnsicherheit')
+g.node('B', 'Fördern\nKoalitionsbildung')
+g.node('C', 'Ermöglichen das\nInfragestellen\nbestehender Institutionen')
+g.node('D', 'Bieten Ressourcen\nfür die Konstruktion\nneuer Institutionen')
+g.node('E', 'Koordinieren\nErwartungen\nreproduzieren Stabilität')
+
+# Alle Kanten unsichtbar machen (aber kürzer)
+g.edge('Zentrum', 'A' #, arrowhead='vee', arrowsize='2', style='arrow'
+)  # len für Abstand
+g.edge('Zentrum', 'B')
+g.edge('Zentrum', 'C')
+g.edge('Zentrum', 'D')
+g.edge('Zentrum', 'E')
+
+#Datei erzeugen 
+g.format = 'svg'  # Format setzen
+g.render(filename='Ideen', cleanup=True)  # Erzeugt output.svg
+```
+
+![Die Rolle von Ideen nach @blyth_great_2002](Ideen.svg)
+
+## Die Rolle von Heuristiken
+
+- Heuristiken sind vereinfachte Erklärungsmodelle für Zusammehnänge 
+
+- Letztlich sind beruhen *alle* Erklärungen auf Heurisitken
+
+```{python}
+#| output: false
+
+import graphviz
+
+g = graphviz.Digraph('satelliten', engine='circo')
+
+# Zentrum mit spezieller Farbe
+g.node('Zentrum', 'Heuristiken',
+       fontsize='20',
+       fontname='Times-Bold',
+       shape='circle',
+       width='2',
+       style='filled',
+       fillcolor='#00BFFF')
+
+# Satelliten-Knoten mit Farbe #00FFFF
+satellites = [
+    ('A', 'Plausibel/\n nicht im Widerspruch\l zum Alltag,'),
+    ('B', 'In der Peer Group geteilt'),
+    ('C', 'Durch Autoritäten bestätigt'),
+    ('D', 'Passend zum Selbstbild'),
+    ('E', 'Passend zum Weltbild'),
+    ('F', 'Hilfreich für\l normatives Problem')
+]
+
+for node_id, label in satellites:
+    g.node(node_id, label, style='filled', fillcolor='#00FFFF', penwidth='1')
+
+# Verbindungen zum Zentrum
+g.edges([(node_id, 'Zentrum') for node_id, _ in satellites])
+
+#Datei erzeugen 
+g.format = 'svg'  # Format setzen
+g.render(filename='Heuristiken', cleanup=True)  # Erzeugt output.svg
+```
+
+![Heuristiken](Heuristiken.svg)

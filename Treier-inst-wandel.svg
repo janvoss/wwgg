@@ -68,7 +68,7 @@
 <text text-anchor="start" x="536" y="-243.7" font-family="Times New Roman,serif" font-size="14.00"> zuständige Gremien</text>
 <text text-anchor="start" x="536" y="-227.2" font-family="Times New Roman,serif" font-size="14.00"> &#45;Ziele</text>
 <text text-anchor="start" x="536" y="-210.7" font-family="Times New Roman,serif" font-size="14.00"> &#45;Restriktionen</text>
-<text text-anchor="start" x="536" y="-194.2" font-family="Times New Roman,serif" font-size="14.00"> &#45;Informationen</text>
+<text text-anchor="middle" x="607.2" y="-194.2" font-family="Times New Roman,serif" font-size="14.00">&#45;Informationen</text>
 </g>
 <!-- D&#45;&gt;D1 -->
 <!-- E -->
@@ -81,7 +81,8 @@
 <!-- E1 -->
 <g id="node10" class="node">
 <title>E1</title>
-<text text-anchor="start" x="712" y="-227.2" font-family="Times New Roman,serif" font-size="14.00">Mehrheitswille</text>
+<text text-anchor="start" x="712" y="-235.45" font-family="Times New Roman,serif" font-size="14.00">Automatische</text>
+<text text-anchor="start" x="712" y="-218.95" font-family="Times New Roman,serif" font-size="14.00"> Stabilisatoren</text>
 </g>
 <!-- E&#45;&gt;E1 -->
 <!-- A2 -->
@@ -103,7 +104,8 @@
 <!-- E2 -->
 <g id="node13" class="node">
 <title>E2</title>
-<text text-anchor="start" x="712" y="-108.95" font-family="Times New Roman,serif" font-size="14.00">Politische Ökonomie</text>
+<text text-anchor="start" x="712" y="-117.2" font-family="Times New Roman,serif" font-size="14.00">Antizyklische</text>
+<text text-anchor="start" x="712" y="-100.7" font-family="Times New Roman,serif" font-size="14.00"> Fiskalpolitik</text>
 </g>
 <!-- E1&#45;&gt;E2 -->
 <!-- C3 -->
@@ -116,8 +118,7 @@
 <!-- E3 -->
 <g id="node15" class="node">
 <title>E3</title>
-<text text-anchor="start" x="712" y="-23.7" font-family="Times New Roman,serif" font-size="14.00">Folgt typischerweise</text>
-<text text-anchor="start" x="712" y="-7.2" font-family="Times New Roman,serif" font-size="14.00"> Änderung der Sitten</text>
+<text text-anchor="start" x="712" y="-15.45" font-family="Times New Roman,serif" font-size="14.00">(Geldpolitik)</text>
 </g>
 <!-- E2&#45;&gt;E3 -->
 </g>

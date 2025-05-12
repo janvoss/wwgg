@@ -235,7 +235,16 @@ div.csl-indent {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Überblick</h2>
+   
+  <ul>
+  <li><a href="#krise-und-vertrauen" id="toc-krise-und-vertrauen" class="nav-link active" data-scroll-target="#krise-und-vertrauen"><span class="header-section-number">5.1</span> Krise und Vertrauen</a></li>
+  <li><a href="#zur-änderung-unterischiedlicher-arten-von-institutionen" id="toc-zur-änderung-unterischiedlicher-arten-von-institutionen" class="nav-link" data-scroll-target="#zur-änderung-unterischiedlicher-arten-von-institutionen"><span class="header-section-number">5.2</span> Zur Änderung unterischiedlicher Arten von Institutionen</a></li>
+  <li><a href="#die-rolle-von-ideen" id="toc-die-rolle-von-ideen" class="nav-link" data-scroll-target="#die-rolle-von-ideen"><span class="header-section-number">5.3</span> Die Rolle von Ideen</a></li>
+  <li><a href="#die-rolle-von-heuristiken" id="toc-die-rolle-von-heuristiken" class="nav-link" data-scroll-target="#die-rolle-von-heuristiken"><span class="header-section-number">5.4</span> Die Rolle von Heuristiken</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -259,156 +268,243 @@ div.csl-indent {
 </header>
 
 
-<div id="6ebdc8e3" class="cell" data-message="false" data-execution_count="1">
+<section id="krise-und-vertrauen" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="krise-und-vertrauen"><span class="header-section-number">5.1</span> Krise und Vertrauen</h2>
+<div id="e984ba5d" class="cell" data-message="false" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> graphviz <span class="im">import</span> Digraph</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>dot <span class="op">=</span> Digraph()</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Layout des gesamten Graphen</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>dot.attr(rankdir<span class="op">=</span><span class="st">'LR'</span>)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Funktion zur Erstellung eines Clusters mit \l für Linksbündigkeit</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> create_cluster(dot, name, label, color, fillcolor, nodes , max_nodes</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>                   ):</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> dot.subgraph(name<span class="op">=</span>name) <span class="im">as</span> c:</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>        c.attr(label<span class="op">=</span>label,</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>               fontname<span class="op">=</span><span class="st">"times-bold"</span>,</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>               style<span class="op">=</span><span class="st">'filled,rounded'</span>,</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>               fillcolor<span class="op">=</span>fillcolor,</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>               color<span class="op">=</span>color,</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>               penwidth<span class="op">=</span><span class="st">'0'</span>)</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Standardknoten mit \l für Linksbündigkeit</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> node_id, node_label <span class="kw">in</span> nodes:</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>            <span class="co"># \n durch \l ersetzen und am Ende \l hinzufügen</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>            formatted_label <span class="op">=</span> node_label.replace(<span class="st">'</span><span class="ch">\n</span><span class="st">'</span>, <span class="st">'</span><span class="ch">\\</span><span class="st">l'</span>) <span class="op">+</span> <span class="st">'</span><span class="ch">\\</span><span class="st">l'</span></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>            c.node(node_id,</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>                   label<span class="op">=</span>formatted_label,</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>                   width<span class="op">=</span><span class="st">"2.5"</span>,</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>                   height<span class="op">=</span><span class="st">"1.2"</span>,</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>                   shape<span class="op">=</span><span class="st">'none'</span>,</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>                   )  <span class="co"># Schrift6art für bessere Lesbarkeit</span></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Unsichtbare Platzhalterknoten</span></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(nodes), max_nodes):</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>            c.node(<span class="ss">f'</span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">_placeholder_</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">'</span>, <span class="st">''</span>,</span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>                  style<span class="op">=</span><span class="st">'invis'</span>,</span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>                   width<span class="op">=</span><span class="st">"1"</span>,</span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>                   height<span class="op">=</span><span class="st">"1.2"</span>,  <span class="co"># Auf 0.3 setzen wie bei echten Knoten</span></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>                   fixedsize<span class="op">=</span><span class="st">'True'</span>  <span class="co"># Erzwingt exakte Größe</span></span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>                    )</span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="co"># Clusterdefinitionen</span></span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>clusters <span class="op">=</span> [</span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'cluster_ziel'</span>, <span class="st">'Konvention'</span>, <span class="st">'blue'</span>, <span class="st">'#EFEFEF'</span>, [</span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>        (<span class="st">'a1'</span>, <span class="st">'Variante A:\l intentionale Änderung\l (Programmiersprache)\l'</span>),</span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>        (<span class="st">'a2'</span>, <span class="st">'Variante B:\l Evolutionäre, inkre-\l mentelle Änderung\l (natürliche Sprache)\l'</span>)</span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>    ]),</span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'cluster_Restriktion'</span>,<span class="st">'Ethische Regel'</span>, <span class="st">'blue'</span>, <span class="st">'#EFEFEF'</span>, [</span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>        (<span class="st">'b1'</span>, <span class="st">'Änderung der\l - Werte\l - Restriktionen\l - Informationen\l'</span>)</span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>    ]),</span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'cluster_Handlung'</span>, <span class="st">'Sitte'</span>, <span class="st">'blue'</span>, <span class="st">'#EFEFEF'</span>, [</span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>        (<span class="st">'c1'</span>, <span class="st">'Änderung zunächst in \l Subpopulationen\l'</span>),</span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>        (<span class="st">'c2'</span>, <span class="st">'Eventuell Kritische\l -Masse-Phänomen'</span>),</span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>        (<span class="st">'c3'</span>, <span class="st">'Imitation vs. bewusste\l Werteänderung'</span>)</span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>    ]),</span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'cluster_d'</span>, <span class="st">'Formelle private Regel'</span>, <span class="st">'blue'</span>, <span class="st">'#EFEFEF'</span>, [</span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>        (<span class="st">'d1'</span>, <span class="st">'Änderung durch\l zuständige Gremien\l -Ziele\l -Restriktionen\l-Informationen'</span>)</span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>    ]),</span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'cluster_e'</span>, <span class="st">'Regel positiven Rechts'</span>, <span class="st">'blue'</span>, <span class="st">'#EFEFEF'</span>, [</span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>        (<span class="st">'e1'</span>, <span class="st">'Mehrheitswille'</span>),</span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>        (<span class="st">'e2'</span>, <span class="st">'Politische Ökonomie'</span>),</span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>        (<span class="st">'e3'</span>, <span class="st">'Folgt typischerweise\l Änderung der Sitten'</span>)</span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>    ])</span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>]</span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>max_nodes <span class="op">=</span> <span class="bu">max</span>(<span class="bu">len</span>(cluster[<span class="dv">4</span>]) <span class="cf">for</span> cluster <span class="kw">in</span> clusters)</span>
-<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a><span class="co"># Cluster erstellen</span></span>
-<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> name, label, color, fillcolor, nodes <span class="kw">in</span> clusters:</span>
-<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>    create_cluster(dot, name, label, color, fillcolor, nodes, max_nodes)</span>
-<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a><span class="co"># Unsichtbare Kanten für vertikale Anordnung</span></span>
-<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>nodes <span class="op">=</span> [<span class="st">'a1'</span>, <span class="st">'b1'</span>, <span class="st">'c1'</span>, <span class="st">'d1'</span>, <span class="st">'e1'</span>]</span>
-<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(nodes)<span class="op">-</span><span class="dv">1</span>):</span>
-<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>   dot.edge(nodes[i], nodes[i<span class="op">+</span><span class="dv">1</span>], style<span class="op">=</span><span class="st">'invis'</span>)</span>
-<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a><span class="co">#Datei erzeugen </span></span>
-<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>dot.<span class="bu">format</span> <span class="op">=</span> <span class="st">'svg'</span>  <span class="co"># Format setzen</span></span>
-<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>dot.render(filename<span class="op">=</span><span class="st">'Treiber-inst-wandel'</span>, cleanup<span class="op">=</span><span class="va">True</span>)  <span class="co"># Erzeugt output.svg</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<div id="01755bdf" class="cell" data-message="false" data-execution_count="2">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> graphviz <span class="im">import</span> Digraph</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>dot <span class="op">=</span> Digraph()</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Layout</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>dot.attr(rankdir<span class="op">=</span><span class="st">'LR'</span>)</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Hauptknoten</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>dot.node(<span class="st">'a'</span>, <span class="st">'Normalzustand'</span>)</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>dot.node(<span class="st">'d'</span>, <span class="st">'Neuer Normalzustand'</span>)</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Funktion zum Erstellen eines Clusters</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> create_cluster(dot, name, label, nodes, bold_node<span class="op">=</span><span class="va">None</span>):</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> dot.subgraph(name<span class="op">=</span>name) <span class="im">as</span> cluster:</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>        cluster.attr(label<span class="op">=</span>label, style<span class="op">=</span><span class="st">'rounded'</span>, bgcolor<span class="op">=</span><span class="st">'#F0F0F0'</span>)</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>        cluster.attr(rankdir<span class="op">=</span><span class="st">'TB'</span>)  <span class="co"># Vertikale Ausrichtung (mittig)</span></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> node_id, node_label <span class="kw">in</span> nodes.items():</span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> node_id <span class="op">==</span> bold_node:</span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>                cluster.node(node_id, <span class="ss">f'</span><span class="sc">{</span>node_label<span class="sc">}</span><span class="ss">'</span>, fontname<span class="op">=</span><span class="st">"times-bold"</span>)  <span class="co"># Fett</span></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>:</span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>                cluster.node(node_id, <span class="ss">f'</span><span class="sc">{</span>node_label<span class="sc">}</span><span class="ss">'</span>)</span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Cluster für "Krise" (b1-b5)</span></span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>crisis_nodes <span class="op">=</span> {</span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>    <span class="st">'b1'</span>: <span class="st">'Ideologien'</span>,</span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>    <span class="st">'b2'</span>: <span class="st">'Wissenschaft'</span>,</span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>    <span class="st">'b3'</span>: <span class="st">'Zweifel'</span>,</span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>    <span class="st">'b4'</span>: <span class="st">'Dysfunktionalität'</span>,</span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>    <span class="st">'b5'</span>: <span class="st">'Exogene Schocks'</span></span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>create_cluster(dot, name<span class="op">=</span><span class="st">'cluster_crisis'</span>, label<span class="op">=</span><span class="st">'Krise'</span>, nodes<span class="op">=</span>crisis_nodes, bold_node<span class="op">=</span><span class="st">'b3'</span>)</span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Cluster für "Innovation" (c1-c5)</span></span>
-<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>innovation_nodes <span class="op">=</span> {</span>
-<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>    <span class="st">'c1'</span>: <span class="st">'Ideologien'</span>,</span>
-<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>    <span class="st">'c2'</span>: <span class="st">'Wissenschaft'</span>,</span>
-<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>    <span class="st">'c3'</span>: <span class="st">'Vertrauen'</span>,</span>
-<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>    <span class="st">'c4'</span>: <span class="st">'Interaktion'</span>,</span>
-<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>    <span class="st">'c5'</span>: <span class="st">'Persönlichkeiten'</span></span>
-<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>create_cluster(dot, name<span class="op">=</span><span class="st">'cluster_group'</span>, label<span class="op">=</span><span class="st">'Innovation'</span>, nodes<span class="op">=</span>innovation_nodes, bold_node<span class="op">=</span><span class="st">'c3'</span>)</span>
-<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a><span class="co"># Kanten</span></span>
-<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>edges <span class="op">=</span> [</span>
-<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'a'</span>, <span class="st">'b3'</span>),  <span class="co"># Verbindung von "Normalzustand" zu zentralem Knoten im "Krise"-Cluster</span></span>
-<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'b3'</span>, <span class="st">'c3'</span>),  <span class="co"># Verbindung von zentralem Knoten im "Krise"-Cluster zu zentralem Knoten im "Innovation"-Cluster</span></span>
-<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'c3'</span>, <span class="st">'d'</span>),  <span class="co"># Verbindung von zentralem Knoten im "Innovation"-Cluster zu "Neuer Normalzustand"</span></span>
-<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'d'</span>, <span class="st">'a'</span>, {<span class="st">'constraint'</span>: <span class="st">'false'</span>})  <span class="co"># Rückkopplung</span></span>
-<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>]</span>
-<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> edge <span class="kw">in</span> edges:</span>
-<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>    dot.edge(edge[<span class="dv">0</span>], edge[<span class="dv">1</span>], <span class="op">**</span>edge[<span class="dv">2</span>] <span class="cf">if</span> <span class="bu">len</span>(edge) <span class="op">&gt;</span> <span class="dv">2</span> <span class="cf">else</span> {})</span>
-<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a><span class="co">#Datei erzeugen </span></span>
-<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>dot.<span class="bu">format</span> <span class="op">=</span> <span class="st">'svg'</span>  <span class="co"># Format setzen</span></span>
-<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>dot.render(filename<span class="op">=</span><span class="st">'Blyth-Krise'</span>, cleanup<span class="op">=</span><span class="va">True</span>)  <span class="co"># Erzeugt output.svg</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>dot <span class="op">=</span> Digraph()</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Layout</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>dot.attr(rankdir<span class="op">=</span><span class="st">'LR'</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Hauptknoten</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>dot.node(<span class="st">'a'</span>, <span class="st">'Normalzustand'</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>dot.node(<span class="st">'d'</span>, <span class="st">'Neuer Normalzustand'</span>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Funktion zum Erstellen eines Clusters</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> create_cluster(dot, name, label, nodes, bold_node<span class="op">=</span><span class="va">None</span>):</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> dot.subgraph(name<span class="op">=</span>name) <span class="im">as</span> cluster:</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>        cluster.attr(label<span class="op">=</span>label, style<span class="op">=</span><span class="st">'rounded'</span>, bgcolor<span class="op">=</span><span class="st">'#F0F0F0'</span>)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>        cluster.attr(rankdir<span class="op">=</span><span class="st">'TB'</span>)  <span class="co"># Vertikale Ausrichtung (mittig)</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> node_id, node_label <span class="kw">in</span> nodes.items():</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> node_id <span class="op">==</span> bold_node:</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>                cluster.node(node_id, <span class="ss">f'</span><span class="sc">{</span>node_label<span class="sc">}</span><span class="ss">'</span>, fontname<span class="op">=</span><span class="st">"times-bold"</span>)  <span class="co"># Fett</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>:</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>                cluster.node(node_id, <span class="ss">f'</span><span class="sc">{</span>node_label<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Cluster für "Krise" (b1-b5)</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>crisis_nodes <span class="op">=</span> {</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    <span class="st">'b1'</span>: <span class="st">'Ideologien'</span>,</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>    <span class="st">'b2'</span>: <span class="st">'Wissenschaft'</span>,</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>    <span class="st">'b3'</span>: <span class="st">'Zweifel'</span>,</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>    <span class="st">'b4'</span>: <span class="st">'Dysfunktionalität'</span>,</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>    <span class="st">'b5'</span>: <span class="st">'Exogene Schocks'</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>create_cluster(dot, name<span class="op">=</span><span class="st">'cluster_crisis'</span>, label<span class="op">=</span><span class="st">'Krise'</span>, nodes<span class="op">=</span>crisis_nodes, bold_node<span class="op">=</span><span class="st">'b3'</span>)</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Cluster für "Innovation" (c1-c5)</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>innovation_nodes <span class="op">=</span> {</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>    <span class="st">'c1'</span>: <span class="st">'Ideologien'</span>,</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>    <span class="st">'c2'</span>: <span class="st">'Wissenschaft'</span>,</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>    <span class="st">'c3'</span>: <span class="st">'Vertrauen'</span>,</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>    <span class="st">'c4'</span>: <span class="st">'Interaktion'</span>,</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>    <span class="st">'c5'</span>: <span class="st">'Persönlichkeiten'</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>create_cluster(dot, name<span class="op">=</span><span class="st">'cluster_group'</span>, label<span class="op">=</span><span class="st">'Innovation'</span>, nodes<span class="op">=</span>innovation_nodes, bold_node<span class="op">=</span><span class="st">'c3'</span>)</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="co"># Kanten</span></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>edges <span class="op">=</span> [</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'a'</span>, <span class="st">'b3'</span>),  <span class="co"># Verbindung von "Normalzustand" zu zentralem Knoten im "Krise"-Cluster</span></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'b3'</span>, <span class="st">'c3'</span>),  <span class="co"># Verbindung von zentralem Knoten im "Krise"-Cluster zu zentralem Knoten im "Innovation"-Cluster</span></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'c3'</span>, <span class="st">'d'</span>),  <span class="co"># Verbindung von zentralem Knoten im "Innovation"-Cluster zu "Neuer Normalzustand"</span></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'d'</span>, <span class="st">'a'</span>, {<span class="st">'constraint'</span>: <span class="st">'false'</span>})  <span class="co"># Rückkopplung</span></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> edge <span class="kw">in</span> edges:</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>    dot.edge(edge[<span class="dv">0</span>], edge[<span class="dv">1</span>], <span class="op">**</span>edge[<span class="dv">2</span>] <span class="cf">if</span> <span class="bu">len</span>(edge) <span class="op">&gt;</span> <span class="dv">2</span> <span class="cf">else</span> {})</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a><span class="co">#Datei erzeugen </span></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>dot.<span class="bu">format</span> <span class="op">=</span> <span class="st">'svg'</span>  <span class="co"># Format setzen</span></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>dot.render(filename<span class="op">=</span><span class="st">'Blyth-Krise'</span>, cleanup<span class="op">=</span><span class="va">True</span>)  <span class="co"># Erzeugt output.svg</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="Blyth-Krise.svg" class="img-fluid figure-img"></p>
 <figcaption>Institutionelle Erneuerung nach <span class="citation" data-cites="blyth_great_2002">Blyth (<a href="#ref-blyth_great_2002" role="doc-biblioref">2002</a>)</span></figcaption>
+</figure>
+</div>
+</section>
+<section id="zur-änderung-unterischiedlicher-arten-von-institutionen" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="zur-änderung-unterischiedlicher-arten-von-institutionen"><span class="header-section-number">5.2</span> Zur Änderung unterischiedlicher Arten von Institutionen</h2>
+<div id="7653a834" class="cell" data-message="false" data-execution_count="2">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> graphviz <span class="im">import</span> Digraph</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>dot <span class="op">=</span> Digraph()</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>dot.attr(<span class="st">'node'</span>, width<span class="op">=</span><span class="st">'2.2'</span>, shape<span class="op">=</span><span class="st">'none'</span>, labeljust<span class="op">=</span><span class="st">'c'</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">#dot.attr(nodesep='.2')</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>dot.attr(label<span class="op">=</span><span class="st">'Treiber des institutionellen Wandels'</span>, labelloc<span class="op">=</span><span class="st">'t'</span>,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>          fontname<span class="op">=</span><span class="st">"times-bold"</span>, fontsize<span class="op">=</span><span class="st">"24"</span>, ranksep<span class="op">=</span><span class="st">".5"</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Konfiguration der Hauptknoten und Subnodes</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>main_nodes <span class="op">=</span> {</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">'A'</span>: [<span class="st">'Konvention'</span>, [<span class="st">'Variante A:\l intentionale Änderung\l (Programmiersprache)\l'</span>,</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>                         <span class="st">'Variante B:\l Evolutionäre, inkre-\l mentelle Änderung\l (natürliche Sprache)\l'</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>                         ]],</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">'B'</span>: [<span class="st">'Ethische Regel'</span>, [<span class="st">'Änderung der\l - Werte\l - Restriktionen\l - Informationen\l'</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>                    ]],</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    <span class="st">'C'</span>: [<span class="st">'Sitte'</span>, [<span class="st">'Änderung zunächst in \l Subpopulationen\l'</span>,</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>                    <span class="st">'Eventuell Kritische\l -Masse-Phänomen\l'</span>,</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>                    <span class="st">'Imitation vs. bewusste\l Werteänderung\l'</span>]],</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    <span class="st">'D'</span>: [<span class="st">'Formelle private Regel'</span>,[<span class="st">'Änderung durch\l zuständige Gremien\l -Ziele\l -Restriktionen\l -Informationen\l'</span>]],</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    <span class="st">'E'</span>: [<span class="st">'Regel positiven Rechts'</span>, [<span class="st">'Mehrheitswille\l'</span>,</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>                             <span class="st">'Politische Ökonomie\l'</span>,</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>                             <span class="st">'Folgt typischerweise\l Änderung der Sitten\l'</span>]]</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Hauptknoten erstellen</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> key <span class="kw">in</span> main_nodes:</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>    dot.node(key, main_nodes[key][<span class="dv">0</span>], shape<span class="op">=</span><span class="st">'underline'</span>)</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Subnodes generieren und verbinden</span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>max_subnodes <span class="op">=</span> <span class="bu">max</span>(<span class="bu">len</span>(sub) <span class="cf">for</span> _, (_, sub) <span class="kw">in</span> main_nodes.items())</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(max_subnodes):</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>    current_nodes <span class="op">=</span> []</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> key, (label, subnodes) <span class="kw">in</span> main_nodes.items():</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> i <span class="op">&lt;</span> <span class="bu">len</span>(subnodes):</span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>            node_id <span class="op">=</span> <span class="ss">f'</span><span class="sc">{</span>key<span class="sc">}{</span>i<span class="op">+</span><span class="dv">1</span><span class="sc">}</span><span class="ss">'</span></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>            dot.node(node_id, subnodes[i])</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>            current_nodes.append(node_id)</span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Vertikale unsichtbare Verbindungen</span></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> i <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>                dot.edge(key, node_id, style<span class="op">=</span><span class="st">'invis'</span>)</span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>:</span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>                prev_node <span class="op">=</span> <span class="ss">f'</span><span class="sc">{</span>key<span class="sc">}{</span>i<span class="sc">}</span><span class="ss">'</span></span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>                dot.edge(prev_node, node_id, style<span class="op">=</span><span class="st">'invis'</span>)</span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Horizontale Ausrichtung der Subnodes</span></span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>  <span class="co">#  if current_nodes:</span></span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>   <span class="co">#     with dot.subgraph() as s:</span></span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>     <span class="co">#       s.attr(rank='same')</span></span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>       <span class="co">#     for node in current_nodes:</span></span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>        <span class="co">#        s.node(node)</span></span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a><span class="co">#Datei erzeugen </span></span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>dot.<span class="bu">format</span> <span class="op">=</span> <span class="st">'svg'</span>  <span class="co"># Format setzen</span></span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a>dot.render(filename<span class="op">=</span><span class="st">'Treiber-inst-wandel'</span>, cleanup<span class="op">=</span><span class="va">True</span>)  <span class="co"># Erzeugt output.svg</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Treiber-inst-wandel.svg" class="img-fluid figure-img"></p>
+<figcaption>Treiber des institutionellen Wandels</figcaption>
+</figure>
+</div>
+</section>
+<section id="die-rolle-von-ideen" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="die-rolle-von-ideen"><span class="header-section-number">5.3</span> Die Rolle von Ideen</h2>
+<div id="35ffc270" class="cell" data-execution_count="3">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> graphviz</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Graph mit 'circo'-Engine für kreisförmige Anordnung mit kleinerem Abstand</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>g <span class="op">=</span> graphviz.Digraph(<span class="st">'satelliten'</span>, engine<span class="op">=</span><span class="st">'circo'</span> <span class="co">#,</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>                <span class="co">#  graph_attr={'nodesep': '0.01', 'ranksep': '0.01'}</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>)  <span class="co"># Abstände angepasst</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Zentraler Knoten: größer, fett, zentriert</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>g.node(<span class="st">'Zentrum'</span>, <span class="st">'Ideen'</span>,</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>       fontsize<span class="op">=</span><span class="st">'20'</span>,</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>       fontname<span class="op">=</span><span class="st">'Times-Bold'</span>,  <span class="co"># Fett durch spezifische Schriftart</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>      shape<span class="op">=</span><span class="st">'circle'</span>,</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>       width<span class="op">=</span><span class="st">'2'</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>)  <span class="co"># Größe angepasst</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Satelliten-Knoten mit eigenen Stichpunkten</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>g.node(<span class="st">'A'</span>, <span class="st">'Reduzieren</span><span class="ch">\n</span><span class="st">Unsicherheit'</span>)</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>g.node(<span class="st">'B'</span>, <span class="st">'Fördern</span><span class="ch">\n</span><span class="st">Koalitionsbildung'</span>)</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>g.node(<span class="st">'C'</span>, <span class="st">'Ermöglichen das</span><span class="ch">\n</span><span class="st">Infragestellen</span><span class="ch">\n</span><span class="st">bestehender Institutionen'</span>)</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>g.node(<span class="st">'D'</span>, <span class="st">'Bieten Ressourcen</span><span class="ch">\n</span><span class="st">für die Konstruktion</span><span class="ch">\n</span><span class="st">neuer Institutionen'</span>)</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>g.node(<span class="st">'E'</span>, <span class="st">'Koordinieren</span><span class="ch">\n</span><span class="st">Erwartungen</span><span class="ch">\n</span><span class="st">reproduzieren Stabilität'</span>)</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Alle Kanten unsichtbar machen (aber kürzer)</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>g.edge(<span class="st">'Zentrum'</span>, <span class="st">'A'</span> <span class="co">#, arrowhead='vee', arrowsize='2', style='arrow'</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>)  <span class="co"># len für Abstand</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>g.edge(<span class="st">'Zentrum'</span>, <span class="st">'B'</span>)</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>g.edge(<span class="st">'Zentrum'</span>, <span class="st">'C'</span>)</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>g.edge(<span class="st">'Zentrum'</span>, <span class="st">'D'</span>)</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>g.edge(<span class="st">'Zentrum'</span>, <span class="st">'E'</span>)</span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a><span class="co">#Datei erzeugen </span></span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>g.<span class="bu">format</span> <span class="op">=</span> <span class="st">'svg'</span>  <span class="co"># Format setzen</span></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>g.render(filename<span class="op">=</span><span class="st">'Ideen'</span>, cleanup<span class="op">=</span><span class="va">True</span>)  <span class="co"># Erzeugt output.svg</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Ideen.svg" class="img-fluid figure-img"></p>
+<figcaption>Die Rolle von Ideen nach <span class="citation" data-cites="blyth_great_2002">Blyth (<a href="#ref-blyth_great_2002" role="doc-biblioref">2002</a>)</span></figcaption>
+</figure>
+</div>
+</section>
+<section id="die-rolle-von-heuristiken" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="die-rolle-von-heuristiken"><span class="header-section-number">5.4</span> Die Rolle von Heuristiken</h2>
+<ul>
+<li><p>Heuristiken sind vereinfachte Erklärungsmodelle für Zusammehnänge</p></li>
+<li><p>Letztlich sind beruhen <em>alle</em> Erklärungen auf Heurisitken</p></li>
+</ul>
+<div id="b7ffb2e0" class="cell" data-execution_count="4">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> graphviz</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>g <span class="op">=</span> graphviz.Digraph(<span class="st">'satelliten'</span>, engine<span class="op">=</span><span class="st">'circo'</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Zentrum mit spezieller Farbe</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>g.node(<span class="st">'Zentrum'</span>, <span class="st">'Heuristiken'</span>,</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>       fontsize<span class="op">=</span><span class="st">'20'</span>,</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>       fontname<span class="op">=</span><span class="st">'Times-Bold'</span>,</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>       shape<span class="op">=</span><span class="st">'circle'</span>,</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>       width<span class="op">=</span><span class="st">'2'</span>,</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>       style<span class="op">=</span><span class="st">'filled'</span>,</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>       fillcolor<span class="op">=</span><span class="st">'#00BFFF'</span>)</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Satelliten-Knoten mit Farbe #00FFFF</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>satellites <span class="op">=</span> [</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'A'</span>, <span class="st">'Plausibel/</span><span class="ch">\n</span><span class="st"> nicht im Widerspruch\l zum Alltag,'</span>),</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'B'</span>, <span class="st">'In der Peer Group geteilt'</span>),</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'C'</span>, <span class="st">'Durch Autoritäten bestätigt'</span>),</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'D'</span>, <span class="st">'Passend zum Selbstbild'</span>),</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'E'</span>, <span class="st">'Passend zum Weltbild'</span>),</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'F'</span>, <span class="st">'Hilfreich für\l normatives Problem'</span>)</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> node_id, label <span class="kw">in</span> satellites:</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>    g.node(node_id, label, style<span class="op">=</span><span class="st">'filled'</span>, fillcolor<span class="op">=</span><span class="st">'#00FFFF'</span>, penwidth<span class="op">=</span><span class="st">'1'</span>)</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Verbindungen zum Zentrum</span></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>g.edges([(node_id, <span class="st">'Zentrum'</span>) <span class="cf">for</span> node_id, _ <span class="kw">in</span> satellites])</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a><span class="co">#Datei erzeugen </span></span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>g.<span class="bu">format</span> <span class="op">=</span> <span class="st">'svg'</span>  <span class="co"># Format setzen</span></span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>g.render(filename<span class="op">=</span><span class="st">'Heuristiken'</span>, cleanup<span class="op">=</span><span class="va">True</span>)  <span class="co"># Erzeugt output.svg</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Heuristiken.svg" class="img-fluid figure-img"></p>
+<figcaption>Heuristiken</figcaption>
 </figure>
 </div>
 
@@ -418,6 +514,7 @@ div.csl-indent {
 Blyth, Mark. 2002. <em>Great Transformations</em>. Cambridge: Cambridge University Press.
 </div>
 </div>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

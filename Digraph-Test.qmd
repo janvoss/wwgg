@@ -1,8 +1,10 @@
 ---
 title: "Digraph-Test"
+code-fold: true
 ---
 
 ```{python}
+#| output: false
 
 from graphviz import Digraph
 
@@ -10,17 +12,48 @@ dot = Digraph()
 dot.attr(rankdir='TB')  # Top to Bottom
 
 with dot.subgraph(name='cluster_0') as c:
-    c.attr(style='filled', color='lightgrey', label='Cluster AB')
-    c.node('a')
-    c.node('b')
-    c.edge('a', 'b')
+    c.attr(style='filled', color='lightgrey', label='Cluster A')
+    c.node('a1')
+    c.node('a2')
+    c.edge('a1', 'a2', style='invis')
 
-dot.node('c')
-dot.node('d')
+dot.node('b1')
+dot.node('b2')
+
+dot.edge('b1', 'b2', style='invis')
+
 
 dot.node('e')
 
-dot.edge('d', 'e')
+
+# Datei erzeugen
+dot.format = 'svg'
+dot.render(filename='Digraph-test', cleanup=True)
+
+
+
+from graphviz import Digraph
+
+dot = Digraph()
+dot.attr(rankdir='TB')  # Top to Bottom
+
+# Funktion zum Hinzufügen eines Clusters mit 2 Knoten
+def add_cluster(dot, cluster_name, node_prefix):
+    with dot.subgraph(name=f'cluster_{cluster_name}') as c:
+        c.attr(
+            style='rounded,filled',
+            color='lightgrey',      # Füllfarbe
+            fillcolor='lightgrey',  # Füllfarbe (für Kompatibilität)
+            label=f'Cluster {cluster_name}',
+            penwidth='0'           # Keine Rahmenlinie
+        )
+        c.node(f'{node_prefix}1', shape='none')
+        c.node(f'{node_prefix}2', shape='none')
+        c.edge(f'{node_prefix}1', f'{node_prefix}2', style='invis')
+
+# Cluster A bis E hinzufügen
+for cluster_name, node_prefix in zip(['A', 'B', 'C', 'D', 'E'], ['a', 'b', 'c', 'd', 'e']):
+    add_cluster(dot, cluster_name, node_prefix)
 
 # Datei erzeugen
 dot.format = 'svg'

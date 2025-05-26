@@ -17,7 +17,7 @@ dot = Digraph()
 dot.attr(rankdir='LR')
 
 # Funktion zur Erstellung eines Clusters mit \l für Linksbündigkeit
-def create_cluster(dot, name, label, color, fillcolor, nodes#, max_nodes
+def create_cluster(dot, name, label, color, fillcolor, nodes #, max_nodes
 ):
     with dot.subgraph(name=name) as c:
         c.attr(label=label,
@@ -37,10 +37,10 @@ def create_cluster(dot, name, label, color, fillcolor, nodes#, max_nodes
                    height="1",
                    shape='none')
 
-        # Unsichtbare Platzhalterknoten
+       #  Unsichtbare Platzhalterknoten
       #  for i in range(len(nodes)#, max_nodes
-       # ):
-        #    c.node(f'{name}_placeholder_{i}', '', style='invis', width="3", height="1")
+      #  ):
+       #     c.node(f'{name}_placeholder_{i}', '', #style='invis', width="3", height="1")
 
 # Clusterdefinitionen (unverändert)
 clusters = [
@@ -64,11 +64,11 @@ clusters = [
     ])
 ]
 
-#max_nodes = max(len(cluster[4]) for cluster in clusters)
+# max_nodes = max(len(cluster[4]) for cluster in clusters)
 
 # Cluster erstellen
 for name, label, color, fillcolor, nodes in clusters:
-    create_cluster(dot, name, label, color, fillcolor, nodes# , max_nodes
+    create_cluster(dot, name, label, color, fillcolor, nodes #, max_nodes
     )
 
 # Vertikale Anordnung für alle Cluster

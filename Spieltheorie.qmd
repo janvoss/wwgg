@@ -1,1 +1,249 @@
 # Spieltheoretische Ansätze zur Erklärung institutionellen Wandels
+
+## Zur Befriedung des Anarchiezustandes
+
+Das Folgende basiert auf @hillman_nietzschean_2004
+
+- Gesellschaft mit zwei Gruppen:  
+  - die Starken (strong)
+  - die Schwachen (weak)
+  
+- Die Schwachen können entweder
+  - Subsistenzwirtschaft betreiben (Auszahlung $a$) und Freizeit genießen (Auszahlung $h$,  Gesamtauszahlung: $b=a+h$) oder
+  - Fleißig sein und für den Verzicht auf Freizeit höhere materielle Erträge erzielen (Auszahlung $r$ mit $r>b$)
+  
+- Die Starken können entweder  
+  - ihre Felder bestellen (Ertrag: $R$) oder
+  - zusätzlich die Schwachen überfallen. Kosten
+des Überfalls $V$
+
+- Wenn die Schwachen produktiv waren, dann haben die Starken aus einem
+Überfall den Nutzen: $A=\left(R-V\right)+\left(r-a\right)$ mit $A>R$;
+$V<\left(r-a\right)$
+
+- Wenn die Schwachen nicht produktiv waren, erhalten die Starken die Auszahoung $B=\left(R-V\right)$
+
+- Ranking der Schwachen $r>b>a$
+
+- Ranking der Starken: $A>R>B$
+
+- Wohlfahrt wird maximiert bei $W=\left(R+r\right)$
+
+```{python}
+#| message: false
+#| warning: false
+
+# Matrix mit Symbolen
+
+from lets_plot import *
+
+LetsPlot.setup_html()
+
+ggplot() + \
+geom_text(x=- .5, y= 2   , label='A') +\
+geom_text(x=-1.5, y=  .75, label='a') +\
+geom_text(x=- .5, y=-1   , label='B') +\
+geom_text(x=-1.5, y=-2.25, label='b') +\
+geom_text(x= 1.5, y= 2   , label='R') +\
+geom_text(x=  .5, y=  .75, label='r') +\
+geom_text(x= 1.5, y=-1   , label='R') +\
+geom_text(x=  .5, y=-2.25, label='b') +\
+geom_text(x=-1  , y= 3.3 , label='überfallen')+\
+geom_text(x= 1  , y= 3.3 , label='friedlich')+\
+geom_text(x=-2.2, y= 1.375, angle=90, label='fleißig')+\
+geom_text(x=-2.2, y=-1.625, angle=90, label='Subsistenzwirtschaft')+\
+geom_text(x= 0 , y= 4 ,
+          fontface = "bold", label='Die Starken')+\
+geom_text(x=-2.7 , y= 0 , angle=90,
+          fontface = "bold", label='Die Schwachen')+\
+geom_segment(x=-2,  xend= 2, y= 0, yend= 0) +\
+geom_segment(x=-2,  xend= 2, y= 3, yend= 3) +\
+geom_segment(x=-2,  xend= 2, y=-3, yend=-3) +\
+geom_segment(x=-2,  xend=-2, y=-3, yend= 3) +\
+geom_segment(x= 0,  xend= 0, y=-3, yend= 3) +\
+geom_segment(x= 2,  xend= 2, y=-3, yend= 3) +\
+theme_void()+\
+labs(title='Auszahlungen für die Schwachen und die Starken' ,
+     caption = 'Hillman (2004)'
+)
+
+```
+
+- Kein Gleichgewicht in reinen Strategien
+
+- In jeder Zelle möchte mindestens eine Partei abweichen.
+
+- Aber: Gleichgewicht in gemischten Strategien
+
+- Wenn es entweder kein Nash-Gleichgewicht (in reinen Strategien) gibt oder mehrere Nash-Gleichgewichte, dann lässt sich das Handeln der Spielenden nicht gut vorhersagen
+
+- Aus der Perspektive jedes Spielenden ist das Handeln des Gegenübers eine Zufallsvariable. Mit einer bestimmten Wahrscheinlichkeit wählt das Gegenüber eine seiner Strategien.
+
+- Den Zufall kann man aber näher charakterisieren, wenn man sich überlegt, **welche Wahrscheinlichkeiten ein rationales Gegenüber wählen würde**.
+
+- Ein rationales Gegenüber wählt die Wahrscheinlichkeiten so, dass der spielende Akteur keine Möglichkeit mehr hat, seine Situation durch die Wahl seiner Strategie zu verbessern.
+
+- **Jede spielende Person wählt die Wahrscheinlichkeiten für ihre Handlung also so, dass das jeweilige Gegenüber indifferent ist in - der Wahl seiner Handlungen**.
+
+- Die Starken sind indifferent zwischen ihren beiden Strategien, wenn
+gilt: $p_{w}A+\left(1-p_{w}\right)B=R$
+
+- $\iff p_{w}^{*}=\frac{R-B}{A-B}=\frac{V}{r-a}$
+
+- Die Schwachen sind indifferent, wenn gilt
+- $p_s a + (1-p_s)r=b$
+
+- $\iff p_{s}^{*}=\frac{r-b}{r-a}=1-\frac{h}{r-a}$
+
+```{python}
+#| message: false
+#| warning: false
+#| output: false
+
+# Gemischte Strategien
+
+# Wahrscheinlichkeiten ausrechnen
+
+from sympy import Symbol, solve, Eq, simplify
+
+symbols = [Symbol(name) for name in 'ABRabrp']
+A, B, R, a, b, r, p = symbols  # Auspacken in verschiedene Variablen
+
+
+#p_ü Wahrscheinlichkeit für Überfall
+E_fl= p*a+(1-p)*r
+
+E_S= b
+
+sol = solve(Eq(E_fl, E_S), p)
+print(sol[0])
+
+#p_f Wahrscheinlichkeit für Fleiß
+
+E_ü = p*A + (1-p)*B
+E_fr = R
+
+sol = solve(Eq(E_ü, E_fr),p)
+print(sol[0])
+```
+
+Ein Zahlenbeispiel
+
+```{python}
+#| message: false
+#| warning: false
+
+# Zufallszahlen
+
+import numpy as np
+import random
+
+random.seed(123)
+
+while True:
+    a = random.randint(1, 9)
+   # B = random.randint(0, 9)
+    r = random.randint(0, 9)
+    R = random.randint(0, 9)
+    h = random.randint(1, 9)
+    V = random.randint(1, 9)
+
+    b=a+h
+    A=(R-V)+(r-a)
+    B=R-V
+
+
+    # Bedingungen prüfen
+    cond1 = r > b > a
+    cond2 = A > R > B
+
+    # nicht nötig, aber für Erzählung
+    cond3 = R > r
+
+    # Wenn Bedingungen erfüllt ist, Schleife beenden
+    if (cond1 and cond2 and cond3):
+        break
+
+
+# Matrix
+
+from lets_plot import *
+
+LetsPlot.setup_html()
+
+ggplot() + \
+geom_text(x=- .5, y= 2   , label=A) +\
+geom_text(x=-1.5, y=  .75, label=a) +\
+geom_text(x=- .5, y=-1   , label=B) +\
+geom_text(x=-1.5, y=-2.25, label=b) +\
+geom_text(x= 1.5, y= 2   , label=R) +\
+geom_text(x=  .5, y=  .75, label=r) +\
+geom_text(x= 1.5, y=-1   , label=R) +\
+geom_text(x=  .5, y=-2.25, label=b) +\
+geom_text(x=-1  , y= 3.3 , label='überfallen')+\
+geom_text(x= 1  , y= 3.3 , label='friedlich')+\
+geom_text(x=-2.2, y= 1.375, angle=90, label='fleißig')+\
+geom_text(x=-2.2, y=-1.625, angle=90, label='Subsistenzwirtschaft')+\
+geom_text(x= 0 , y= 4 ,
+          fontface = "bold", label='Die Starken')+\
+geom_text(x=-2.7 , y= 0 , angle=90,
+          fontface = "bold", label='Die Schwachen')+\
+geom_segment(x=-2,  xend= 2, y= 0, yend= 0) +\
+geom_segment(x=-2,  xend= 2, y= 3, yend= 3) +\
+geom_segment(x=-2,  xend= 2, y=-3, yend=-3) +\
+geom_segment(x=-2,  xend=-2, y=-3, yend= 3) +\
+geom_segment(x= 0,  xend= 0, y=-3, yend= 3) +\
+geom_segment(x= 2,  xend= 2, y=-3, yend= 3) +\
+theme_void()+\
+labs(title='Auszahlungen für die Schwachen und die Starken',
+     subtitle=f"h={h}, V={V}",
+     caption = 'Nach Hillman (2004)'
+)
+
+
+
+```
+
+```{python}
+#| message: false
+#| warning: false
+
+import numpy as np
+import pandas as pd
+from lets_plot import *
+LetsPlot.setup_html()
+
+# Parameter
+numberofrounds = 400
+#pw = 0.2   # Beispielwert, kann angepasst werden
+#ps = 0.6   # Beispielwert, kann angepasst werden
+
+ps = (b - r)/(a - r)
+pw = (-B + R)/(A - B)
+
+# DataFrame erzeugen (Reproduzierbarkeit durch seed)
+np.random.seed(123)
+df = pd.DataFrame({
+    'W': np.random.binomial(1, pw, numberofrounds),
+    'S': np.random.binomial(1, (1-ps), numberofrounds)
+})
+
+# Ausgabe
+# print(df.head())
+
+# Grafik
+plot = (
+    ggplot(df, aes(x='S', y='W')) +
+    geom_jitter(width=0.4, height=0.4, alpha=0.5, color='red') +
+    scale_x_continuous(breaks=[0, 1], labels=[f"überfallen {round(ps, 2)}", f"friedlich {round((1-ps),2)}"]) +
+    scale_y_continuous(breaks=[0, 1], labels=[f"Subsistenzwirtschaft {round((1-pw),2)}", f"fleißig {round(pw, 2)}"]) +
+    theme_light() +
+    theme(panel_grid_major=None, panel_grid_minor=None)+ 
+    labs(title="Häufigkeiten in gemischten Strategien",
+    x="Die Starken",
+    y="Die Schwachen")
+)
+plot
+
+```
+

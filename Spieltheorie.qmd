@@ -4,6 +4,9 @@
 
 Das Folgende basiert auf @hillman_nietzschean_2004
 
+
+### Das Grundmodell
+
 - Gesellschaft mit zwei Gruppen:  
   - die Starken (strong)
   - die Schwachen (weak)
@@ -68,6 +71,8 @@ labs(title='Auszahlungen für die Schwachen und die Starken' ,
 )
 
 ```
+ 
+### Das Gleichgewicht
 
 - Kein Gleichgewicht in reinen Strategien
 
@@ -246,4 +251,271 @@ plot = (
 plot
 
 ```
+
+### Die Ineffizienz des Gleichgewichts
+
+- Das Gleichgewicht in gemischten Strategien ist ineffizient.
+
+   - Erwartungswert für die Starken: $R$
+   - Erwartungswert für die Schwachen: $b$
+
+- Effizient wäre eine Summe der erwarteten Auszahlungen von $R+r>R+b$
+
+### Die Idee eines Friedebsvertrags
+
+- Die Starken können den Schwachen einen Vertrag anbieten
+
+  - Die Starken verzichten zukünftig auf den Überfall
+
+  - Dafür bekommen sie jede Periode ein Schutzgeld $\mu >0$
+
+- Für die Schwachen ist das eine Verbesserung,  sofern $\mu < r-b$
+
+- Für die Starken muss gelten, dass der Gegenwartswert der regelmäßigen Zahlung des Schutzgelds größer ist als der Gegenwartswert des einmalig erfolgreichen Überfalls und des folgenden Rückfalls ins Anarchie-Gleichgewicht
+
+- $\frac{R+ \mu}{i}\geq A + \frac{R}{i}-R \iff \mu \geq i(A-R)$
+
+- Der Friedensvertrag ist also umso wahrscheinlicher, je niedriger $i$ ist.
+
+```{python}
+#| message: false
+#| warning: false
+
+
+
+# Schnittpunkt berechnen
+schnittpunkt = (r - b) / (A - R)
+
+# Werte von 0 bis Schnittpunkt
+i = np.linspace(0, schnittpunkt, 101)
+
+# Vollständige i-Werte (0 bis 1)
+i_full = np.linspace(0, 1, 101)
+df_full = pd.DataFrame({'i': i_full})
+df_full['mu'] = df_full['i'] * (A - R)
+df_full['mu_max'] = r - b  # Konstanter Wert
+
+# Ribbon-Daten nur bis Schnittpunkt
+df_ribbon = df_full[df_full['i'] <= schnittpunkt].copy()
+
+plot = (
+    ggplot()
+    # Fläche NUR bis Schnittpunkt
+    + geom_ribbon(aes(x='i', ymin='mu', ymax='mu_max'),
+            data=df_ribbon, fill='#4d7faf', alpha=0.3, inherit_aes=False)
+    # Linien mit VOLLSTÄNDIGEN Daten
+    + geom_line(aes(x='i', y='mu'), data=df_full, color='darkgreen', size=1)
+    + geom_line(aes(x='i', y='mu_max'), data=df_full, color='red', size=1)
+    + theme_light()
+    + labs(title="Zulässige Werte für \(\mu\)",
+               x="Zeitpräferenzrate \(i\)",
+               y= "\(\mu\)")
+)
+
+plot
+```
+
+## Evolutionäre Spieltheorie
+
+### Ausgangspunkt hier: Das Gefangenendilemma
+
+```{python}
+#| message: false
+#| warning: false
+
+# Python
+
+
+A= 3
+a= 3
+B= 5
+b= 0
+C= 0
+c= 5
+D= 1
+d= 1
+
+# https://github.com/Axelrod-Python/Axelrod/blob/dev/axelrod%2Fgame.py
+
+from lets_plot import *
+
+LetsPlot.setup_html()
+
+ggplot() + \
+geom_text(x=- .5, y= 2   , label=a) +\
+geom_text(x=-1.5, y=  .75, label=A) +\
+geom_text(x=- .5, y=-1   , label=b) +\
+geom_text(x=-1.5, y=-2.25, label=B) +\
+geom_text(x= 1.5, y= 2   , label=c) +\
+geom_text(x=  .5, y=  .75, label=C) +\
+geom_text(x= 1.5, y=-1   , label=d) +\
+geom_text(x=  .5, y=-2.25, label=D) +\
+geom_text(x=-1  , y= 3.3 , label='kooperieren')+\
+geom_text(x= 1  , y= 3.3 , label='defektieren')+\
+geom_text(x=-2.2, y= 1.375, angle=90, label='kooperieren')+\
+geom_text(x=-2.2, y=-1.625, angle=90, label='defektieren')+\
+geom_text(x= 0 , y= 4 ,
+          fontface = "bold", label='Spieler 2')+\
+geom_text(x=-2.7 , y= 0 , angle=90,
+          fontface = "bold", label='Spieler 1')+\
+geom_segment(x=-2,  xend= 2, y= 0, yend= 0) +\
+geom_segment(x=-2,  xend= 2, y= 3, yend= 3) +\
+geom_segment(x=-2,  xend= 2, y=-3, yend=-3) +\
+geom_segment(x=-2,  xend=-2, y=-3, yend= 3) +\
+geom_segment(x= 0,  xend= 0, y=-3, yend= 3) +\
+geom_segment(x= 2,  xend= 2, y=-3, yend= 3) +\
+theme_void()+\
+labs(title='Auszahlungen in einem Gefangenendilemma',
+     caption='Axelrod (1980)')
+```
+
+\- Ineffizientes Nash-Gleichgewicht bei defektieren/defektieren
+
+### Wettbewerb der Strategien
+
+- 3 Ideen dazu. Was ist, wenn (Axelrod, 1980)
+
+   - Spieler auf bestimmte Strategien festgelegt sind,   
+   - auch komplexe Strategien über mehrere Runden hinweg möglich sind,   
+   - Strategien sich je nach Erfolg evolutionär durchsetzen können?
+
+- Axelrod-Wettbewerbe
+
+  - Spieler mit (gleichen oder) unterschiedlichen Strategien treten gegeneinander an.
+
+  - Alle Paare spielen mehrere Runden (hier implementiert: 200) gegeneinander
+
+  - Die (durchschnittliche) Auszahlung wird ausgegeben
+
+
+- Hier: immer kooperieren, immer defektieren und Tit for Tat
+
+
+- Grundsätzliche Auszahlungen
+
+```{python}
+#| message: false
+#| warning: false
+
+import axelrod as axl
+players = [axl.Cooperator(),
+           axl.Defector(),
+          # axl.TitForTat(),
+           axl.TitForTat() #, axl.Random()
+]
+# players.append(axl.Random())
+tournament = axl.Tournament(players)
+results = tournament.play()
+
+```
+
+```{python}
+#| message: false
+#| warning: false
+
+import matplotlib.pyplot as plt
+plot = axl.Plot(results)
+p = plot.payoff()
+plt.title("Grundsätzliche Auszahlungen der Wettbewerbe")
+p.show()
+
+```
+
+#### "Immer defektieren" gegen "Immer kooperieren"
+
+```{python}
+#| message: false
+#| warning: false
+
+import axelrod as axl
+players = [axl.Cooperator(),
+           axl.Defector(),
+          # axl.TitForTat(),
+         #  axl.TitForTat() #, axl.Random()
+]
+# players.append(axl.Random())
+tournament = axl.Tournament(players)
+results = tournament.play()
+
+plot = axl.Plot(results)
+p = plot.boxplot()
+plt.title("Auszahlungen der Wettbewerbe")
+p.show()
+
+import axelrod as axl
+players = [axl.Cooperator(),
+           axl.Cooperator(),
+           axl.Defector(),
+          # axl.TitForTat(),
+         #  axl.TitForTat() #, axl.Random()
+]
+# players.append(axl.Random())
+tournament = axl.Tournament(players)
+results = tournament.play()
+
+plot = axl.Plot(results)
+p = plot.boxplot()
+plt.title("Auszahlungen der Wettbewerbe")
+p.show()
+
+```
+
+- Spieler vom Typ "immer kooperieren" profitieren (ein bisschen) voneinander
+
+```{python}
+#| message: false
+#| warning: false
+
+import axelrod as axl
+players = [axl.Cooperator(),
+           axl.Cooperator(),
+           axl.Defector(),
+           axl.Defector()
+          # axl.TitForTat(),
+         #  axl.TitForTat() #, axl.Random()
+]
+# players.append(axl.Random())
+tournament = axl.Tournament(players)
+results = tournament.play()
+
+plot = axl.Plot(results)
+p = plot.boxplot()
+plt.title("Auszahlungen der Wettbewerbe")
+p.show()
+
+```
+
+- Spieler vom Typ "defektiere immer" schaden sich gegenseitig
+
+### Tit for Tat
+
+- Spieler vom Typ "Tit for Tat"
+
+   - kooperieren in der ersten Runde
+   - kopieren die Strategie ihrer Gegenspieler ab der zweiten Runde
+   
+```{python}
+#| message: false
+#| warning: false
+
+import axelrod as axl
+players = [axl.Cooperator(),
+          # axl.Cooperator(),
+         #  axl.Defector(),
+          # axl.Defector()
+           axl.TitForTat(),
+         #  axl.TitForTat() #, axl.Random()
+]
+# players.append(axl.Random())
+tournament = axl.Tournament(players)
+results = tournament.play()
+
+plot = axl.Plot(results)
+p = plot.boxplot()
+plt.title("Auszahlungen der Wettbewerbe")
+p.show()
+
+```
+
+- Im Spiel gehen "immer kooperieren" spielt "Tit for Tat" kooperativ
 

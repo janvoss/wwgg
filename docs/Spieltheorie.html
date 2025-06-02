@@ -288,6 +288,7 @@ window.Quarto = {
   <li><a href="#ausgangspunkt-hier-das-gefangenendilemma" id="toc-ausgangspunkt-hier-das-gefangenendilemma" class="nav-link" data-scroll-target="#ausgangspunkt-hier-das-gefangenendilemma"><span class="header-section-number">6.2.1</span> Ausgangspunkt hier: Das Gefangenendilemma</a></li>
   <li><a href="#wettbewerb-der-strategien" id="toc-wettbewerb-der-strategien" class="nav-link" data-scroll-target="#wettbewerb-der-strategien"><span class="header-section-number">6.2.2</span> Wettbewerb der Strategien</a></li>
   <li><a href="#tit-for-tat" id="toc-tit-for-tat" class="nav-link" data-scroll-target="#tit-for-tat"><span class="header-section-number">6.2.3</span> Tit for Tat</a></li>
+  <li><a href="#evolution-als-moran-prozess" id="toc-evolution-als-moran-prozess" class="nav-link" data-scroll-target="#evolution-als-moran-prozess"><span class="header-section-number">6.2.4</span> Evolution als Moran-Prozess</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -341,7 +342,7 @@ window.Quarto = {
 <li><p>Ranking der Starken: <span class="math inline">\(A&gt;R&gt;B\)</span></p></li>
 <li><p>Wohlfahrt wird maximiert bei <span class="math inline">\(W=\left(R+r\right)\)</span></p></li>
 </ul>
-<div id="2742dee4" class="cell" data-message="false" data-execution_count="1">
+<div id="d2c56d86" class="cell" data-message="false" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Matrix mit Symbolen</span></span>
@@ -412,8 +413,8 @@ window.Quarto = {
             </script>
             
 </div>
-<div class="cell-output cell-output-display" data-execution_count="34">
-   <div id="ltR6vH"></div>
+<div class="cell-output cell-output-display" data-execution_count="45">
+   <div id="Uxtzqw"></div>
    <script type="text/javascript" data-lets-plot-script="plot">
    
    (function() {
@@ -438,7 +439,7 @@ window.Quarto = {
        };
    }
    
-   const containerDiv = document.getElementById("ltR6vH");
+   const containerDiv = document.getElementById("Uxtzqw");
    let fig = null;
    
    function renderPlot() {
@@ -694,7 +695,7 @@ window.Quarto = {
 }
 }],
 "metainfo_list":[],
-"spec_id":"21"
+"spec_id":"26"
 };
            window.letsPlotCall(function() { fig = LetsPlot.buildPlotFromProcessedSpecs(plotSpec, containerDiv, sizing); });
        } else {
@@ -757,7 +758,7 @@ window.Quarto = {
 <li><p><span class="math inline">\(p_s a + (1-p_s)r=b\)</span></p></li>
 <li><p><span class="math inline">\(\iff p_{s}^{*}=\frac{r-b}{r-a}=1-\frac{h}{r-a}\)</span></p></li>
 </ul>
-<div id="9ebdd689" class="cell" data-message="false" data-execution_count="2">
+<div id="aa9ce6a3" class="cell" data-message="false" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Gemischte Strategien</span></span>
@@ -788,7 +789,7 @@ window.Quarto = {
 </details>
 </div>
 <p>Ein Zahlenbeispiel</p>
-<div id="746d007a" class="cell" data-message="false" data-execution_count="3">
+<div id="93c07ef7" class="cell" data-message="false" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Zufallszahlen</span></span>
@@ -892,8 +893,8 @@ window.Quarto = {
             </script>
             
 </div>
-<div class="cell-output cell-output-display" data-execution_count="36">
-   <div id="vPN8EM"></div>
+<div class="cell-output cell-output-display" data-execution_count="47">
+   <div id="qwCHuv"></div>
    <script type="text/javascript" data-lets-plot-script="plot">
    
    (function() {
@@ -918,7 +919,7 @@ window.Quarto = {
        };
    }
    
-   const containerDiv = document.getElementById("vPN8EM");
+   const containerDiv = document.getElementById("qwCHuv");
    let fig = null;
    
    function renderPlot() {
@@ -1175,7 +1176,7 @@ window.Quarto = {
 }
 }],
 "metainfo_list":[],
-"spec_id":"22"
+"spec_id":"27"
 };
            window.letsPlotCall(function() { fig = LetsPlot.buildPlotFromProcessedSpecs(plotSpec, containerDiv, sizing); });
        } else {
@@ -1220,7 +1221,7 @@ window.Quarto = {
    </script>
 </div>
 </div>
-<div id="bff5e692" class="cell" data-message="false" data-execution_count="4">
+<div id="cae79f05" class="cell" data-message="false" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -1294,8 +1295,8 @@ window.Quarto = {
             </script>
             
 </div>
-<div class="cell-output cell-output-display" data-execution_count="37">
-   <div id="AiQdDT"></div>
+<div class="cell-output cell-output-display" data-execution_count="48">
+   <div id="FfBGD7"></div>
    <script type="text/javascript" data-lets-plot-script="plot">
    
    (function() {
@@ -1320,7 +1321,7 @@ window.Quarto = {
        };
    }
    
-   const containerDiv = document.getElementById("AiQdDT");
+   const containerDiv = document.getElementById("FfBGD7");
    let fig = null;
    
    function renderPlot() {
@@ -1381,7 +1382,7 @@ window.Quarto = {
 }
 }],
 "metainfo_list":[],
-"spec_id":"23"
+"spec_id":"28"
 };
            window.letsPlotCall(function() { fig = LetsPlot.buildPlotFromProcessedSpecs(plotSpec, containerDiv, sizing); });
        } else {
@@ -1451,7 +1452,7 @@ window.Quarto = {
 <li><p><span class="math inline">\(\frac{R+ \mu}{i}\geq A + \frac{R}{i}-R \iff \mu \geq i(A-R)\)</span></p></li>
 <li><p>Der Friedensvertrag ist also umso wahrscheinlicher, je niedriger <span class="math inline">\(i\)</span> ist.</p></li>
 </ul>
-<div id="bae5b132" class="cell" data-message="false" data-execution_count="5">
+<div id="5703d41c" class="cell" data-message="false" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Schnittpunkt berechnen</span></span>
@@ -1485,8 +1486,8 @@ window.Quarto = {
 <span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="38">
-   <div id="U5zeaw"></div>
+<div class="cell-output cell-output-display" data-execution_count="49">
+   <div id="zkPFvo"></div>
    <script type="text/javascript" data-lets-plot-script="plot">
    
    (function() {
@@ -1511,7 +1512,7 @@ window.Quarto = {
        };
    }
    
-   const containerDiv = document.getElementById("U5zeaw");
+   const containerDiv = document.getElementById("zkPFvo");
    let fig = null;
    
    function renderPlot() {
@@ -1614,7 +1615,7 @@ window.Quarto = {
 "size":1.0
 }],
 "metainfo_list":[],
-"spec_id":"24"
+"spec_id":"29"
 };
            window.letsPlotCall(function() { fig = LetsPlot.buildPlotFromProcessedSpecs(plotSpec, containerDiv, sizing); });
        } else {
@@ -1665,7 +1666,7 @@ window.Quarto = {
 <h2 data-number="6.2" class="anchored" data-anchor-id="evolutionäre-spieltheorie"><span class="header-section-number">6.2</span> Evolutionäre Spieltheorie</h2>
 <section id="ausgangspunkt-hier-das-gefangenendilemma" class="level3" data-number="6.2.1">
 <h3 data-number="6.2.1" class="anchored" data-anchor-id="ausgangspunkt-hier-das-gefangenendilemma"><span class="header-section-number">6.2.1</span> Ausgangspunkt hier: Das Gefangenendilemma</h3>
-<div id="a2505ab7" class="cell" data-message="false" data-execution_count="6">
+<div id="89dd676a" class="cell" data-message="false" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Python</span></span>
@@ -1747,8 +1748,8 @@ window.Quarto = {
             </script>
             
 </div>
-<div class="cell-output cell-output-display" data-execution_count="39">
-   <div id="m8ByH7"></div>
+<div class="cell-output cell-output-display" data-execution_count="50">
+   <div id="66yRtP"></div>
    <script type="text/javascript" data-lets-plot-script="plot">
    
    (function() {
@@ -1773,7 +1774,7 @@ window.Quarto = {
        };
    }
    
-   const containerDiv = document.getElementById("m8ByH7");
+   const containerDiv = document.getElementById("66yRtP");
    let fig = null;
    
    function renderPlot() {
@@ -2029,7 +2030,7 @@ window.Quarto = {
 }
 }],
 "metainfo_list":[],
-"spec_id":"25"
+"spec_id":"30"
 };
            window.letsPlotCall(function() { fig = LetsPlot.buildPlotFromProcessedSpecs(plotSpec, containerDiv, sizing); });
        } else {
@@ -2096,7 +2097,7 @@ window.Quarto = {
 <li><p>Hier: immer kooperieren, immer defektieren und Tit for Tat</p></li>
 <li><p>Grundsätzliche Auszahlungen</p></li>
 </ul>
-<div id="d1810285" class="cell" data-message="false" data-execution_count="7">
+<div id="05974a29" class="cell" data-message="false" data-execution_count="7">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> axelrod <span class="im">as</span> axl</span>
@@ -2110,7 +2111,7 @@ window.Quarto = {
 <span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>results <span class="op">=</span> tournament.play()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<div id="5e7444a6" class="cell" data-message="false" data-execution_count="8">
+<div id="e0fe5e8b" class="cell" data-message="false" data-execution_count="8">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -2129,7 +2130,7 @@ window.Quarto = {
 </div>
 <section id="immer-defektieren-gegen-immer-kooperieren" class="level4" data-number="6.2.2.1">
 <h4 data-number="6.2.2.1" class="anchored" data-anchor-id="immer-defektieren-gegen-immer-kooperieren"><span class="header-section-number">6.2.2.1</span> “Immer defektieren” gegen “Immer kooperieren”</h4>
-<div id="ff3eedc1" class="cell" data-message="false" data-execution_count="9">
+<div id="a32b8710" class="cell" data-message="false" data-execution_count="9">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> axelrod <span class="im">as</span> axl</span>
@@ -2181,7 +2182,7 @@ window.Quarto = {
 <ul>
 <li>Spieler vom Typ “immer kooperieren” profitieren (ein bisschen) voneinander</li>
 </ul>
-<div id="ed5e217f" class="cell" data-message="false" data-execution_count="10">
+<div id="eaef03ca" class="cell" data-message="false" data-execution_count="10">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> axelrod <span class="im">as</span> axl</span>
@@ -2223,7 +2224,7 @@ window.Quarto = {
 <li>kopieren die Strategie ihrer Gegenspieler ab der zweiten Runde</li>
 </ul></li>
 </ul>
-<div id="bd07abf7" class="cell" data-message="false" data-execution_count="11">
+<div id="93c5c301" class="cell" data-message="false" data-execution_count="11">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> axelrod <span class="im">as</span> axl</span>
@@ -2254,6 +2255,80 @@ window.Quarto = {
 <ul>
 <li>Im Spiel gehen “immer kooperieren” spielt “Tit for Tat” kooperativ</li>
 </ul>
+<div id="c71249a0" class="cell" data-message="false" data-execution_count="12">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> axelrod <span class="im">as</span> axl</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>players <span class="op">=</span> [<span class="co">#axl.Cooperator(),</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>          <span class="co"># axl.Cooperator(),</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>          axl.Defector(),</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>          <span class="co"># axl.Defector()</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>           axl.TitForTat(),</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>         <span class="co">#  axl.TitForTat() #, axl.Random()</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="co"># players.append(axl.Random())</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>tournament <span class="op">=</span> axl.Tournament(players)</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>results <span class="op">=</span> tournament.play()</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>plot <span class="op">=</span> axl.Plot(results)</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> plot.boxplot()</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Auszahlungen der Wettbewerbe"</span>)</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>p.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Spieltheorie_files/figure-html/cell-13-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li><p>Gegen “immer defektieren” kooperiert TfT in der ersten Runde, dann nicht mehr</p></li>
+<li><p>Er erhält eine etwas geringere Auszahlung als “immer defektieren”</p></li>
+</ul>
+<div id="8eda3a83" class="cell" data-message="false" data-execution_count="13">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> axelrod <span class="im">as</span> axl</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>players <span class="op">=</span> [<span class="co">#axl.Cooperator(),</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>          <span class="co"># axl.Cooperator(),</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>          axl.Defector(),</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>          <span class="co"># axl.Defector()</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>           axl.TitForTat(),</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>          axl.TitForTat() <span class="co">#, axl.Random()</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="co"># players.append(axl.Random())</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>tournament <span class="op">=</span> axl.Tournament(players)</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>results <span class="op">=</span> tournament.play()</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>plot <span class="op">=</span> axl.Plot(results)</span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> plot.boxplot()</span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Auszahlungen der Wettbewerbe"</span>)</span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>p.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Spieltheorie_files/figure-html/cell-14-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>TfT-Spieler profitieren voneinander</li>
+</ul>
+</section>
+<section id="evolution-als-moran-prozess" class="level3" data-number="6.2.4">
+<h3 data-number="6.2.4" class="anchored" data-anchor-id="evolution-als-moran-prozess"><span class="header-section-number">6.2.4</span> Evolution als Moran-Prozess</h3>
+<ul>
+<li><p>In einem Moran Prozess spielen alle Spieler (mit üblicherweise zunächst unterschiedlichen Typen) mehrere Runden gegeneinander.</p></li>
+<li><p>In jeder Runde interagiert jeder Spieler mit jedem anderen Spieler. Die Auszahlungen jedes Spielers werden notiert.</p></li>
+<li><p>In jeder Runde wird ein zufällig ausgewählter Spieler entfernt (er “stirbt”)</p></li>
+<li><p>Ein neuer Spieler wird dem Spiel hinzugefügt. Der Typ dieses Spielers wird zufällig festgelegt. In diesen Zufallsprozess werden die Wahrscheinlichkeiten aus dem “Erfolg” der Spieltypen in dieser Runde zugrundegelegt . Erfolgreiche Typen vermehren sich also schneller als weniger erfolgreiche Typen.</p></li>
+</ul>
+<section id="immer-defektieren-verdrängt-immer-kooperieren" class="level4" data-number="6.2.4.1">
+<h4 data-number="6.2.4.1" class="anchored" data-anchor-id="immer-defektieren-verdrängt-immer-kooperieren"><span class="header-section-number">6.2.4.1</span> “Immer defektieren” verdrängt “immer kooperieren”</h4>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
@@ -2261,6 +2336,7 @@ window.Quarto = {
 Hillman, Arye L. 2004. <span>“Nietzschean Development Failures.”</span> <em>Public Choice</em> 119: 263–80.
 </div>
 </div>
+</section>
 </section>
 </section>
 

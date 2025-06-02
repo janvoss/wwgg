@@ -519,3 +519,66 @@ p.show()
 
 - Im Spiel gehen "immer kooperieren" spielt "Tit for Tat" kooperativ
 
+```{python}
+#| message: false
+#| warning: false
+
+import axelrod as axl
+players = [#axl.Cooperator(),
+          # axl.Cooperator(),
+          axl.Defector(),
+          # axl.Defector()
+           axl.TitForTat(),
+         #  axl.TitForTat() #, axl.Random()
+]
+# players.append(axl.Random())
+tournament = axl.Tournament(players)
+results = tournament.play()
+
+plot = axl.Plot(results)
+p = plot.boxplot()
+plt.title("Auszahlungen der Wettbewerbe")
+p.show()
+
+```
+
+- Gegen "immer defektieren" kooperiert TfT in der ersten Runde, dann nicht mehr
+
+- Er erhält eine etwas geringere Auszahlung als "immer defektieren"
+
+```{python}
+#| message: false
+#| warning: false
+
+import axelrod as axl
+players = [#axl.Cooperator(),
+          # axl.Cooperator(),
+          axl.Defector(),
+          # axl.Defector()
+           axl.TitForTat(),
+          axl.TitForTat() #, axl.Random()
+]
+# players.append(axl.Random())
+tournament = axl.Tournament(players)
+results = tournament.play()
+
+plot = axl.Plot(results)
+p = plot.boxplot()
+plt.title("Auszahlungen der Wettbewerbe")
+p.show()
+```
+
+- TfT-Spieler profitieren voneinander
+
+### Evolution als Moran-Prozess
+
+- In einem Moran Prozess spielen alle Spieler (mit üblicherweise zunächst unterschiedlichen Typen) mehrere Runden gegeneinander.
+
+- In jeder Runde interagiert jeder Spieler mit jedem anderen Spieler. Die Auszahlungen jedes Spielers werden notiert.
+
+- In jeder Runde wird ein zufällig ausgewählter Spieler entfernt (er "stirbt")
+
+- Ein neuer Spieler wird dem Spiel hinzugefügt.  Der Typ dieses Spielers wird zufällig festgelegt. In diesen Zufallsprozess werden die Wahrscheinlichkeiten aus dem "Erfolg" der Spieltypen in dieser Runde zugrundegelegt
+. Erfolgreiche Typen vermehren sich also schneller als weniger erfolgreiche Typen.
+
+#### "Immer defektieren" verdrängt "immer kooperieren"

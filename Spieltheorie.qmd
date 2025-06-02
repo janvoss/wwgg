@@ -261,7 +261,7 @@ plot
 
 - Effizient wäre eine Summe der erwarteten Auszahlungen von $R+r>R+b$
 
-### Die Idee eines Friedebsvertrags
+### Die Idee eines Friedensvertrags
 
 - Die Starken können den Schwachen einen Vertrag anbieten
 
@@ -618,6 +618,113 @@ players = (
 # Run the process. Eventually there will be only
 # one player type left.
 mp = axl.MoranProcess(players=players, turns=200, seed=123)
+mp.play()
+print("Es setzt sich durch:", mp.winning_strategy_name)
+
+# Plot the results
+
+player_names = mp.populations[0].keys()
+
+plot_data = []
+labels = []
+for name in player_names:
+    labels.append(name)
+    values = [counter[name] for counter in mp.populations]
+    plot_data.append(values)
+    domain = range(len(values))
+
+plt.stackplot(domain, plot_data, labels=labels)
+plt.legend()
+plt.xlabel("Runden")
+plt.ylabel("Anzahl der Individuen")
+plt.title("Evolution mit Moran-Prozess")
+plt.show()
+
+```
+
+#### "Tit for Tat" setzt sich durch
+
+```{python}
+#| message: false
+#| warning: false
+
+# Create a population of size N
+#N = 20
+#players = []
+#for _ in range(N):
+#    player = random.choice([axl.Cooperator,
+#                            axl.Random,
+#                            axl.TitForTat,
+#                            axl.Defector])
+#   players.append(player())
+
+# random.seed(123)
+
+players = (
+    [axl.Cooperator() for _ in range(10)] +
+  #  [axl.Random() for _ in range(5)] +
+   [axl.TitForTat() for _ in range(5)] +
+    [axl.Defector() for _ in range(5)]
+)
+
+
+# Run the process. Eventually there will be only
+# one player type left.
+mp = axl.MoranProcess(players=players, turns=200, seed=128)
+mp.play()
+print("Es setzt sich durch:", mp.winning_strategy_name)
+
+# Plot the results
+
+player_names = mp.populations[0].keys()
+
+plot_data = []
+labels = []
+for name in player_names:
+    labels.append(name)
+    values = [counter[name] for counter in mp.populations]
+    plot_data.append(values)
+    domain = range(len(values))
+
+plt.stackplot(domain, plot_data, labels=labels)
+plt.legend()
+plt.xlabel("Runden")
+plt.ylabel("Anzahl der Individuen")
+plt.title("Evolution mit Moran-Prozess")
+plt.show()
+
+```
+
+#### "Tit for Tat" wird verdrängt - und "immer defektieren" setzt sich durch
+
+```{python}
+#| message: false
+#| warning: false
+
+# Create a population of size N
+#N = 20
+#players = []
+#for _ in range(N):
+#    player = random.choice([axl.Cooperator,
+#                            axl.Random,
+#                            axl.TitForTat,
+#                            axl.Defector])
+#   players.append(player())
+
+# random.seed(123)
+
+players = (
+    [axl.Cooperator() for _ in range(10)] +
+  #  [axl.Random() for _ in range(5)] +
+   [axl.TitForTat() for _ in range(5)] +
+    [axl.Defector() for _ in range(5)]
+)
+
+
+# Run the process. Eventually there will be only
+# one player type left.
+#125
+mp = axl.MoranProcess(players=players, turns=200, seed=77)
 mp.play()
 print("Es setzt sich durch:", mp.winning_strategy_name)
 

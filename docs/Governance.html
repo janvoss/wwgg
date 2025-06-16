@@ -55,7 +55,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -251,10 +271,10 @@ Definition Governance
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Die Gesamtheit der <strong>kollektiven Regelungen</strong>, die auf eine <strong>bestimmte Problemlage</strong> oder einen bestimmten gesellschaftlichen Sachverhalt zielen und mit Verweis auf das <strong>Kollektivinteresse</strong> der betroffenen Gruppe gerechtfertigt werden. (nach Zürn 2008)</p>
+<p>Die Gesamtheit der <strong>kollektiven Regelungen</strong>, die auf eine <strong>bestimmte Problemlage</strong> oder einen bestimmten gesellschaftlichen Sachverhalt zielen und mit Verweis auf das <strong>Kollektivinteresse</strong> der betroffenen Gruppe gerechtfertigt werden (<span class="citation" data-cites="simonis_global_2022">Simonis (<a href="#ref-simonis_global_2022" role="doc-biblioref">2022</a>)</span> nach Zürn (2008)).</p>
 </div>
 </div>
-<div id="c08b0a9b" class="cell" data-message="false" data-execution_count="1">
+<div id="eda367f1" class="cell" data-message="false" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> graphviz <span class="im">import</span> Source</span>
@@ -302,15 +322,35 @@ Definition Governance
 <span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>display(src)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
-<div>
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="Governance_files/figure-html/cell-2-output-1.svg" class="img-fluid figure-img"></p>
+<figcaption>nach <span class="citation" data-cites="simonis_global_2022">Simonis (<a href="#ref-simonis_global_2022" role="doc-biblioref">2022</a>)</span></figcaption>
 </figure>
 </div>
 </div>
 </div>
+<div class="callout callout-style-default callout-note callout-titled" title="Definition Global Governance">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition Global Governance
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Global Governance bezeichnet als an der Sicherung und Gewährleistung von globalen öffentlichen Gütern orientiertes, auf Legitimation bedachtes, (problemlösendes) Handeln von überstaatlichen öffentlichen, privaten und hybriden Institutionen und der im Rahmen dieser Institutionen handelnden Personen und Organisationen.</p>
+<p>Politische Aktivitäten, die zum Aufbau neuer Institutionen/Organisationen der Gloabel Governance führen sollen, werden als vorbereitende Global Governance mit unter das Konzept subsummiert <span class="citation" data-cites="simonis_global_2022">(<a href="#ref-simonis_global_2022" role="doc-biblioref">Simonis 2022</a>)</span>.</p>
+</div>
+</div>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-simonis_global_2022" class="csl-entry" role="listitem">
+Simonis, Georg. 2022. <em>Global Governance: Entstehung – Institutionen – Analyse</em>. Wiesbaden: Springer Fachmedien. <a href="https://doi.org/10.1007/978-3-658-36462-5">https://doi.org/10.1007/978-3-658-36462-5</a>.
+</div>
+</div>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

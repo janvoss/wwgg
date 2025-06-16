@@ -2,13 +2,14 @@
 
 ::: {.callout-note title='Definition Governance'}
 
-Die Gesamtheit der **kollektiven Regelungen**, die auf eine **bestimmte Problemlage** oder einen bestimmten gesellschaftlichen Sachverhalt zielen und mit Verweis auf das **Kollektivinteresse** der betroffenen Gruppe gerechtfertigt werden. (nach Zürn 2008)
+Die Gesamtheit der **kollektiven Regelungen**, die auf eine **bestimmte Problemlage** oder einen bestimmten gesellschaftlichen Sachverhalt zielen und mit Verweis auf das **Kollektivinteresse** der betroffenen Gruppe gerechtfertigt werden (@simonis_global_2022 nach Zürn (2008)).
 
 :::
 
 ```{python}
 #| message: false
 #| warning: false
+#| fig-cap: "nach @simonis_global_2022"
 
 from graphviz import Source
 from IPython.display import display
@@ -55,3 +56,10 @@ src = Source(dot, format="svg")
 display(src)
 ```
 
+::: {.callout-note title='Definition Global Governance'}
+
+Global Governance bezeichnet als an der Sicherung und Gewährleistung von globalen öffentlichen Gütern orientiertes, auf Legitimation bedachtes, (problemlösendes) Handeln von überstaatlichen öffentlichen, privaten und hybriden Institutionen und der im Rahmen dieser Institutionen handelnden Personen und Organisationen. 
+
+Politische Aktivitäten, die zum Aufbau neuer Institutionen/Organisationen der Gloabel Governance führen sollen, werden als vorbereitende Global Governance mit unter das Konzept subsummiert [@simonis_global_2022].
+
+:::

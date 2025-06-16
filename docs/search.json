@@ -268,5 +268,15 @@
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Spieltheoretische Ansätze zur Erklärung institutionellen Wandels</span>"
     ]
+  },
+  {
+    "objectID": "Governance.html",
+    "href": "Governance.html",
+    "title": "7  Global Governance",
+    "section": "",
+    "text": "Definition Governance\n\n\n\nDie Gesamtheit der kollektiven Regelungen, die auf eine bestimmte Problemlage oder einen bestimmten gesellschaftlichen Sachverhalt zielen und mit Verweis auf das Kollektivinteresse der betroffenen Gruppe gerechtfertigt werden. (nach Zürn 2008)\n\n\n\n\nCode\nfrom graphviz import Source\nfrom IPython.display import display\n\ndot = '''\ndigraph G {\n    rankdir=TD;\n    node [shape=plaintext, width=3];\n    edge [style=invis];\n\n    subgraph cluster_0 {\n        label = \"Global Governance\";\n        labelloc = \"t\";\n        fontsize = 18;\n        style = \"filled,rounded\";\n        color = \"lightblue\";\n\n        // Cluster 1\n        subgraph cluster_1 {\n            label = \"Governance\";\n            labelloc = \"t\";\n            { a1 -&gt; a2 -&gt; a3; }\n            a1 [label=\"vs. regieren:\\l verschiedene Akteure\\l\"];\n            a2 [label=\"vs. managen:\\l nicht nach innen gerichtet\\l\"];\n            a3 [label = \"Merkmale:\\l - Problemorientierung\\l -Maßnahmenorientierung\\l - Bindewirkung\\l -Rechtfertigungszwang\\l  (-orientierung)\\l\"];\n        }\n\n        // Cluster 2\n        subgraph cluster_2 {\n            label = \"Global\";\n            labelloc = \"t\";\n            penwidth = 1;\n            {b1 -&gt; b2 -&gt; b3 -&gt; b4; }\n            b1 [label=\"Weltumspannende Probleme\\\\l\"];\n            b2 [label=\"lokale Probleme mit\\\\l globaler Normativität\\\\l\"];\n            b3 [label=\"Funktionsbedingungen\\l globaler Vernetzung\\\\l\"];\n            b4 [label=\"Anerkennung des Prinzips\\l der Staatlichkeit\\l\"]\n        }\n    }\n}\n'''\n\nsrc = Source(dot, format=\"svg\")\ndisplay(src)",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Global Governance</span>"
+    ]
   }
 ]

@@ -1,5 +1,7 @@
 # Global Governance
 
+## Begriff Global Governance
+
 ::: {.callout-note title='Definition Governance'}
 
 Die Gesamtheit der **kollektiven Regelungen**, die auf eine **bestimmte Problemlage** oder einen bestimmten gesellschaftlichen Sachverhalt zielen und mit Verweis auf das **Kollektivinteresse** der betroffenen Gruppe gerechtfertigt werden (@simonis_global_2022 nach Zürn (2008)).
@@ -63,3 +65,120 @@ Global Governance bezeichnet als an der Sicherung und Gewährleistung von global
 Politische Aktivitäten, die zum Aufbau neuer Institutionen/Organisationen der Gloabel Governance führen sollen, werden als vorbereitende Global Governance mit unter das Konzept subsummiert [@simonis_global_2022].
 
 :::
+
+```{python}
+#| message: false
+#| warning: false
+
+import graphviz
+from IPython.display import display
+
+g = graphviz.Digraph('satelliten', engine='circo')
+
+# Zentrum mit spezieller Farbe
+g.node('Zentrum', 'Global Governance',
+       fontsize='20',
+       fontname='Times-Bold',
+       shape='circle',
+       width='3',
+       style='filled',
+       fillcolor='#00BFFF')
+
+# Satelliten-Knoten mit Farbe #00FFFF
+satellites = [
+    ('A', 'Regieren ohne Regierung'),
+    ('B', 'Staatliche Akteure'),
+    ('C', 'Nichtstaatliche Akteure'),
+    ('D', 'Grenzüberschreitende/ globale Probleme'),
+    ('E', 'Völkerrecht'),
+    ('F', 'informelle Vereinbarungen')
+]
+
+for node_id, label in satellites:
+    g.node(node_id, label, style='filled', fillcolor='#00FFFF', penwidth='1')
+
+# Verbindungen zum Zentrum
+g.edges([(node_id, 'Zentrum') for node_id, _ in satellites])
+
+display(g)
+```
+
+
+
+## Begriff Globalisierung
+
+::: {.callout-note title='Globalisierung'}
+
+**Globalisierung**
+
+- **Internationalisierung**  
+  (mehr Handel, und zwischenstaatliche Interdependenz)
+
+- **Liberalisierung**  
+  (Auflösung regulativer Hemmnisse)
+
+- **Universalisierung/Westernisierung**  
+  (Angleichung von Werten/ Angleichung *auf* westliche Werte)
+
+- **Deterritorialisierung**  
+  (räumliche und zeitliche Verdichtung des Globalen)
+ [@glaab_globalisierung_2024 nach Scholte(2000)].
+
+:::
+
+## Dynamiken im Innen- und Außenverhältnis
+
+```{python}
+#| message: false
+#| warning: false
+#| fig-cap: Globale Dynamiken in Innen- und Außenverhältnissen
+
+from graphviz import Digraph
+from IPython.display import display
+
+dot = Digraph()
+dot.attr(rankdir='LR')
+
+# Gleiche Breite und kein Rand für alle Knoten
+dot.node_attr.update(width='1.8', fixedsize='true', penwidth='0')
+
+with dot.subgraph(name='cluster_1') as c1:
+    c1.attr(rank='same', style="rounded",
+            label='Außenverhältnis',
+            fontname='Times-Bold')
+   
+    c1.node('A1', 'Entflechtung')
+    c1.node('B1', 'Blockbildung')
+   
+    c1.node('A', 'Globalisierung')
+    c1.node('B', 'Global Governance')
+   
+
+with dot.subgraph(name='cluster_2') as c2:
+    c2.attr(rank='same', style="rounded",
+            label="Innenverhältnis",
+            fontname='Times-Bold')
+    c2.node('C1', 'Autokratisierung')
+    c2.node('D1', 'Polarisierung')
+    
+    c2.node('C', 'Demokratisierung')
+    c2.node('D', 'Liberalisierung')
+    
+
+dot.edge('A', 'B', style='invis')
+dot.edge('A1', 'B1', style='invis')
+dot.edge('C', 'D', style='invis')
+dot.edge('C1', 'D1', style='invis')
+
+dot.edge('A', 'A1', constraint='false')
+dot.edge('B', 'B1', constraint='false')
+
+dot.edge('C', 'C1', constraint='false')
+dot.edge('D', 'D1', constraint='false')
+
+
+# print(dot)
+
+display(dot)
+```
+

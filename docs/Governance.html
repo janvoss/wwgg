@@ -236,8 +236,16 @@ div.csl-indent {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Überblick</h2>
+   
+  <ul>
+  <li><a href="#begriff-global-governance" id="toc-begriff-global-governance" class="nav-link active" data-scroll-target="#begriff-global-governance"><span class="header-section-number">7.1</span> Begriff Global Governance</a></li>
+  <li><a href="#begriff-globalisierung" id="toc-begriff-globalisierung" class="nav-link" data-scroll-target="#begriff-globalisierung"><span class="header-section-number">7.2</span> Begriff Globalisierung</a></li>
+  <li><a href="#dynamiken-im-innen--und-außenverhältnis" id="toc-dynamiken-im-innen--und-außenverhältnis" class="nav-link" data-scroll-target="#dynamiken-im-innen--und-außenverhältnis"><span class="header-section-number">7.3</span> Dynamiken im Innen- und Außenverhältnis</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -261,6 +269,8 @@ div.csl-indent {
 </header>
 
 
+<section id="begriff-global-governance" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="begriff-global-governance"><span class="header-section-number">7.1</span> Begriff Global Governance</h2>
 <div class="callout callout-style-default callout-note callout-titled" title="Definition Governance">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -274,7 +284,7 @@ Definition Governance
 <p>Die Gesamtheit der <strong>kollektiven Regelungen</strong>, die auf eine <strong>bestimmte Problemlage</strong> oder einen bestimmten gesellschaftlichen Sachverhalt zielen und mit Verweis auf das <strong>Kollektivinteresse</strong> der betroffenen Gruppe gerechtfertigt werden (<span class="citation" data-cites="simonis_global_2022">Simonis (<a href="#ref-simonis_global_2022" role="doc-biblioref">2022</a>)</span> nach Zürn (2008)).</p>
 </div>
 </div>
-<div id="eda367f1" class="cell" data-message="false" data-execution_count="1">
+<div id="187d67e1" class="cell" data-message="false" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> graphviz <span class="im">import</span> Source</span>
@@ -344,13 +354,149 @@ Definition Global Governance
 <p>Politische Aktivitäten, die zum Aufbau neuer Institutionen/Organisationen der Gloabel Governance führen sollen, werden als vorbereitende Global Governance mit unter das Konzept subsummiert <span class="citation" data-cites="simonis_global_2022">(<a href="#ref-simonis_global_2022" role="doc-biblioref">Simonis 2022</a>)</span>.</p>
 </div>
 </div>
+<div id="3d9e2610" class="cell" data-message="false" data-execution_count="2">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> graphviz</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> display</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>g <span class="op">=</span> graphviz.Digraph(<span class="st">'satelliten'</span>, engine<span class="op">=</span><span class="st">'circo'</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Zentrum mit spezieller Farbe</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>g.node(<span class="st">'Zentrum'</span>, <span class="st">'Global Governance'</span>,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>       fontsize<span class="op">=</span><span class="st">'20'</span>,</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>       fontname<span class="op">=</span><span class="st">'Times-Bold'</span>,</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>       shape<span class="op">=</span><span class="st">'circle'</span>,</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>       width<span class="op">=</span><span class="st">'3'</span>,</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>       style<span class="op">=</span><span class="st">'filled'</span>,</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>       fillcolor<span class="op">=</span><span class="st">'#00BFFF'</span>)</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Satelliten-Knoten mit Farbe #00FFFF</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>satellites <span class="op">=</span> [</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'A'</span>, <span class="st">'Regieren ohne Regierung'</span>),</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'B'</span>, <span class="st">'Staatliche Akteure'</span>),</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'C'</span>, <span class="st">'Nichtstaatliche Akteure'</span>),</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'D'</span>, <span class="st">'Grenzüberschreitende/ globale Probleme'</span>),</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'E'</span>, <span class="st">'Völkerrecht'</span>),</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'F'</span>, <span class="st">'informelle Vereinbarungen'</span>)</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> node_id, label <span class="kw">in</span> satellites:</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>    g.node(node_id, label, style<span class="op">=</span><span class="st">'filled'</span>, fillcolor<span class="op">=</span><span class="st">'#00FFFF'</span>, penwidth<span class="op">=</span><span class="st">'1'</span>)</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Verbindungen zum Zentrum</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>g.edges([(node_id, <span class="st">'Zentrum'</span>) <span class="cf">for</span> node_id, _ <span class="kw">in</span> satellites])</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>display(g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Governance_files/figure-html/cell-3-output-1.svg" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="begriff-globalisierung" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="begriff-globalisierung"><span class="header-section-number">7.2</span> Begriff Globalisierung</h2>
+<div class="callout callout-style-default callout-note callout-titled" title="Globalisierung">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Globalisierung
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Globalisierung</strong></p>
+<ul>
+<li><p><strong>Internationalisierung</strong><br>
+(mehr Handel, und zwischenstaatliche Interdependenz)</p></li>
+<li><p><strong>Liberalisierung</strong><br>
+(Auflösung regulativer Hemmnisse)</p></li>
+<li><p><strong>Universalisierung/Westernisierung</strong><br>
+(Angleichung von Werten/ Angleichung <em>auf</em> westliche Werte)</p></li>
+<li><p><strong>Deterritorialisierung</strong><br>
+(räumliche und zeitliche Verdichtung des Globalen) <span class="citation" data-cites="glaab_globalisierung_2024">(<a href="#ref-glaab_globalisierung_2024" role="doc-biblioref">Glaab and Fuchs 2024</a> nach Scholte(2000))</span>.</p></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="dynamiken-im-innen--und-außenverhältnis" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="dynamiken-im-innen--und-außenverhältnis"><span class="header-section-number">7.3</span> Dynamiken im Innen- und Außenverhältnis</h2>
+<div id="98e280b4" class="cell" data-message="false" data-execution_count="3">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> graphviz <span class="im">import</span> Digraph</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> display</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>dot <span class="op">=</span> Digraph()</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>dot.attr(rankdir<span class="op">=</span><span class="st">'LR'</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Gleiche Breite und kein Rand für alle Knoten</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>dot.node_attr.update(width<span class="op">=</span><span class="st">'1.8'</span>, fixedsize<span class="op">=</span><span class="st">'true'</span>, penwidth<span class="op">=</span><span class="st">'0'</span>)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> dot.subgraph(name<span class="op">=</span><span class="st">'cluster_1'</span>) <span class="im">as</span> c1:</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    c1.attr(rank<span class="op">=</span><span class="st">'same'</span>, style<span class="op">=</span><span class="st">"rounded"</span>,</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>            label<span class="op">=</span><span class="st">'Außenverhältnis'</span>,</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>            fontname<span class="op">=</span><span class="st">'Times-Bold'</span>)</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>   </span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    c1.node(<span class="st">'A1'</span>, <span class="st">'Entflechtung'</span>)</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    c1.node(<span class="st">'B1'</span>, <span class="st">'Blockbildung'</span>)</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>   </span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    c1.node(<span class="st">'A'</span>, <span class="st">'Globalisierung'</span>)</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    c1.node(<span class="st">'B'</span>, <span class="st">'Global Governance'</span>)</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>   </span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> dot.subgraph(name<span class="op">=</span><span class="st">'cluster_2'</span>) <span class="im">as</span> c2:</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>    c2.attr(rank<span class="op">=</span><span class="st">'same'</span>, style<span class="op">=</span><span class="st">"rounded"</span>,</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>            label<span class="op">=</span><span class="st">"Innenverhältnis"</span>,</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>            fontname<span class="op">=</span><span class="st">'Times-Bold'</span>)</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>    c2.node(<span class="st">'C1'</span>, <span class="st">'Autokratisierung'</span>)</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>    c2.node(<span class="st">'D1'</span>, <span class="st">'Polarisierung'</span>)</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>    c2.node(<span class="st">'C'</span>, <span class="st">'Demokratisierung'</span>)</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>    c2.node(<span class="st">'D'</span>, <span class="st">'Liberalisierung'</span>)</span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>dot.edge(<span class="st">'A'</span>, <span class="st">'B'</span>, style<span class="op">=</span><span class="st">'invis'</span>)</span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>dot.edge(<span class="st">'A1'</span>, <span class="st">'B1'</span>, style<span class="op">=</span><span class="st">'invis'</span>)</span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>dot.edge(<span class="st">'C'</span>, <span class="st">'D'</span>, style<span class="op">=</span><span class="st">'invis'</span>)</span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>dot.edge(<span class="st">'C1'</span>, <span class="st">'D1'</span>, style<span class="op">=</span><span class="st">'invis'</span>)</span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>dot.edge(<span class="st">'A'</span>, <span class="st">'A1'</span>, constraint<span class="op">=</span><span class="st">'false'</span>)</span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>dot.edge(<span class="st">'B'</span>, <span class="st">'B1'</span>, constraint<span class="op">=</span><span class="st">'false'</span>)</span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>dot.edge(<span class="st">'C'</span>, <span class="st">'C1'</span>, constraint<span class="op">=</span><span class="st">'false'</span>)</span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>dot.edge(<span class="st">'D'</span>, <span class="st">'D1'</span>, constraint<span class="op">=</span><span class="st">'false'</span>)</span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a><span class="co"># print(dot)</span></span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>display(dot)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Governance_files/figure-html/cell-4-output-1.svg" class="img-fluid figure-img"></p>
+<figcaption>Globale Dynamiken in Innen- und Außenverhältnissen</figcaption>
+</figure>
+</div>
+</div>
+</div>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-glaab_globalisierung_2024" class="csl-entry" role="listitem">
+Glaab, Katharina, and Doris Fuchs. 2024. <span>“Globalisierung, Global Governance und internationale Politik.”</span> In <em>Handbuch Internationale Beziehungen</em>, edited by Frank Sauer, Luba von Hauff, and Carlo Masala, 1319–44. Wiesbaden: Springer Fachmedien. <a href="https://doi.org/10.1007/978-3-658-33953-1_42">https://doi.org/10.1007/978-3-658-33953-1_42</a>.
+</div>
 <div id="ref-simonis_global_2022" class="csl-entry" role="listitem">
 Simonis, Georg. 2022. <em>Global Governance: Entstehung – Institutionen – Analyse</em>. Wiesbaden: Springer Fachmedien. <a href="https://doi.org/10.1007/978-3-658-36462-5">https://doi.org/10.1007/978-3-658-36462-5</a>.
 </div>
 </div>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

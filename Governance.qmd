@@ -181,4 +181,3 @@ dot.edge('D', 'D1', constraint='false')
 
 display(dot)
 ```
-

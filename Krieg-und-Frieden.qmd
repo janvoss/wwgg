@@ -1,0 +1,48 @@
+# Das Verhältnis von Staaten zueinander
+
+
+```{r}
+#| message: false
+#| warning: false
+#| eval: true
+
+# library(jsonlite)
+
+# Fetch the data
+df <- read.csv("https://ourworldindata.org/grapher/peaceful-and-hostile-relationships-between-states.csv?v=1&csvType=full&useColumnShortNames=true")
+
+# Fetch the metadata
+# metadata <- fromJSON("https://ourworldindata.org/grapher/peaceful-and-hostile-relationships-between-states.metadata.json?v=1&csvType=full&useColumnShortNames=true")
+
+#head(df)
+
+# https://r-graph-gallery.com/136-stacked-area-chart.html
+
+
+library(tidyverse)
+
+df <- df %>% pivot_longer(-c(Entity, Code, Year), names_to= 'Status')
+
+# head(df)
+
+# unique(df$value)
+
+# unique(df$Entity)
+
+# unique(df$Status)
+
+df$Status <- factor(df$Status, levels=c("severe_rivalry", "lesser_rivalry", "negative_peace", "warm_peace", "security_community"))
+
+df %>% group_by(Entity, Year) %>%
+      # group_by(Year) %>%
+       mutate(share=value/sum(value)) %>%
+   ggplot(aes(Year, share, fill=Status))+
+      geom_area()+
+      scale_fill_manual(values= c("red", "orange", "yellow", "green", "blue"))+
+      theme_light()+
+      facet_wrap(~Entity)
+
+
+```
+
+

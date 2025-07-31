@@ -46,7 +46,7 @@ Eine Institution hat eine stärkere Regelungswirkung, wenn eine (passende) zweit
 
 $$F(x_1, y_1) - F(x_2, y_1) \geq F(x_1, y_2) - F(x_2, y_2)$$
 
-$\Rightarrow$ Institutioneller log-in Effekt möglich.
+$\Rightarrow$ Institutioneller lock-in Effekt möglich.
 
 Beispiele?
 

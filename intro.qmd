@@ -17,15 +17,15 @@ dot = Digraph()
 dot.attr(rankdir='LR')
 
 # Funktion zur Erstellung eines Clusters mit \l für Linksbündigkeit
-def create_cluster(dot, name, label, color, fillcolor, nodes #, max_nodes
+def create_cluster(dot, name, label, nodes #, max_nodes
 ):
     with dot.subgraph(name=name) as c:
         c.attr(label=label,
                fontname="times-bold",
                style='filled,rounded',
-               fillcolor=fillcolor,
-               color=color,
-               penwidth='1.5')
+               fillcolor="white",
+              # color=color,
+               penwidth='0')
 
         # Standardknoten mit \l für Linksbündigkeit
         for node_id, node_label in nodes:
@@ -44,18 +44,18 @@ def create_cluster(dot, name, label, color, fillcolor, nodes #, max_nodes
 
 # Clusterdefinitionen (unverändert)
 clusters = [
-    ('cluster_wirtschaft', 'Wirtschaftlicher Wandel', '#0000ff', '#0000ff33', [
+    ('cluster_wirtschaft', 'Wirtschaftlicher Wandel', [
         ('a1', 'Technologiepfade'),
         ('a2', 'Schumpeterscher Wettbewerb'),
         ('a3', 'Strukturwandel'),
         ('a4', 'Permanente Anpassung')
     ]),
-    ('cluster_institutionen', 'Institutioneller Wandel', '#ff0000', '#ff000033', [
+    ('cluster_institutionen', 'Institutioneller Wandel', [
         ('b1', 'gesteuert vs. evolutionär'),
         ('b2', 'graduell vs. drastisch'),
         ('b3', ' Reformblockaden')
     ]),
-    ('cluster_governance', 'Global Governance', '#00ff00', '#00ff0033', [
+    ('cluster_governance', 'Global Governance', [
         ('c1', 'Internationale Koordination'),
         ('c2', 'Kooperationsgeflecht\nstatt zentraler Steuerung'),
         ('c3', 'Liberale Weltordnung vs. \n regelbasierte Ordnung'),
@@ -67,8 +67,8 @@ clusters = [
 # max_nodes = max(len(cluster[4]) for cluster in clusters)
 
 # Cluster erstellen
-for name, label, color, fillcolor, nodes in clusters:
-    create_cluster(dot, name, label, color, fillcolor, nodes #, max_nodes
+for name, label,  nodes in clusters:
+    create_cluster(dot, name, label,  nodes #, max_nodes
     )
 
 # Vertikale Anordnung für alle Cluster

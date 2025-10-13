@@ -34,7 +34,7 @@ kable(df) #%>%
 
 ### Substitutives Verhältnis 
 
-Der gleiche Zweck kann durch verschiedene (Arten von) Informationen erreicht werden.
+Der gleiche Zweck kann durch verschiedene (Arten von) Institutionen erreicht werden.
 
 Beispiele? 
 

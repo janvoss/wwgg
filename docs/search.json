@@ -82,31 +82,31 @@
   {
     "objectID": "Anwendungsfaelle.html",
     "href": "Anwendungsfaelle.html",
-    "title": "8  Anwendungsfälle",
+    "title": "9  Anwendungsfälle",
     "section": "",
-    "text": "8.1 Klimaschutz",
+    "text": "9.1 Klimaschutz",
     "crumbs": [
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Anwendungsfälle</span>"
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Anwendungsfälle</span>"
     ]
   },
   {
     "objectID": "Anwendungsfaelle.html#migration",
     "href": "Anwendungsfaelle.html#migration",
-    "title": "8  Anwendungsfälle",
-    "section": "8.2 Migration",
-    "text": "8.2 Migration",
+    "title": "9  Anwendungsfälle",
+    "section": "9.2 Migration",
+    "text": "9.2 Migration",
     "crumbs": [
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Anwendungsfälle</span>"
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Anwendungsfälle</span>"
     ]
   },
   {
     "objectID": "Anwendungsfaelle.html#internationale-sicherheit",
     "href": "Anwendungsfaelle.html#internationale-sicherheit",
-    "title": "8  Anwendungsfälle",
-    "section": "8.3 Internationale Sicherheit",
-    "text": "8.3 Internationale Sicherheit",
+    "title": "9  Anwendungsfälle",
+    "section": "9.3 Internationale Sicherheit",
+    "text": "9.3 Internationale Sicherheit",
     "crumbs": [
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Anwendungsfälle</span>"
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Anwendungsfälle</span>"
     ]
   },
   {
@@ -294,7 +294,7 @@
     "href": "Governance.html#dynamiken-im-innen--und-außenverhältnis",
     "title": "7  Global Governance",
     "section": "7.3 Dynamiken im Innen- und Außenverhältnis",
-    "text": "7.3 Dynamiken im Innen- und Außenverhältnis\n\n\nCode\nfrom graphviz import Digraph\nfrom IPython.display import display\n\ndot = Digraph()\ndot.attr(rankdir='LR')\n\n# Gleiche Breite und kein Rand für alle Knoten\ndot.node_attr.update(width='1.8', fixedsize='true', penwidth='0')\n\nwith dot.subgraph(name='cluster_1') as c1:\n    c1.attr(rank='same', style=\"rounded\",\n            label='Außenverhältnis',\n            fontname='Times-Bold')\n   \n    c1.node('A1', 'Entflechtung')\n    c1.node('B1', 'Blockbildung')\n   \n    c1.node('A', 'Globalisierung')\n    c1.node('B', 'Global Governance')\n   \n\nwith dot.subgraph(name='cluster_2') as c2:\n    c2.attr(rank='same', style=\"rounded\",\n            label=\"Innenverhältnis\",\n            fontname='Times-Bold')\n    c2.node('C1', 'Autokratisierung')\n    c2.node('D1', 'Polarisierung')\n    \n    c2.node('C', 'Demokratisierung')\n    c2.node('D', 'Liberalisierung')\n    \n\ndot.edge('A', 'B', style='invis')\ndot.edge('A1', 'B1', style='invis')\ndot.edge('C', 'D', style='invis')\ndot.edge('C1', 'D1', style='invis')\n\ndot.edge('A', 'A1', constraint='false')\ndot.edge('B', 'B1', constraint='false')\n\ndot.edge('C', 'C1', constraint='false')\ndot.edge('D', 'D1', constraint='false')\n\n\n# print(dot)\n\ndisplay(dot)\n\n\n\n\n\nGlobale Dynamiken in Innen- und Außenverhältnissen\n\n\n\n\n\n\n\n\nGlaab, Katharina, and Doris Fuchs. 2024. “Globalisierung, Global Governance und internationale Politik.” In Handbuch Internationale Beziehungen, edited by Frank Sauer, Luba von Hauff, and Carlo Masala, 1319–44. Wiesbaden: Springer Fachmedien. https://doi.org/10.1007/978-3-658-33953-1_42.\n\n\nSimonis, Georg. 2022. Global Governance: Entstehung – Institutionen – Analyse. Wiesbaden: Springer Fachmedien. https://doi.org/10.1007/978-3-658-36462-5.",
+    "text": "7.3 Dynamiken im Innen- und Außenverhältnis\n\n\nCode\nfrom graphviz import Digraph\nfrom IPython.display import display\n\ndot = Digraph()\ndot.attr(rankdir='LR')\n\n# Gleiche Breite und kein Rand für alle Knoten\ndot.node_attr.update(width='1.8', fixedsize='true', penwidth='0')\n\nwith dot.subgraph(name='cluster_1') as c1:\n    c1.attr(rank='same', style=\"rounded\",\n            label='Außenverhältnis',\n            fontname='Times-Bold')\n   \n    c1.node('A1', 'Entflechtung')\n    c1.node('B1', 'Blockbildung')\n   \n    c1.node('A', 'Globalisierung')\n    c1.node('B', 'Global Governance')\n   \n\nwith dot.subgraph(name='cluster_2') as c2:\n    c2.attr(rank='same', style=\"rounded\",\n            label=\"Innenverhältnis\",\n            fontname='Times-Bold')\n    c2.node('C1', 'Autokratisierung')\n    c2.node('D1', 'Polarisierung')\n    \n    c2.node('C', 'Demokratisierung')\n    c2.node('D', 'Liberalisierung')\n    \n\ndot.edge('A', 'B', style='invis')\ndot.edge('A1', 'B1', style='invis')\ndot.edge('C', 'D', style='invis')\ndot.edge('C1', 'D1', style='invis')\n\ndot.edge('A', 'A1', constraint='false')\ndot.edge('B', 'B1', constraint='false')\n\ndot.edge('C', 'C1', constraint='false')\ndot.edge('D', 'D1', constraint='false')\n\n\n# print(dot)\n\ndisplay(dot)\n\n\n\n\n\nGlobale Dynamiken in Innen- und Außenverhältnissen",
     "crumbs": [
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Global Governance</span>"
     ]
@@ -332,11 +332,31 @@
   {
     "objectID": "Anwendungsfaelle.html#nato",
     "href": "Anwendungsfaelle.html#nato",
-    "title": "8  Anwendungsfälle",
-    "section": "8.4 NATO",
-    "text": "8.4 NATO\nDas Folgende basiert auf Koschut (2023)\n\n8.4.1 Inhaltlicher Kern der Nato\n\nBeistandspflicht nach Art. 5\nPolitische Absichtserklärung, keine harte Verbindlichkeit\nErst ein Anwendungsfall (nach den Anschlägen des 11. September 2001)\n\n\n\n8.4.2 Die vier Säulen der NATO\n\nWertegemeinschaft\nHandlungsgemeinschaft\nKommunikationsgemeinschaft\nEmotionale Bindung\n\n\n\n8.4.3 Phasen der Nato-Geschichte\n\nAufbau- und Konsolidierungsphase (kalter Krieg)\nSelbstfindungsphase (nach dem kalten Krieg)\nRückbesinnungsphase (seit 2014)\n\n\n\n8.4.4 Das Freifahrerproblem\n\nTafelaufschrieb\n\n\n\n\n\nKoschut, Simon. 2023. “Die Westliche Sicherheitsgemeinschaft Im Umbruch.” Aus Politik Und Zeitgeschichte 47-48: 10–16.",
+    "title": "9  Anwendungsfälle",
+    "section": "9.4 NATO",
+    "text": "9.4 NATO\nDas Folgende basiert auf Koschut (2023)\n\n9.4.1 Inhaltlicher Kern der Nato\n\nBeistandspflicht nach Art. 5\nPolitische Absichtserklärung, keine harte Verbindlichkeit\nErst ein Anwendungsfall (nach den Anschlägen des 11. September 2001)\n\n\n\n9.4.2 Die vier Säulen der NATO\n\nWertegemeinschaft\nHandlungsgemeinschaft\nKommunikationsgemeinschaft\nEmotionale Bindung\n\n\n\n9.4.3 Phasen der Nato-Geschichte\n\nAufbau- und Konsolidierungsphase (kalter Krieg)\nSelbstfindungsphase (nach dem kalten Krieg)\nRückbesinnungsphase (seit 2014)\n\n\n\n9.4.4 Das Freifahrerproblem\n\nTafelaufschrieb\n\n\n\n\n\nKoschut, Simon. 2023. “Die Westliche Sicherheitsgemeinschaft Im Umbruch.” Aus Politik Und Zeitgeschichte 47-48: 10–16.",
     "crumbs": [
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Anwendungsfälle</span>"
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Anwendungsfälle</span>"
+    ]
+  },
+  {
+    "objectID": "Governance.html#aufstrebende-mächte",
+    "href": "Governance.html#aufstrebende-mächte",
+    "title": "7  Global Governance",
+    "section": "7.4 Aufstrebende Mächte",
+    "text": "7.4 Aufstrebende Mächte\n\n\n\n\nGlaab, Katharina, and Doris Fuchs. 2024. “Globalisierung, Global Governance und internationale Politik.” In Handbuch Internationale Beziehungen, edited by Frank Sauer, Luba von Hauff, and Carlo Masala, 1319–44. Wiesbaden: Springer Fachmedien. https://doi.org/10.1007/978-3-658-33953-1_42.\n\n\nSimonis, Georg. 2022. Global Governance: Entstehung – Institutionen – Analyse. Wiesbaden: Springer Fachmedien. https://doi.org/10.1007/978-3-658-36462-5.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Global Governance</span>"
+    ]
+  },
+  {
+    "objectID": "Dynamiken.html",
+    "href": "Dynamiken.html",
+    "title": "8  Aktuelle Dynamiken im Gefüge der Staaten und der Global Governance",
+    "section": "",
+    "text": "Code\n# library(jsonlite)\n\n# Fetch the data\ndf &lt;- read.csv(\"https://ourworldindata.org/grapher/gdp-worldbank.csv?v=1&csvType=full&useColumnShortNames=true\")\n\n# Fetch the metadata\n# metadata &lt;- fromJSON(\"https://ourworldindata.org/grapher/gdp-worldbank.metadata.json?v=1&csvType=full&useColumnShortNames=true\")\n\n# head(df)\n\n\ng7_countries &lt;- c(\"Canada\", \"France\", \"Germany\", \"Italy\", \"Japan\", \"United Kingdom\", \"United States\")\n\nbrics_countries &lt;- c(\n  \"Brazil\",\n  \"Russia\",\n  \"India\",\n  \"China\",\n  \"South Africa\",\n  \"Egypt\",\n  \"Ethiopia\",\n  \"Iran\",\n  \"United Arab Emirates\",\n  \"Indonesia\"\n)\n\nlibrary(tidyverse)\n\nG7_sum &lt;- df %&gt;% group_by(Year) %&gt;%\n  filter(Entity %in% g7_countries) %&gt;%\n  summarise(ny_gdp_mktp_pp_kd = sum(ny_gdp_mktp_pp_kd)) %&gt;%\n  mutate(Entity= \"G7\")\n\n# head(G7_sum)\n\nBRICS_sum &lt;- df %&gt;% group_by(Year) %&gt;%\n  filter(Entity %in% brics_countries) %&gt;%\n  summarise(ny_gdp_mktp_pp_kd = sum(ny_gdp_mktp_pp_kd)) %&gt;%\n  mutate(Entity= \"BRICS\")\n\n# head(BRICS_sum)\n\ndf &lt;- df %&gt;% select(-Code) %&gt;% rbind(G7_sum, BRICS_sum) %&gt;%\n             group_by(Year) %&gt;%\n             mutate(Share = ny_gdp_mktp_pp_kd/ny_gdp_mktp_pp_kd[Entity== \"World\"])\n\n\n# head(df)\n\ndf %&gt;% filter(Entity %in% c(\"G7\", \"BRICS\")) %&gt;%\n        ggplot(aes(Year, Share, color=Entity))+\n        geom_line()+\n         scale_y_continuous(labels = scales::percent) +\n        theme_light()+\n        theme(legend.position=\"bottom\")+\n\n        labs(title=\"Anteil der Staatengruppen am Welt-BIP\",\n             color= \"Staatengruppe\\nZusammensetzung 2025\",\n             x=\"Jahr\",\n             y=\"Anteil\",\n             caption= \"Abbildung: Jan Voßwinkel,  Daten: Weltbank,  zur Verfügung gestellt von ourworldindata.org\")",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Aktuelle Dynamiken im Gefüge der Staaten und der Global Governance</span>"
     ]
   }
 ]

@@ -1,0 +1,70 @@
+# Aktuelle Dynamiken im Gefüge der Staaten und der Global Governance
+
+```{r}
+#| message: false
+#| warning: false
+
+# library(jsonlite)
+
+# Fetch the data
+df <- read.csv("https://ourworldindata.org/grapher/gdp-worldbank.csv?v=1&csvType=full&useColumnShortNames=true")
+
+# Fetch the metadata
+# metadata <- fromJSON("https://ourworldindata.org/grapher/gdp-worldbank.metadata.json?v=1&csvType=full&useColumnShortNames=true")
+
+# head(df)
+
+
+g7_countries <- c("Canada", "France", "Germany", "Italy", "Japan", "United Kingdom", "United States")
+
+brics_countries <- c(
+  "Brazil",
+  "Russia",
+  "India",
+  "China",
+  "South Africa",
+  "Egypt",
+  "Ethiopia",
+  "Iran",
+  "United Arab Emirates",
+  "Indonesia"
+)
+
+library(tidyverse)
+
+G7_sum <- df %>% group_by(Year) %>%
+  filter(Entity %in% g7_countries) %>%
+  summarise(ny_gdp_mktp_pp_kd = sum(ny_gdp_mktp_pp_kd)) %>%
+  mutate(Entity= "G7")
+
+# head(G7_sum)
+
+BRICS_sum <- df %>% group_by(Year) %>%
+  filter(Entity %in% brics_countries) %>%
+  summarise(ny_gdp_mktp_pp_kd = sum(ny_gdp_mktp_pp_kd)) %>%
+  mutate(Entity= "BRICS")
+
+# head(BRICS_sum)
+
+df <- df %>% select(-Code) %>% rbind(G7_sum, BRICS_sum) %>%
+             group_by(Year) %>%
+             mutate(Share = ny_gdp_mktp_pp_kd/ny_gdp_mktp_pp_kd[Entity== "World"])
+
+
+# head(df)
+
+df %>% filter(Entity %in% c("G7", "BRICS")) %>%
+        ggplot(aes(Year, Share, color=Entity))+
+        geom_line()+
+         scale_y_continuous(labels = scales::percent) +
+        theme_light()+
+        theme(legend.position="bottom")+
+
+        labs(title="Anteil der Staatengruppen am Welt-BIP",
+             color= "Staatengruppe\nZusammensetzung 2025",
+             x="Jahr",
+             y="Anteil",
+             caption= "Abbildung: Jan Voßwinkel,  Daten: Weltbank,  zur Verfügung gestellt von ourworldindata.org")
+
+```
+

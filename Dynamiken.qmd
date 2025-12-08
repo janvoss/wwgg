@@ -1,5 +1,7 @@
 # Aktuelle Dynamiken im Gefüge der Staaten und der Global Governance
 
+## Machtverschiebung
+
 ```{r}
 #| message: false
 #| warning: false
@@ -66,5 +68,45 @@ df %>% filter(Entity %in% c("G7", "BRICS")) %>%
              y="Anteil",
              caption= "Abbildung: Jan Voßwinkel,  Daten: Weltbank,  zur Verfügung gestellt von ourworldindata.org")
 
+df %>% filter(Entity %in% c("European Union (27)", "United States", "China", "Russia" #, "Germany"
+              )) %>%
+        ggplot(aes(Year, Share, color=Entity))+
+        geom_line()+
+         scale_y_continuous(labels = scales::percent) +
+        theme_light()+
+        labs(title="Anteil am Welt-BIP",
+             color= "Staat",
+             x="Jahr",
+             y="Anteil",
+             caption= "Abbildung: Jan Voßwinkel,  Daten: Weltbank,  zur Verfügung gestellt von ourworldindata.org")
+
+df %>% filter(Entity %in% c("Germany", "Russia")) %>%
+        ggplot(aes(Year, Share, color=Entity))+
+        geom_line()+
+         scale_y_continuous(labels = scales::percent) +
+        theme_light()+
+        labs(title="Anteil am Welt-BIP",
+             color= "Staat",
+             x="Jahr",
+             y="Anteil",
+             caption= "Abbildung: Jan Voßwinkel,  Daten: Weltbank,  zur Verfügung gestellt von ourworldindata.org")
+
 ```
 
+
+## Die Suche nach einem neuen System?
+
+Wir lesen [@tooze_towards_2025](https://www.intereconomics.eu/contents/year/2025/number/5/article/towards-the-next-world-order-lessons-from-history.html)
+
+
+```{r qr,  echo=FALSE, warning=FALSE}
+library(qrcode)
+
+qr <- qr_code('https://www.intereconomics.eu/contents/year/2025/number/5/article/towards-the-next-world-order-lessons-from-history.html')
+#plot(qr)
+
+generate_svg(qr, filename = "tooze.svg")
+
+```
+
+![](tooze.svg){width="50%"}  

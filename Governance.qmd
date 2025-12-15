@@ -181,3 +181,81 @@ dot.edge('D', 'D1', constraint='false')
 
 display(dot)
 ```
+
+## Formen der internationalen Koordination
+
+```{python}
+#| message: false
+#| warning: false
+#| fig-cap: Formen der internationalen Koordination nach @patrick_rules_2023
+
+# 4 Modelle nach Stewart Patrick
+
+from graphviz import Digraph
+from IPython.display import display
+
+dot = Digraph()
+
+# Layout des gesamten Graphen
+dot.attr(rankdir='LR')
+
+# Funktion zur Erstellung eines Clusters mit standardisierten Knoten und Auffüllen mit Platzhaltern
+def create_cluster(dot, name, label, color, fillcolor, nodes, max_nodes):
+    with dot.subgraph(name=name) as c:
+        c.attr(label=label,
+               fontname="times-bold",
+               style='filled,rounded',
+               fillcolor=fillcolor,
+               color=color,
+               penwidth='1.5')
+
+        # Standardknoten hinzufügen
+        for node_id, node_label in nodes:
+            c.node(node_id, node_label, width="3.2", height="1", shape='none')  # Einheitliche Breite und Höhe
+
+
+        # Unsichtbare Platzhalterknoten hinzufügen
+        for i in range(len(nodes), max_nodes):
+            c.node(f'{name}_placeholder_{i}', '', style='invis', width="3.2", height="1")
+
+
+# Clusterdefinitionen
+clusters = [
+    ('cluster_charta', 'Charter-Modell', '#0000ff', '#0000ff90', [
+        ('a1', 'Zusammenarbeit innerhalb der VN'),
+        ('a2', 'Gleichrangigkeit der Staaten'),
+        ('a3', 'Legitimität')
+    ]),
+    ('cluster_club', 'Club-Modell', '#0000ff', '#0000ff70', [
+        ('b1', 'Zusammenarbeit Gleichgesinnter'),
+        ('b2', 'NATO, OECD, BRICS'),
+        ('b3', 'Solidarität')
+    ]),
+    ('cluster_konzert', 'Konzert-Modell', '#0000ff', '#0000ff50', [
+        ('c1', 'Großmächte sprechen sich ab'),
+        ('c2', 'Koexistenz unterschiedlicher\n Regierungstypen\n'),
+        ('c3', 'Fähigkeit')
+    ]),
+    ('cluster_koalitionen', 'Koalitionen-Modell', '#0000ff', '#0000ff30', [
+        ('d1', 'Ad hoc Zusammenarbeit'),
+        ('d2', 'Sutuationsbedingte Kooperation'),
+        ('d3', 'Flexibilität')
+    ])
+]
+
+# Maximale Anzahl von Knoten in einem Cluster berechnen
+max_nodes = max(len(cluster[4]) for cluster in clusters)
+
+# Cluster erstellen
+for name, label, color, fillcolor, nodes in clusters:
+    create_cluster(dot, name, label, color, fillcolor, nodes, max_nodes)
+
+# Unsichtbare Kanten für vertikale Anordnung zwischen den Clustern
+dot.edge('a1', 'b1', style='invis')
+dot.edge('b1', 'c1', style='invis')
+dot.edge('c1', 'd1', style='invis')
+
+# Ausgabe
+display(dot)
+```
+

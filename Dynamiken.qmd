@@ -126,3 +126,80 @@ generate_svg(qr, filename = "tooze.svg")
 ## Die Nationale Sicherheitsstrategie der USA 2025
 
 [Die Nationale Sicherheitsstrategie der USA](https://www.whitehouse.gov/wp-content/uploads/2025/12/2025-National-Security-Strategy.pdf)
+
+### Ziele in den USA
+
+- Souveränität
+
+- Krisensichere Infrastruktur
+
+- Sicherheit der Grenzen
+
+- Kontrolle der Migration
+
+- Militärische Stärke
+
+- Ökonomische/industrielle Stärke
+
+- Innovationsstärke
+
+- Energieunabhängigkeit
+
+- Soft-Power
+
+- "Kulutrelle Gesundheit"
+
+### Ziele in der Welt
+
+- Stabilität in der westlichen Hemissphäre ("Trump Corollary to
+the Monroe Doctrine")
+
+- Freier Zugang  zum Indo-Pazifik
+
+- Europa bei der Sicherung Europas helfen
+
+- Einflusssicherung im Nahen Osten (ohne "ewige Kriege")
+
+- US-Technoligie und US-Standards sollen weltweit Bedeutung haben
+
+
+### Kernpunkte der Stratiegie
+
+- Enge Definition des nationalen Interesses
+
+- Frieden durch Stärke
+
+- Bevorzugung der Nichteinmischung
+
+- Flexibler Realismus  
+  "We seek good relations
+and peaceful commercial relations with the nations of the world without
+imposing on them democratic or other social change that differs widely from
+their traditions and histories."
+
+- Primat der Nationen
+
+- Souveränität und Respekt
+
+- Gleichgewicht der Kräfte
+
+  "The United States cannot allow any nation to become
+so dominant that it could threaten our interests."
+
+- Pro Worker statt pro Growth
+
+- Faire Behandlung der USA
+
+- Kompetenz und Leistungsprinzip
+
+### Prioritäten 
+
+- Ende der Massenmigration
+
+- Schutz der Kernfreiheiten
+
+- Latenteilung und Lastenumverteilung
+
+- Neuausrichtung durch Frieden
+
+- Ökonomische Sicherheit

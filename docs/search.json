@@ -364,7 +364,7 @@
     "href": "Dynamiken.html#die-suche-nach-einem-neuen-system",
     "title": "8  Aktuelle Dynamiken im Gefüge der Staaten und der Global Governance",
     "section": "8.2 Die Suche nach einem neuen System?",
-    "text": "8.2 Die Suche nach einem neuen System?\nWir lesen Tooze (2025)\n\n\n\n\n\nTooze, Adam. 2025. “Towards the Next World Order – Lessons from History.” Intereconomics 60 (5): 257–60. https://doi.org/10.2478/ie-2025-0050.",
+    "text": "8.2 Die Suche nach einem neuen System?\nWir lesen Tooze (2025)",
     "crumbs": [
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Aktuelle Dynamiken im Gefüge der Staaten und der Global Governance</span>"
     ]
@@ -377,6 +377,26 @@
     "text": "7.4 Formen der internationalen Koordination\n\n\nCode\n# 4 Modelle nach Stewart Patrick\n\nfrom graphviz import Digraph\nfrom IPython.display import display\n\ndot = Digraph()\n\n# Layout des gesamten Graphen\ndot.attr(rankdir='LR')\n\n# Funktion zur Erstellung eines Clusters mit standardisierten Knoten und Auffüllen mit Platzhaltern\ndef create_cluster(dot, name, label, color, fillcolor, nodes, max_nodes):\n    with dot.subgraph(name=name) as c:\n        c.attr(label=label,\n               fontname=\"times-bold\",\n               style='filled,rounded',\n               fillcolor=fillcolor,\n               color=color,\n               penwidth='1.5')\n\n        # Standardknoten hinzufügen\n        for node_id, node_label in nodes:\n            c.node(node_id, node_label, width=\"3.2\", height=\"1\", shape='none')  # Einheitliche Breite und Höhe\n\n\n        # Unsichtbare Platzhalterknoten hinzufügen\n        for i in range(len(nodes), max_nodes):\n            c.node(f'{name}_placeholder_{i}', '', style='invis', width=\"3.2\", height=\"1\")\n\n\n# Clusterdefinitionen\nclusters = [\n    ('cluster_charta', 'Charter-Modell', '#0000ff', '#0000ff90', [\n        ('a1', 'Zusammenarbeit innerhalb der VN'),\n        ('a2', 'Gleichrangigkeit der Staaten'),\n        ('a3', 'Legitimität')\n    ]),\n    ('cluster_club', 'Club-Modell', '#0000ff', '#0000ff70', [\n        ('b1', 'Zusammenarbeit Gleichgesinnter'),\n        ('b2', 'NATO, OECD, BRICS'),\n        ('b3', 'Solidarität')\n    ]),\n    ('cluster_konzert', 'Konzert-Modell', '#0000ff', '#0000ff50', [\n        ('c1', 'Großmächte sprechen sich ab'),\n        ('c2', 'Koexistenz unterschiedlicher\\n Regierungstypen\\n'),\n        ('c3', 'Fähigkeit')\n    ]),\n    ('cluster_koalitionen', 'Koalitionen-Modell', '#0000ff', '#0000ff30', [\n        ('d1', 'Ad hoc Zusammenarbeit'),\n        ('d2', 'Sutuationsbedingte Kooperation'),\n        ('d3', 'Flexibilität')\n    ])\n]\n\n# Maximale Anzahl von Knoten in einem Cluster berechnen\nmax_nodes = max(len(cluster[4]) for cluster in clusters)\n\n# Cluster erstellen\nfor name, label, color, fillcolor, nodes in clusters:\n    create_cluster(dot, name, label, color, fillcolor, nodes, max_nodes)\n\n# Unsichtbare Kanten für vertikale Anordnung zwischen den Clustern\ndot.edge('a1', 'b1', style='invis')\ndot.edge('b1', 'c1', style='invis')\ndot.edge('c1', 'd1', style='invis')\n\n# Ausgabe\ndisplay(dot)\n\n\n\n\n\nFormen der internationalen Koordination nach Patrick (2023)\n\n\n\n\n\n\n\n\nGlaab, Katharina, and Doris Fuchs. 2024. “Globalisierung, Global Governance und internationale Politik.” In Handbuch Internationale Beziehungen, edited by Frank Sauer, Luba von Hauff, and Carlo Masala, 1319–44. Wiesbaden: Springer Fachmedien. https://doi.org/10.1007/978-3-658-33953-1_42.\n\n\nPatrick, Steward. 2023. “Rules of Order: Assessing the State of Global Governance.” 2023. https://carnegieendowment.org/research/2023/09/rules-of-order-assessing-the-state-of-global-governance?lang=en.\n\n\nSimonis, Georg. 2022. Global Governance: Entstehung – Institutionen – Analyse. Wiesbaden: Springer Fachmedien. https://doi.org/10.1007/978-3-658-36462-5.",
     "crumbs": [
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Global Governance</span>"
+    ]
+  },
+  {
+    "objectID": "Dynamiken.html#tendenzen-in-der-globalen-politik-nach-patrick_rules_2023",
+    "href": "Dynamiken.html#tendenzen-in-der-globalen-politik-nach-patrick_rules_2023",
+    "title": "8  Aktuelle Dynamiken im Gefüge der Staaten und der Global Governance",
+    "section": "8.3 Tendenzen in der globalen Politik nach Patrick (2023)",
+    "text": "8.3 Tendenzen in der globalen Politik nach Patrick (2023)\n\nRückzug von der Globalisierung\nNord-Süd-Spaltung\nDemokratischer Rückschritt\nWiederaufleben des Nationalismus",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Aktuelle Dynamiken im Gefüge der Staaten und der Global Governance</span>"
+    ]
+  },
+  {
+    "objectID": "Dynamiken.html#die-nationale-sicherheitsstrategie-der-usa-2025",
+    "href": "Dynamiken.html#die-nationale-sicherheitsstrategie-der-usa-2025",
+    "title": "8  Aktuelle Dynamiken im Gefüge der Staaten und der Global Governance",
+    "section": "8.4 Die Nationale Sicherheitsstrategie der USA 2025",
+    "text": "8.4 Die Nationale Sicherheitsstrategie der USA 2025\nDie Nationale Sicherheitsstrategie der USA\n\n\n\n\nPatrick, Steward. 2023. “Rules of Order: Assessing the State of Global Governance.” 2023. https://carnegieendowment.org/research/2023/09/rules-of-order-assessing-the-state-of-global-governance?lang=en.\n\n\nTooze, Adam. 2025. “Towards the Next World Order – Lessons from History.” Intereconomics 60 (5): 257–60. https://doi.org/10.2478/ie-2025-0050.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Aktuelle Dynamiken im Gefüge der Staaten und der Global Governance</span>"
     ]
   }
 ]

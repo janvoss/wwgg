@@ -96,13 +96,13 @@ df %>% filter(Entity %in% c("Germany", "Russia")) %>%
 
 ## Die Suche nach einem neuen System?
 
-Wir lesen [@tooze_towards_2025](https://www.intereconomics.eu/contents/year/2025/number/5/article/towards-the-next-world-order-lessons-from-history.html)
-
+Wir lesen [@tooze_towards_2025](https://www.intereconomics.eu/contents/year/2025/number/5/article/towards-the-next-world-order-lessons-from-history.html) 
 
 ```{r qr,  echo=FALSE, warning=FALSE}
 library(qrcode)
 
 qr <- qr_code('https://www.intereconomics.eu/contents/year/2025/number/5/article/towards-the-next-world-order-lessons-from-history.html')
+
 #plot(qr)
 
 generate_svg(qr, filename = "tooze.svg")
@@ -110,3 +110,19 @@ generate_svg(qr, filename = "tooze.svg")
 ```
 
 ![](tooze.svg){width="50%"}  
+
+
+
+## Tendenzen in der globalen Politik nach @patrick_rules_2023
+
+- **Rückzug von der Globalisierung**
+
+- **Nord-Süd-Spaltung**
+
+- **Demokratischer Rückschritt**
+
+- **Wiederaufleben des Nationalismus**
+
+## Die Nationale Sicherheitsstrategie der USA 2025
+
+[Die Nationale Sicherheitsstrategie der USA](https://www.whitehouse.gov/wp-content/uploads/2025/12/2025-National-Security-Strategy.pdf)

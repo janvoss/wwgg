@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 /* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
@@ -217,10 +252,11 @@ div.csl-indent {
   <li><a href="#internationale-sicherheit" id="toc-internationale-sicherheit" class="nav-link" data-scroll-target="#internationale-sicherheit"><span class="header-section-number">9.3</span> Internationale Sicherheit</a></li>
   <li><a href="#nato" id="toc-nato" class="nav-link" data-scroll-target="#nato"><span class="header-section-number">9.4</span> NATO</a>
   <ul class="collapse">
-  <li><a href="#inhaltlicher-kern-der-nato" id="toc-inhaltlicher-kern-der-nato" class="nav-link" data-scroll-target="#inhaltlicher-kern-der-nato"><span class="header-section-number">9.4.1</span> Inhaltlicher Kern der Nato</a></li>
-  <li><a href="#die-vier-säulen-der-nato" id="toc-die-vier-säulen-der-nato" class="nav-link" data-scroll-target="#die-vier-säulen-der-nato"><span class="header-section-number">9.4.2</span> Die vier Säulen der NATO</a></li>
-  <li><a href="#phasen-der-nato-geschichte" id="toc-phasen-der-nato-geschichte" class="nav-link" data-scroll-target="#phasen-der-nato-geschichte"><span class="header-section-number">9.4.3</span> Phasen der Nato-Geschichte</a></li>
-  <li><a href="#das-freifahrerproblem" id="toc-das-freifahrerproblem" class="nav-link" data-scroll-target="#das-freifahrerproblem"><span class="header-section-number">9.4.4</span> Das Freifahrerproblem</a></li>
+  <li><a href="#die-nato-staaten" id="toc-die-nato-staaten" class="nav-link" data-scroll-target="#die-nato-staaten"><span class="header-section-number">9.4.1</span> Die NATO-Staaten</a></li>
+  <li><a href="#inhaltlicher-kern-der-nato" id="toc-inhaltlicher-kern-der-nato" class="nav-link" data-scroll-target="#inhaltlicher-kern-der-nato"><span class="header-section-number">9.4.2</span> Inhaltlicher Kern der Nato</a></li>
+  <li><a href="#die-vier-säulen-der-nato" id="toc-die-vier-säulen-der-nato" class="nav-link" data-scroll-target="#die-vier-säulen-der-nato"><span class="header-section-number">9.4.3</span> Die vier Säulen der NATO</a></li>
+  <li><a href="#phasen-der-nato-geschichte" id="toc-phasen-der-nato-geschichte" class="nav-link" data-scroll-target="#phasen-der-nato-geschichte"><span class="header-section-number">9.4.4</span> Phasen der Nato-Geschichte</a></li>
+  <li><a href="#das-freifahrerproblem" id="toc-das-freifahrerproblem" class="nav-link" data-scroll-target="#das-freifahrerproblem"><span class="header-section-number">9.4.5</span> Das Freifahrerproblem</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -259,16 +295,119 @@ div.csl-indent {
 <section id="nato" class="level2" data-number="9.4">
 <h2 data-number="9.4" class="anchored" data-anchor-id="nato"><span class="header-section-number">9.4</span> NATO</h2>
 <p>Das Folgende basiert auf <span class="citation" data-cites="koschut_westliche_2023">Koschut (<a href="#ref-koschut_westliche_2023" role="doc-biblioref">2023</a>)</span></p>
-<section id="inhaltlicher-kern-der-nato" class="level3" data-number="9.4.1">
-<h3 data-number="9.4.1" class="anchored" data-anchor-id="inhaltlicher-kern-der-nato"><span class="header-section-number">9.4.1</span> Inhaltlicher Kern der Nato</h3>
+<section id="die-nato-staaten" class="level3" data-number="9.4.1">
+<h3 data-number="9.4.1" class="anchored" data-anchor-id="die-nato-staaten"><span class="header-section-number">9.4.1</span> Die NATO-Staaten</h3>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Notwendige Pakete laden</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra) <span class="co"># Optional für noch schönere Formatierung</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Erstellen des Dataframes</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>nato_tabelle_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">Jahr =</span> <span class="fu">c</span>(</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"1949 (Gründer)"</span>, <span class="st">"1952"</span>, <span class="st">"1955"</span>, <span class="st">"1982"</span>, <span class="st">"1999"</span>, </span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"2004"</span>, <span class="st">"2009"</span>, <span class="st">"2017"</span>, <span class="st">"2020"</span>, <span class="st">"2023"</span>, <span class="st">"2024"</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">Staaten =</span> <span class="fu">c</span>(</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Belgien, Dänemark, Frankreich, Island, Italien, Kanada, Luxemburg, Niederlande, Norwegen, Portugal, Ver. Königreich, USA"</span>,</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Griechenland, Türkei"</span>,</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Deutschland (damals Westdeutschland)"</span>,</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Spanien"</span>,</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Polen, Tschechien, Ungarn"</span>,</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Bulgarien, Estland, Lettland, Litauen, Rumänien, Slowakei, Slowenien"</span>,</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Albanien, Kroatien"</span>,</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Montenegro"</span>,</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Nordmazedonien"</span>,</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Finnland"</span>,</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Schweden"</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Ausgabe mit knitr::kable</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="co"># 'format = "simple"' reicht oft aus, 'pipe' sieht in RMarkdown am besten aus.</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>  nato_tabelle_df, </span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">"Chronologische Übersicht der NATO-Beitritte"</span>,</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>  <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Beitrittsjahr"</span>, <span class="st">"Mitgliedstaaten"</span>),</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>  <span class="at">align =</span> <span class="st">"ll"</span> <span class="co"># Linksbündig für beide Spalten</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Chronologische Übersicht der NATO-Beitritte</caption>
+<colgroup>
+<col style="width: 11%">
+<col style="width: 88%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Beitrittsjahr</th>
+<th style="text-align: left;">Mitgliedstaaten</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1949 (Gründer)</td>
+<td style="text-align: left;">Belgien, Dänemark, Frankreich, Island, Italien, Kanada, Luxemburg, Niederlande, Norwegen, Portugal, Ver. Königreich, USA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1952</td>
+<td style="text-align: left;">Griechenland, Türkei</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1955</td>
+<td style="text-align: left;">Deutschland (damals Westdeutschland)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1982</td>
+<td style="text-align: left;">Spanien</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1999</td>
+<td style="text-align: left;">Polen, Tschechien, Ungarn</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2004</td>
+<td style="text-align: left;">Bulgarien, Estland, Lettland, Litauen, Rumänien, Slowakei, Slowenien</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2009</td>
+<td style="text-align: left;">Albanien, Kroatien</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2017</td>
+<td style="text-align: left;">Montenegro</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2020</td>
+<td style="text-align: left;">Nordmazedonien</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2023</td>
+<td style="text-align: left;">Finnland</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2024</td>
+<td style="text-align: left;">Schweden</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="inhaltlicher-kern-der-nato" class="level3" data-number="9.4.2">
+<h3 data-number="9.4.2" class="anchored" data-anchor-id="inhaltlicher-kern-der-nato"><span class="header-section-number">9.4.2</span> Inhaltlicher Kern der Nato</h3>
 <ul>
 <li><p>Beistandspflicht nach Art. 5</p></li>
 <li><p>Politische Absichtserklärung, keine harte Verbindlichkeit</p></li>
 <li><p>Erst ein Anwendungsfall (nach den Anschlägen des 11. September 2001)</p></li>
 </ul>
 </section>
-<section id="die-vier-säulen-der-nato" class="level3" data-number="9.4.2">
-<h3 data-number="9.4.2" class="anchored" data-anchor-id="die-vier-säulen-der-nato"><span class="header-section-number">9.4.2</span> Die vier Säulen der NATO</h3>
+<section id="die-vier-säulen-der-nato" class="level3" data-number="9.4.3">
+<h3 data-number="9.4.3" class="anchored" data-anchor-id="die-vier-säulen-der-nato"><span class="header-section-number">9.4.3</span> Die vier Säulen der NATO</h3>
 <ul>
 <li><p>Wertegemeinschaft</p></li>
 <li><p>Handlungsgemeinschaft</p></li>
@@ -276,16 +415,16 @@ div.csl-indent {
 <li><p>Emotionale Bindung</p></li>
 </ul>
 </section>
-<section id="phasen-der-nato-geschichte" class="level3" data-number="9.4.3">
-<h3 data-number="9.4.3" class="anchored" data-anchor-id="phasen-der-nato-geschichte"><span class="header-section-number">9.4.3</span> Phasen der Nato-Geschichte</h3>
+<section id="phasen-der-nato-geschichte" class="level3" data-number="9.4.4">
+<h3 data-number="9.4.4" class="anchored" data-anchor-id="phasen-der-nato-geschichte"><span class="header-section-number">9.4.4</span> Phasen der Nato-Geschichte</h3>
 <ul>
 <li><p><strong>Aufbau- und Konsolidierungsphase</strong> (kalter Krieg)</p></li>
 <li><p><strong>Selbstfindungsphase</strong> (nach dem kalten Krieg)</p></li>
 <li><p><strong>Rückbesinnungsphase</strong> (seit 2014)</p></li>
 </ul>
 </section>
-<section id="das-freifahrerproblem" class="level3" data-number="9.4.4">
-<h3 data-number="9.4.4" class="anchored" data-anchor-id="das-freifahrerproblem"><span class="header-section-number">9.4.4</span> Das Freifahrerproblem</h3>
+<section id="das-freifahrerproblem" class="level3" data-number="9.4.5">
+<h3 data-number="9.4.5" class="anchored" data-anchor-id="das-freifahrerproblem"><span class="header-section-number">9.4.5</span> Das Freifahrerproblem</h3>
 <ol start="19" type="a">
 <li>Tafelaufschrieb</li>
 </ol>

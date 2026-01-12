@@ -10,6 +10,104 @@
 
 Das Folgende basiert auf @koschut_westliche_2023
 
+### Die NATO-Staaten
+
+```{r}
+#| message: false
+#| warning: false
+
+
+# Notwendige Pakete laden
+library(knitr)
+library(kableExtra) # Optional für noch schönere Formatierung
+library(dplyr)
+
+# 1. Erstellen des Dataframes
+nato_tabelle_df <- data.frame(
+  Jahr = c(
+    "1949 (Gründer)", "1952", "1955", "1982", "1999", 
+    "2004", "2009", "2017", "2020", "2023", "2024"
+  ),
+  Staaten = c(
+    "Belgien, Dänemark, Frankreich, Island, Italien, Kanada, Luxemburg, Niederlande, Norwegen, Portugal, Ver. Königreich, USA",
+    "Griechenland, Türkei",
+    "Deutschland (damals Westdeutschland)",
+    "Spanien",
+    "Polen, Tschechien, Ungarn",
+    "Bulgarien, Estland, Lettland, Litauen, Rumänien, Slowakei, Slowenien",
+    "Albanien, Kroatien",
+    "Montenegro",
+    "Nordmazedonien",
+    "Finnland",
+    "Schweden"
+  )
+)
+
+# 2. Ausgabe mit knitr::kable
+# 'format = "simple"' reicht oft aus, 'pipe' sieht in RMarkdown am besten aus.
+knitr::kable(
+  nato_tabelle_df, 
+  caption = "Chronologische Übersicht der NATO-Beitritte",
+  col.names = c("Beitrittsjahr", "Mitgliedstaaten"),
+  align = "ll" # Linksbündig für beide Spalten
+)
+```
+
+
+
+```{r}
+#| message: false
+#| warning: false
+#| fig-cap: "Die NATO-Staaten"
+#| include: false
+#| eval: false
+
+library(tidyverse)
+library(rnaturalearth)
+library(sf)
+
+# 1. Geodaten laden und reparieren
+world <- ne_countries(scale = "medium", returnclass = "sf") %>% 
+  st_make_valid() # Repariert Geometrie-Fehler
+
+# 2. NATO-Daten
+nato_accession <- data.frame(
+  name = c(
+    "Belgium", "Denmark", "France", "Iceland", "Italy", "Canada", 
+    "Luxembourg", "Netherlands", "Norway", "Portugal", "United Kingdom", "United States",
+    "Greece", "Turkey", "Germany", "Spain", "Poland", "Czech Rep.", "Hungary",
+    "Bulgaria", "Estonia", "Latvia", "Lithuania", "Romania", "Slovakia", "Slovenia",
+    "Albania", "Croatia", "Montenegro", "N. Macedonia", "Finland", "Sweden"
+  ),
+  beitritt = c(
+    rep("1949", 12), rep("1952", 2), "1955", "1982", rep("1999", 3),
+    rep("2004", 7), rep("2009", 2), "2017", "2020", "2023", "2024"
+  )
+)
+
+# 3. Join
+# Wir behalten alle Länder für den Hintergrund, fügen aber die NATO-Infos hinzu
+nato_map <- world %>%
+  left_join(nato_accession, by = "name")
+
+# 4. Plotten mit sicherem Ausschnitt
+ggplot(data = nato_map) +
+  # Hintergrund: Alle Länder grau
+  geom_sf(fill = "grey90", color = "white", size = 0.1) +
+  # Vordergrund: Nur NATO-Staaten farbig (wo beitritt nicht NA ist)
+  geom_sf(data = nato_map %>% filter(!is.na(beitritt)), 
+          aes(fill = beitritt), color = "white", size = 0.1) +
+  # Koordinaten-Begrenzung ohne st_crop (stabiler)
+  coord_sf(xlim = c(-130, 50), ylim = c(20, 80)) +
+  scale_fill_viridis_d(option = "viridis", name = "Beitrittsjahr") +
+  theme_minimal() +
+  labs(title = "NATO-Mitglieder nach Beitrittsdatum") +
+  theme(panel.grid = element_blank(), axis.text = element_blank())
+
+```
+
+
+
 ### Inhaltlicher Kern der Nato
 
 - Beistandspflicht nach Art. 5

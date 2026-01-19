@@ -4,6 +4,118 @@
 
 ## Migration
 
+### Die Migrationslage
+
+### Internationale Lage der Fluchtmigration (2026)
+
+* **Rekordzahlen der Vertreibung:** Weltweit sind über **117 bis 123 Millionen Menschen** auf der Flucht.
+    * Trotz vereinzelter Rückgänge bleibt das Gesamtniveau auf einem historischen Höchststand seit dem Zweiten Weltkrieg.
+    * Etwa jeder 65. Mensch auf der Erde ist gewaltsam vertrieben.
+
+* **Dominanz der Binnenvertreibung (IDPs):**
+    * Die Mehrheit der Betroffenen (ca. **68 Millionen**) flieht nicht über Staatsgrenzen, sondern bleibt als Binnenvertriebene im eigenen Land.
+
+* **Zentrale Krisenherde:**
+    * **Sudan:** Aktuell die größte Vertreibungskrise weltweit (über 14 Mio. Menschen auf der Flucht).
+    * **Syrien & Ukraine:** Langwierige Konflikte mit weiterhin Millionen Vertriebenen, wobei Syrien durch politische Umbrüche Ende 2024 verstärkte Rückkehrbewegungen verzeichnet.
+    * **Gazastreifen:** Nahezu die gesamte Bevölkerung (ca. 2 Mio. Menschen) ist intern vertrieben.
+    * **Weitere Brennpunkte:** DR Kongo, Myanmar, Afghanistan und Haiti.
+
+* **Regionale Verteilung & Lastenteilung:**
+    * **71 % der Flüchtlinge** leben in Ländern mit niedrigem oder mittlerem Einkommen, meist in direkter Nachbarschaft zu den Krisenregionen.
+    * Haupaufnahmeländer sind weiterhin der Iran, die Türkei, Kolumbien und Deutschland.
+
+* **Finanzierungs- und Verantwortungskrise:**
+    * Das UNHCR und andere Hilfswerke leiden unter massiven Mittelkürzungen durch wichtige Geberstaaten (z. B. USA).
+    * Kürzungen von bis zu 30 % bei Personalkosten und operativen Hilfen gefährden die Grundversorgung in Lagern.
+
+* **Neue Fluchtursachen:**
+    * Der **Klimawandel** wirkt zunehmend als Multiplikator für Konflikte und zwingt Millionen zur Abwanderung, ohne dass bisher ein klarer völkerrechtlicher Schutzstatus für „Klimaflüchtlinge“ existiert.
+
+* **Politische Trends:**
+    * **Externalisierung:** Industriestaaten (insb. die EU) setzen verstärkt auf Grenzverfahren an den Außengrenzen und Abkommen mit Drittstaaten, um irreguläre Migration zu reduzieren.
+    * **Instrumentalisierung:** Migration wird zunehmend als Mittel geopolitischen Drucks durch Transitstaaten eingesetzt.
+
+### Völkerrechtliche Regelungen zur Fluchtmigration
+
+* **Genfer Flüchtlingskonvention (GFK) von 1951 & Protokoll von 1967:**
+    * **Kernstück:** Das wichtigste internationale Dokument zum Flüchtlingsrecht.
+    * **Flüchtlingsdefinition:** Schutz für Personen mit begründeter Furcht vor Verfolgung wegen Rasse, Religion, Nationalität, Zugehörigkeit zu einer sozialen Gruppe oder politischer Überzeugung.
+    * **Non-Refoulement-Prinzip (Art. 33):** Das absolute Verbot, Flüchtlinge in Gebiete zurückzuweisen, in denen ihnen schwere Menschenrechtsverletzungen drohen.
+
+* **Regionale Abkommen (Erweiterte Definitionen):**
+    * **OAU-Flüchtlingskonvention (Afrika, 1969):** Erweitert den Flüchtlingsbegriff auf Personen, die wegen Kriegen oder Störungen der öffentlichen Ordnung fliehen.
+    * **Cartagena-Erklärung (Lateinamerika, 1984):** Schließt auch Opfer von generalisierter Gewalt und massiven Menschenrechtsverletzungen ein.
+
+* **Europäisches Recht (EU-Ebene):**
+    * **EU-Grundrechtecharta (Art. 18):** Garantiert das Recht auf Asyl.
+    * **GEAS-Reform (2024/2026):** Das Gemeinsame Europäische Asylsystem harmonisiert die Anwendung der GFK in Europa. Es führt ab 2026 verbindliche Grenzverfahren und einen neuen Solidaritätsmechanismus ein.
+    * **Dublin-Verordnung:** Regelt die Zuständigkeit der EU-Mitgliedstaaten für Asylverfahren (ab 2026 ergänzt durch die Verordnung über Asyl- und Migrationsmanagement).
+
+* **Menschenrechtliche Garantien (Ergänzender Schutz):**
+    * **Europäische Menschenrechtskonvention (EMRK):** Insbesondere Art. 3 (Verbot von Folter) verhindert Abschiebungen in Staaten, in denen unmenschliche Behandlung droht, selbst wenn die GFK-Kriterien nicht erfüllt sind.
+    * **UN-Antifolterkonvention:** Enthält ebenfalls ein striktes Rückführungsverbot bei drohender Folter.
+
+* **Soft Law & Globale Rahmenwerke:**
+    * **Globaler Pakt für Flüchtlinge (GCR, 2018):** Ein rechtlich nicht bindender Rahmen zur besseren Lastenteilung und Unterstützung von Aufnahmeländern.
+    * **UN-Leitlinien für Binnenvertriebene:** Bieten Schutzstandards für Menschen, die innerhalb ihrer Staatsgrenzen fliehen (IDPs), da die GFK formal nur beim Überschreiten internationaler Grenzen greift.
+
+### EU-Regelungen zum Umgang mit Geflüchteten
+
+Das Rechtssystem basiert auf dem reformierten **Gemeinsamen Europäischen Asylsystem (GEAS)** und dem **EU-Asyl- und Migrationspakt**, dessen Kernregelungen im Juni und Juli 2026 vollumfänglich wirksam werden.
+
+**Verpflichtende Grenzverfahren**
+
+* **Ziel:** Schnelle Entscheidung über Asylanträge von Personen mit geringer Bleibeperspektive.
+* **Anwendung:** Personen aus Ländern mit einer Anerkennungsquote von unter **20 %** müssen das Verfahren direkt in Grenzzentren durchlaufen.
+* **Fiktion der Nicht-Einreise:** Während des maximal **12-wöchigen Verfahrens** gelten die Betroffenen rechtlich als nicht eingereist, was Abschiebungen vereinfacht.
+
+**Der neue Solidaritätsmechanismus**
+
+* **Abkehr von "Dublin-Zwang":** Erstaufnahmeländer werden durch einen verpflichtenden Mechanismus unterstützt.
+* **Wahlmöglichkeiten:** Mitgliedstaaten müssen entweder eine festgelegte Quote an Geflüchteten aufnehmen (**Relocation**) oder pro nicht aufgenommener Person eine Ausgleichszahlung (ca. **20.000 €**) in einen EU-Fonds leisten.
+* **Operative Hilfe:** Alternativ können Sachleistungen oder Personal für den Grenzschutz bereitgestellt werden.
+
+
+
+**Konzept der sicheren Drittstaaten** 
+
+* **Flexibilisierung:** Die Anforderungen für die Einstufung eines Drittstaates als "sicher" wurden gesenkt.
+* **Externalisierung:** Es wird verstärkt geprüft, ob Asylsuchende in Transitländer zurückgebracht werden können, zu denen sie eine "Verbindung" haben.
+
+**Krisenverordnung**
+
+* **Sonderregeln:** Bei massiven Fluchtbewegungen oder der instrumentellen Nutzung von Migration durch Drittstaaten (z.B. an der Ostgrenze) dürfen Staaten Schutzstandards temporär senken und Grenzverfahren ausweiten.
+
+**Zeitplan der Umsetzung** 
+
+* **12. Juni 2026:** Inkrafttreten der Asylverfahrensverordnung (APV) und der Anerkennungsverordnung.
+* **01. Juli 2026:** Inkrafttreten der Verordnung über Asyl- und Migrationsmanagement (VAMM), die das alte Dublin-System formal ersetzt.
+
+### Deutsche Regeln zum Umgang mit Fluchtmigration
+
+Deutschland kombiniert verfassungsrechtliche Garantien mit einem komplexen System aus Bundesgesetzen, die durch die EU-Asylreform 2026 massiv beeinflusst werden.
+
+**Der Asylanspruch nach dem Grundgesetz (Art. 16a GG)**
+
+* **Das Grundrecht:** „Politisch Verfolgte genießen Asylrecht.“ Dies ist eines der wenigen Grundrechte, die nur Ausländern zustehen.
+
+* **Einschränkung durch Drittstaatenregelung:** Wer aus einem sicheren Drittstaat (alle EU-Nachbarstaaten) einreist, kann sich nicht auf Art. 16a GG berufen. Da Deutschland von sicheren Drittstaaten umgeben ist, wird das Asylrecht heute meist über das Völkerrecht (Genfer Konvention) gewährt.
+
+**Schutzformen nach dem Asylgesetz (AsylG)**
+
+Neben dem Grundgesetz gibt es drei weitere Schutzstufen:
+
+* **Flüchtlingsschutz (§ 3 AsylG):** Schutz nach der Genfer Flüchtlingskonvention bei Verfolgung aufgrund von Rasse, Religion, Nationalität etc.
+
+* **Subsidiärer Schutz (§ 4 AsylG):** Schutz für Personen, denen im Herkunftsland ernsthafter Schaden droht (z. B. durch Bürgerkrieg), die aber keine persönliche Verfolgung nachweisen können.
+
+* **Abschiebeverbote (§ 60 Abs. 5/7 AufenthG):** Greifen, wenn eine Abschiebung die Menschenrechte verletzen würde (z. B. bei schwerer Krankheit).
+
+
+
+
+
 ## Internationale Sicherheit 
 
 ## NATO
@@ -67,17 +179,29 @@ library(rnaturalearth)
 library(sf)
 
 # 1. Geodaten laden und reparieren
+# 'st_make_valid' stellt sicher, dass alle Grenzen geometrisch korrekt sind
 world <- ne_countries(scale = "medium", returnclass = "sf") %>% 
-  st_make_valid() # Repariert Geometrie-Fehler
+  st_make_valid()
 
-# 2. NATO-Daten
+# 2. NATO-Daten mit den EXAKTEN Namen aus 'rnaturalearth'
+# Hinweis: USA heißt dort "United States", Tschechien heißt "Czech Rep."
 nato_accession <- data.frame(
   name = c(
     "Belgium", "Denmark", "France", "Iceland", "Italy", "Canada", 
-    "Luxembourg", "Netherlands", "Norway", "Portugal", "United Kingdom", "United States",
-    "Greece", "Turkey", "Germany", "Spain", "Poland", "Czech Rep.", "Hungary",
+    "Luxembourg", "Netherlands", "Norway", "Portugal", "United Kingdom", 
+    "United States",  # WICHTIG: Statt USA
+    "Greece", "Turkey",
+    "Germany",
+    "Spain",
+    "Poland", 
+    "Czech Rep.",    # WICHTIG: Statt Tschechien / Czech Republic
+    "Hungary",
     "Bulgaria", "Estonia", "Latvia", "Lithuania", "Romania", "Slovakia", "Slovenia",
-    "Albania", "Croatia", "Montenegro", "N. Macedonia", "Finland", "Sweden"
+    "Albania", "Croatia",
+    "Montenegro",
+    "N. Macedonia",
+    "Finland",
+    "Sweden"
   ),
   beitritt = c(
     rep("1949", 12), rep("1952", 2), "1955", "1982", rep("1999", 3),
@@ -85,24 +209,32 @@ nato_accession <- data.frame(
   )
 )
 
-# 3. Join
-# Wir behalten alle Länder für den Hintergrund, fügen aber die NATO-Infos hinzu
+# 3. Daten verbinden
 nato_map <- world %>%
   left_join(nato_accession, by = "name")
 
-# 4. Plotten mit sicherem Ausschnitt
+# 4. Karte plotten
 ggplot(data = nato_map) +
-  # Hintergrund: Alle Länder grau
+  # Hintergrund: Alle Länder der Welt in hellem Grau
   geom_sf(fill = "grey90", color = "white", size = 0.1) +
-  # Vordergrund: Nur NATO-Staaten farbig (wo beitritt nicht NA ist)
+  # Vordergrund: Nur NATO-Staaten farbig markieren
   geom_sf(data = nato_map %>% filter(!is.na(beitritt)), 
           aes(fill = beitritt), color = "white", size = 0.1) +
-  # Koordinaten-Begrenzung ohne st_crop (stabiler)
-  coord_sf(xlim = c(-130, 50), ylim = c(20, 80)) +
+  # Zoom auf NATO-relevantes Gebiet (Nordamerika + Europa)
+  coord_sf(xlim = c(-130, 50), ylim = c(23, 80)) +
+  # Farbskala für die Beitrittsjahre
   scale_fill_viridis_d(option = "viridis", name = "Beitrittsjahr") +
   theme_minimal() +
-  labs(title = "NATO-Mitglieder nach Beitrittsdatum") +
-  theme(panel.grid = element_blank(), axis.text = element_blank())
+  labs(
+    title = "Mitgliedstaaten der NATO nach Beitrittsjahr",
+    subtitle = "Korrektur: USA (United States) und Tschechien (Czech Rep.) integriert",
+    caption = "Daten: rnaturalearth | Stand: 2024"
+  ) +
+  theme(
+    panel.grid = element_blank(), 
+    axis.text = element_blank(),
+    legend.position = "bottom"
+  )
 
 ```
 

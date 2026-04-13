@@ -1,16 +1,14 @@
-# Institutionenökonomik 
+# Institutionenökonomik
 
 ## Institutionenbegriff
 
-[Hier auch Aokis doppelte Natur von Institutionen: Beschränkung und Freiheit durch Erwartungssicherheit]::
-
 Institution
 
-- Regelkomponente
+-   Regelkomponente
 
-- Überwachungskomponente
+-   Überwachungskomponente
 
-```{r Regeln, echo=F, message=F, warning=F, cache=F}
+```{r Regeln, echo=T, message=F, warning=F, cache=F, fig.cap="In enger Anlehnung an @voigt_institutionenokonomik_2009"}
 
 library(tidyverse)
 
@@ -32,15 +30,13 @@ kable(df) #%>%
 
 ## Verhältnis von Institutionen zueinander
 
-### Substitutives Verhältnis 
+### Substitutives Verhältnis
 
 Der gleiche Zweck kann durch verschiedene (Arten von) Institutionen erreicht werden.
 
-Beispiele? 
+Beispiele?
 
 ### Komplementäres Verhältnis
-
-[Isogai 2024]::
 
 Eine Institution hat eine stärkere Regelungswirkung, wenn eine (passende) zweite Institution ebenfalls vorhanden ist.
 
@@ -50,9 +46,9 @@ $\Rightarrow$ Institutioneller lock-in Effekt möglich.
 
 Beispiele?
 
-### Konfligierendes Verhältnis 
+### Konfligierendes Verhältnis
 
-Es ist nicht möglich zwei bestimmte Institutionen gleichzeitig zu befolgen. 
+Es ist nicht möglich zwei bestimmte Institutionen gleichzeitig zu befolgen.
 
 Beispiele?
 
@@ -62,7 +58,7 @@ Zwei Institutionen sind völlig unabhängig voneinander.
 
 Beispiele?
 
-## Zur Änderbarkeit von Institutionen: Erste Überlegungen 
+## Zur Änderbarkeit von Institutionen: Erste Überlegungen
 
 ## Konstitutionenökonomik
 

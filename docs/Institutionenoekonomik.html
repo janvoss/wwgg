@@ -20,7 +20,62 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -264,6 +319,22 @@ window.Quarto = {
 <li><p>Überwachungskomponente</p></li>
 </ul>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Regel=</span><span class="fu">c</span>(<span class="st">"Konvention"</span>, <span class="st">"Ethische Regel"</span>, <span class="st">"Sitte"</span>, <span class="st">"Formelle private Regel"</span>, <span class="st">"Regel positiven Rechts"</span>),</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"Überwachung"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Selbstüberwachung"</span>, <span class="st">"imperative Selbstbindung"</span>,<span class="st">"informelle Überwachung durch andere Akteure"</span>, <span class="st">"organisierte private Überwachung"</span>, <span class="st">"organisierte staatliche Überwachung"</span>),</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>                 <span class="st">'Institutionenkategorie'</span><span class="ot">=</span> <span class="fu">c</span>(<span class="st">"intern vom Typ 1"</span>, <span class="st">"intern vom Typ 2"</span>,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>                                             <span class="st">"intern vom Typ 3"</span>, <span class="st">"intern vom Typ 4"</span>,</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>                                             <span class="st">"extern"</span>),</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>                 <span class="st">'Beispiel'</span><span class="ot">=</span><span class="fu">c</span>(<span class="st">"Regeln der Sprache"</span>, <span class="st">"Kategorischer Imperativ, privater Trainingsplan"</span>, <span class="st">"gesellschaftliche Umgangsformen"</span>, <span class="st">"Regeln des Sports"</span>, <span class="st">"Privat- und Strafrecht, öffentliches Recht"</span>))</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># library(kableExtra)</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(df) <span class="co">#%&gt;% </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <colgroup>
@@ -313,7 +384,13 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
+<p>In enger Anlehnung an <span class="citation" data-cites="voigt_institutionenokonomik_2009">Voigt (<a href="#ref-voigt_institutionenokonomik_2009" role="doc-biblioref">2009</a>)</span></p>
 </div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>  <span class="co">#kable_styling(#bootstrap_options = c("responsive")</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>   <span class="co"># )</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 </section>
 <section id="verhältnis-von-institutionen-zueinander" class="level2" data-number="2.2">
@@ -351,6 +428,11 @@ window.Quarto = {
 <p>Lösungsidee: Schleier des Nichtwissens. Individuen haben (zutreffendes) Wissen über positive Eigenschaften der Welt, aber kein Wissen über individuelle Charakteristika (oder abstrahieren davon).</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-voigt_institutionenokonomik_2009" class="csl-entry" role="listitem">
+Voigt, Stefan. 2009. <em>Institutionenökonomik</em>. München.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->

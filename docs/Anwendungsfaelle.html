@@ -85,7 +85,7 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./literatur.html" rel="next">
+<link href="./Voelkerrecht.html" rel="next">
 <link href="./Dynamiken.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -223,6 +223,12 @@ div.csl-indent {
   <div class="sidebar-item-container"> 
   <a href="./Anwendungsfaelle.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Anwendungsfälle</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Voelkerrecht.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Völkerrecht</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -553,9 +559,89 @@ div.csl-indent {
 </section>
 <section id="das-freifahrerproblem" class="level3" data-number="9.4.5">
 <h3 data-number="9.4.5" class="anchored" data-anchor-id="das-freifahrerproblem"><span class="header-section-number">9.4.5</span> Das Freifahrerproblem</h3>
-<ol start="19" type="a">
-<li>Tafelaufschrieb</li>
-</ol>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Bibliotheken laden</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Funktionen definieren</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">5</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>demand2 <span class="ot">&lt;-</span> <span class="cf">function</span>(x) <span class="dv">3</span><span class="sc">-</span>x</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>demand1 <span class="ot">&lt;-</span> <span class="cf">function</span>(x) <span class="dv">2</span><span class="fl">-.8</span><span class="sc">*</span>x</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co">#Vertikale Aggregation</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>demandg <span class="ot">&lt;-</span> <span class="cf">function</span>(x) <span class="fu">demand1</span>(x)<span class="sc">+</span><span class="fu">demand2</span>(x) </span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Schnittpunkt </span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>q0 <span class="ot">&lt;-</span> <span class="fu">uniroot</span>(<span class="cf">function</span>(x) <span class="fu">demand2</span>(x) <span class="sc">-</span> <span class="fu">demandg</span>(x), <span class="fu">range</span>(x))<span class="sc">$</span>root</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>p0 <span class="ot">&lt;-</span> <span class="cf">function</span>(x) <span class="fl">1.3</span> <span class="co">#Horizontale Grenzkosten</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>q1 <span class="ot">&lt;-</span> <span class="fu">uniroot</span>(<span class="cf">function</span>(x) <span class="fu">demand1</span>(x) <span class="sc">-</span> <span class="fu">p0</span>(x), <span class="fu">range</span>(x))<span class="sc">$</span>root</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>q2 <span class="ot">&lt;-</span> <span class="fu">uniroot</span>(<span class="cf">function</span>(x) <span class="fu">demand2</span>(x) <span class="sc">-</span> <span class="fu">p0</span>(x), <span class="fu">range</span>(x))<span class="sc">$</span>root</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>qg <span class="ot">&lt;-</span> <span class="fu">uniroot</span>(<span class="cf">function</span>(x) <span class="fu">demandg</span>(x) <span class="sc">-</span> <span class="fu">p0</span>(x), <span class="fu">range</span>(x))<span class="sc">$</span>root</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>q_knick <span class="ot">&lt;-</span> <span class="fu">uniroot</span>(<span class="cf">function</span>(x) <span class="fu">demand1</span>(x), <span class="fu">range</span>(x))<span class="sc">$</span>root</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="co"># Chart</span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>p  <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="fu">aes</span>(<span class="at">color =</span> <span class="st">"Nachfrage"</span>), <span class="at">fun =</span> demand1, <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="fl">3.3</span>))<span class="sc">+</span></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">"text"</span>, <span class="at">x=</span>.<span class="dv">5</span>, <span class="at">y=</span><span class="fu">demand1</span>(.<span class="dv">5</span>), <span class="at">hjust=</span><span class="sc">-</span><span class="fl">0.1</span>, <span class="at">label=</span><span class="fu">expression</span>(<span class="st">'MB'</span>[<span class="dv">1</span>]),<span class="at">color =</span> <span class="st">"grey30"</span>)<span class="sc">+</span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="fu">aes</span>(<span class="at">color =</span> <span class="st">"Nachfrage"</span>), <span class="at">fun =</span> demand2, <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="fl">3.3</span>))<span class="sc">+</span></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">"text"</span>, <span class="at">x=</span>.<span class="dv">5</span>, <span class="at">y=</span><span class="fu">demand2</span>(<span class="fl">0.5</span>), <span class="at">hjust=</span><span class="sc">-</span><span class="fl">0.1</span>, <span class="at">label=</span><span class="fu">expression</span>(<span class="st">'MB'</span>[<span class="dv">2</span>]),<span class="at">color =</span> <span class="st">"grey30"</span>)<span class="sc">+</span></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="fu">aes</span>(<span class="at">color =</span> <span class="st">"Nachfrage"</span>), <span class="at">fun =</span> demandg, <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>,q_knick), <span class="at">size=</span><span class="dv">1</span>)<span class="sc">+</span></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">"text"</span>, <span class="at">x=</span>.<span class="dv">5</span>, <span class="at">y=</span><span class="fu">demandg</span>(.<span class="dv">5</span>), <span class="at">hjust=</span><span class="sc">-</span><span class="fl">0.1</span>, <span class="at">label=</span><span class="fu">expression</span>(<span class="st">'MB'</span>[ges]),<span class="at">color =</span> <span class="st">"grey30"</span>)<span class="sc">+</span></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="fu">aes</span>(<span class="at">color =</span> <span class="st">"Nachfrage"</span>), <span class="at">fun =</span> demand2, <span class="at">xlim =</span> <span class="fu">c</span>(q_knick,<span class="fl">3.3</span>), <span class="at">size=</span><span class="dv">1</span>)<span class="sc">+</span></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> p0, <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="fl">3.3</span>), <span class="at">color=</span><span class="st">"orange"</span>)<span class="sc">+</span></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>  <span class="co">#</span></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"point"</span>, <span class="at">x =</span> q1, <span class="at">y =</span> <span class="fu">demand1</span>(q1), <span class="at">color =</span> <span class="st">"grey30"</span>)<span class="sc">+</span></span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"point"</span>, <span class="at">x =</span> q2, <span class="at">y =</span> <span class="fu">demand2</span>(q2), <span class="at">color =</span> <span class="st">"grey30"</span>)<span class="sc">+</span></span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"point"</span>, <span class="at">x =</span> qg, <span class="at">y =</span> <span class="fu">demandg</span>(qg), <span class="at">color =</span> <span class="st">"grey30"</span>)<span class="sc">+</span></span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>  <span class="co">#</span></span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"segment"</span>, <span class="at">x =</span> q1, <span class="at">xend =</span> q1, <span class="at">y =</span> <span class="dv">0</span>, <span class="at">yend =</span> <span class="fu">demand1</span>(q1),</span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>           <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"grey30"</span>) <span class="sc">+</span></span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"segment"</span>, <span class="at">x =</span> q2, <span class="at">xend =</span> q2, <span class="at">y =</span> <span class="dv">0</span>, <span class="at">yend =</span> <span class="fu">demand2</span>(q2),</span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>           <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"grey30"</span>) <span class="sc">+</span></span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"segment"</span>, <span class="at">x =</span> qg, <span class="at">xend =</span> qg, <span class="at">y =</span> <span class="dv">0</span>, <span class="at">yend =</span> <span class="fu">demandg</span>(qg),</span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>           <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"grey30"</span>) <span class="sc">+</span>  </span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">"green"</span>))<span class="sc">+</span></span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>  <span class="co">#  scale_fill_manual(values=c("green", "orange"))+</span></span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>), </span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>                     <span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">0</span>, q1, q2, qg), <span class="at">labels =</span> <span class="fu">expression</span>(<span class="dv">0</span>, <span class="st">"G"</span>[<span class="dv">1</span>], <span class="st">"G"</span>[<span class="dv">2</span>], <span class="st">"G"</span>[ges]),</span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a>                     <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">4</span>)) <span class="sc">+</span></span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>), </span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>                     <span class="at">breaks =</span> p0,</span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>                     <span class="at">labels=</span><span class="fu">expression</span>(<span class="st">"MC"</span>[G]),</span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>                     <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">5</span>)</span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.grid =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">"none"</span>, <span class="co">#Damit Legende unterdrückt.</span></span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">arrow =</span> <span class="fu">arrow</span>(<span class="at">type=</span><span class="st">'closed'</span>, <span class="at">length =</span> <span class="fu">unit</span>(<span class="dv">5</span>,<span class="st">'pt'</span>))))<span class="sc">+</span></span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Menge des öffentlichen Guts"</span>, <span class="at">y =</span> <span class="st">"Steuerpreis"</span>, </span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="cn">NULL</span>, <span class="at">fill =</span> <span class="cn">NULL</span>)</span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a>p</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Anwendungsfaelle_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
@@ -973,8 +1059,8 @@ Koschut, Simon. 2023. <span>“Die Westliche Sicherheitsgemeinschaft Im Umbruch.
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./literatur.html" class="pagination-link" aria-label="Literatur">
-        <span class="nav-page-text">Literatur</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./Voelkerrecht.html" class="pagination-link" aria-label="Völkerrecht">
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Völkerrecht</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -270,4 +270,77 @@ ggplot(data = nato_map) +
 
 ### Das Freifahrerproblem 
 
-s. Tafelaufschrieb
+```{r echo=T, warning=F, message=F, cache=F}
+# Bibliotheken laden
+library(tidyverse)
+
+# Funktionen definieren
+
+x <- 0:5
+
+demand2 <- function(x) 3-x
+demand1 <- function(x) 2-.8*x
+
+#Vertikale Aggregation
+demandg <- function(x) demand1(x)+demand2(x) 
+
+# Schnittpunkt 
+
+q0 <- uniroot(function(x) demand2(x) - demandg(x), range(x))$root
+
+p0 <- function(x) 1.3 #Horizontale Grenzkosten
+
+q1 <- uniroot(function(x) demand1(x) - p0(x), range(x))$root
+
+q2 <- uniroot(function(x) demand2(x) - p0(x), range(x))$root
+
+qg <- uniroot(function(x) demandg(x) - p0(x), range(x))$root
+
+q_knick <- uniroot(function(x) demand1(x), range(x))$root
+
+
+# Chart
+
+p  <- ggplot() +
+  stat_function(aes(color = "Nachfrage"), fun = demand1, xlim = c(0,3.3))+
+  annotate(geom = "text", x=.5, y=demand1(.5), hjust=-0.1, label=expression('MB'[1]),color = "grey30")+
+  
+  stat_function(aes(color = "Nachfrage"), fun = demand2, xlim = c(0,3.3))+
+  annotate(geom = "text", x=.5, y=demand2(0.5), hjust=-0.1, label=expression('MB'[2]),color = "grey30")+
+  
+  stat_function(aes(color = "Nachfrage"), fun = demandg, xlim = c(0,q_knick), size=1)+
+  annotate(geom = "text", x=.5, y=demandg(.5), hjust=-0.1, label=expression('MB'[ges]),color = "grey30")+
+  
+  stat_function(aes(color = "Nachfrage"), fun = demand2, xlim = c(q_knick,3.3), size=1)+
+  stat_function(fun = p0, xlim = c(0,3.3), color="orange")+
+  #
+  annotate("point", x = q1, y = demand1(q1), color = "grey30")+
+  annotate("point", x = q2, y = demand2(q2), color = "grey30")+
+  annotate("point", x = qg, y = demandg(qg), color = "grey30")+
+  #
+  annotate("segment", x = q1, xend = q1, y = 0, yend = demand1(q1),
+           linetype = "dashed", color = "grey30") +
+  annotate("segment", x = q2, xend = q2, y = 0, yend = demand2(q2),
+           linetype = "dashed", color = "grey30") +
+  annotate("segment", x = qg, xend = qg, y = 0, yend = demandg(qg),
+           linetype = "dashed", color = "grey30") +  
+  scale_color_manual(values=c("green"))+
+  #  scale_fill_manual(values=c("green", "orange"))+
+  scale_x_continuous(expand = c(0, 0), 
+                     breaks = c(0, q1, q2, qg), labels = expression(0, "G"[1], "G"[2], "G"[ges]),
+                     limits = c(0, 4)) +
+  scale_y_continuous(expand = c(0, 0), 
+                     breaks = p0,
+                     labels=expression("MC"[G]),
+                     limits = c(0,5)
+  ) +
+  theme_classic() +
+  theme(panel.grid = element_blank(),
+        legend.position = "none", #Damit Legende unterdrückt.
+  ) +
+  theme(axis.line = element_line(arrow = arrow(type='closed', length = unit(5,'pt'))))+
+  labs(x = "Menge des öffentlichen Guts", y = "Steuerpreis", 
+       color = NULL, fill = NULL)
+p
+
+```

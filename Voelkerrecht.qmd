@@ -1,0 +1,214 @@
+# Völkerrecht
+
+## Koordinationsrecht vs. Kooperationsrecht
+
+
+```{python}
+#| message: false
+#| warning: false
+#| fig-cap: Koordinationsrecht vs. Kooperationsrecht
+
+from graphviz import Digraph
+from IPython.display import display
+
+def create_voelkerrecht_evolution_graph():
+    dot = Digraph('Voelkerrecht_Wandel', comment='Vom Koordinations- zum Kooperationsrecht')
+
+    # Globales Styling
+    dot.attr(rankdir='TB', size='12,12', nodesep='1.0', ranksep='0.8')
+    dot.attr('node', shape='rect', style='filled, rounded', fontname='Arial', fontsize='11')
+
+    # --- EBENE 1: Klassisches Koordinationsrecht ---
+    with dot.subgraph(name='cluster_koordination') as c:
+        c.attr(label='1. Klassisches Koordinationsrecht', style='dotted', fontname='Arial-Bold', color='#546E7A')
+        c.node('SOUV', 'Souveräne Gleichheit\n(Staatliche Eigeninteressen)', fillcolor='#ECEFF1')
+        c.node('KONS', 'Konsensprinzip &\nFriedliches Nebeneinander', fillcolor='#ECEFF1')
+
+    # --- EBENE 2: Die Transformations-Treiber ---
+    dot.node('TRANS', 'TRANSFORMATION\n(Gemeinsame Ziele:\nUmwelt, Handel, Menschenrechte)',
+             shape='diamond', fillcolor='#FFF59D', fontsize='10')
+
+    # --- EBENE 3: Modernes Kooperationsrecht ---
+    with dot.subgraph(name='cluster_kooperation') as c:
+        c.attr(label='2. Modernes Kooperationsrecht', style='dotted', fontname='Arial-Bold', color='#2E7D32')
+        c.node('SUPRA', 'Supranationalität\n(z.B. EU, WTO)', fillcolor='#C8E6C9')
+        c.node('KONST', 'Globale Konstitutionalisierung\n(UN-Charta als Weltverfassung)', fillcolor='#C8E6C9')
+        c.node('FRAG', 'Fragmentierung\n(Spezialisierte Regime)', fillcolor='#DCEDC8', style='filled, dashed')
+
+    # --- VERBINDUNGEN (Der vertikale Fluss) ---
+    dot.edge('SOUV', 'TRANS')
+    dot.edge('KONS', 'TRANS')
+    dot.edge('TRANS', 'SUPRA', label='Hoheitsübertragung')
+    dot.edge('TRANS', 'KONST', label='Legitimitätsbedarf')
+    dot.edge('SUPRA', 'FRAG', style='dotted')
+
+    # --- DAS MACHT-ELEMENT (Der gewünschte Außenpfeil) ---
+    # Hier nutzen wir constraint='false', um die Machtasymmetrie
+    # links um die gesamte Entwicklung herumzuführen.
+    dot.node('MACHT', 'PERSISTENZ DER MACHT\n(Veto-Recht, Asymmetrie,\nHegemoniale Verzerrung)',
+             fillcolor='#FFCCBC', shape='septagon')
+
+    # Pfeil, der von der Macht-Ebene oben (Koordination) zur Einhegung unten führt
+    dot.edge('MACHT:w', 'SOUV:w', constraint='false', color='#BF360C', style='dashed', label=' Ursprung')
+    dot.edge('MACHT:e', 'KONST:e', constraint='false', color='#BF360C', label=' Verzerrung des\negalitären Anspruchs')
+
+    # Einhegungspfeil (Gerichte/Recht binden Macht)
+    dot.node('JUD', 'Gerichtliche Kontrolle &\nInternationale Einhegung', fillcolor='#B3E5FC')
+    dot.edge('KONST', 'JUD')
+    dot.edge('JUD', 'MACHT', label='Versuch der Bändigung', color='#0277BD', style='bold')
+
+    return dot
+
+# Visualisierung anzeigen
+graph = create_voelkerrecht_evolution_graph()
+display(graph)
+```
+
+## Gewaltverbot
+
+```{python}
+#| message: false
+#| warning: false
+#| fig-cap: "Gewaltverbot und Ausnahmen"
+ 
+from graphviz import Digraph
+from IPython.display import display
+
+def create_ius_ad_bellum_graph():
+    dot = Digraph('Ius_ad_Bellum', comment='Rechtfertigung von Gewalt im Völkerrecht')
+
+    # Globales Styling: Klar und strukturiert
+    dot.attr(rankdir='TB', size='12,12', nodesep='0.5', ranksep='0.8')
+    dot.attr('node', shape='rect', style='filled, rounded', fontname='Arial', fontsize='10')
+
+    # Zentrales Verbot
+    dot.node('VERBOT', 'GEWALTVERBOT\n(Art. 2 Ziff. 4 UN-Charta)',
+             fillcolor='#FFEBEE', penwidth='3', color='#B71C1C', fontsize='12')
+
+    # --- Zweig 1: Selbstverteidigung (Art. 51) ---
+    with dot.subgraph(name='cluster_self_defense') as c:
+        c.attr(label='Selbstverteidigung (Art. 51)', style='dashed', color='#2E7D32', fontname='Arial-Bold')
+        c.node('IND', 'Individuelle\nSelbstverteidigung', fillcolor='#C8E6C9')
+        c.node('KOL', 'Kollektive\nSelbstverteidigung (Nothilfe)', fillcolor='#C8E6C9')
+        c.node('VORAUS', 'Voraussetzungen:\n1. Bewaffneter Angriff\n2. Erforderlichkeit\n3. Verhältnismäßigkeit',
+               shape='note', fillcolor='#DCEDC8')
+        c.node('PREV', 'Präventiv-Verteidigung\n(Streng restriktiv)', fillcolor='#F1F8E9')
+
+    # --- Zweig 2: Kollektive Sicherheit (Kap. VII) ---
+    with dot.subgraph(name='cluster_security_council') as c:
+        c.attr(label='Kollektive Sicherheit', style='dashed', color='#1565C0', fontname='Arial-Bold')
+        c.node('SC', 'UN-Sicherheitsrat\n(Kapitel VII)', fillcolor='#BBDEFB')
+        c.node('ART42', 'Militärische Sanktionen\n(Art. 42)', fillcolor='#BBDEFB')
+        c.node('ART39', 'Feststellung:\nBruch/Bedrohung des Friedens\n(Art. 39)', shape='note', fillcolor='#E3F2FD')
+
+    # --- Zweig 3: Weitere Gründe & Kontroversen ---
+    with dot.subgraph(name='cluster_other') as c:
+        c.attr(label='Andere Gründe / Kontroversen', style='dotted', color='#546E7A')
+        c.node('CONSENT', 'Zustimmung des\nbetroffenen Staates', fillcolor='#F5F5F5')
+        c.node('R2P', 'Humanitäre Intervention /\nResponsibility to Protect (R2P)\n(Hochgradig umstritten)', fillcolor='#FFF9C4')
+        c.node('NAT', 'Schutz eigener Staatsbürger\n(Gewohnheitsrechtlich umstritten)', fillcolor='#FFF9C4')
+
+    # --- Zweig 4: Historisch / Spezialfälle ---
+    dot.node('HIST', 'Historisch:\nBellum Iustum\n(Gerechter Krieg)', fillcolor='#EEEEEE', fontcolor='#757575')
+    dot.node('REPR', 'Kriegerische Repressalien\n(Strengste Anforderungen)', fillcolor='#F5F5F5')
+
+    # --- Verbindungen ---
+    # Ausnahmen vom Verbot
+    dot.edge('VERBOT', 'IND', label=' Ausnahme 1')
+    dot.edge('VERBOT', 'SC', label=' Ausnahme 2')
+    dot.edge('VERBOT', 'CONSENT', label=' Anerkannt')
+
+    # Details Selbstverteidigung
+    dot.edge('IND', 'VORAUS', style='dotted')
+    dot.edge('KOL', 'VORAUS', style='dotted')
+    dot.edge('IND', 'PREV', label=' Grenzfall')
+
+    # Details Sicherheitsrat
+    dot.edge('SC', 'ART39')
+    dot.edge('ART39', 'ART42')
+
+    # Kontroversen
+    dot.edge('VERBOT', 'R2P', label=' ?', color='#FBC02D')
+    dot.edge('VERBOT', 'NAT', label=' ?', color='#FBC02D')
+
+    # Historischer Kontext (Außenpfeil ohne Layout-Zwang)
+    dot.edge('HIST', 'VERBOT', label=' Ablösung durch\npositives Recht', constraint='false', color='#9E9E9E', style='dashed')
+    dot.edge('REPR', 'VERBOT', constraint='false', style='dotted')
+
+    return dot
+
+# Visualisierung anzeigen
+graph = create_ius_ad_bellum_graph()
+display(graph)
+
+
+
+```
+
+
+## Das Dilemma des Hegemons
+
+```{python}
+#| message: false
+#| warning: false
+#| fig-cap: "Das Dilemma des Hegemons"
+
+from graphviz import Digraph
+from IPython.display import display
+
+def create_hegemon_dilemma_graph_v2():
+    dot = Digraph('Hegemon_Dilemma', comment='Dilemma des Hegemons - Umleitung')
+    dot.attr(rankdir='TB', size='12,12', nodesep='0.8', ranksep='0.9')
+    dot.attr('node', shape='rect', style='filled, rounded', fontname='Helvetica', fontsize='11')
+
+    # Zentraler Akteur (Top)
+    dot.node('H', 'HEGEMON\n(Großmacht)', fillcolor='#E3F2FD', penwidth='2')
+
+    # Pfad der Legitimität (Links)
+    with dot.subgraph(name='cluster_legitimacy') as c:
+        c.attr(label='Pfad der Legitimität', style='dashed', color='#2E7D32')
+        c.node('RL', 'Selbstbindung an\nVölkerrechtliche Normen', fillcolor='#C8E6C9')
+        c.node('STA', 'Internationale Akzeptanz &\nBerechenbarkeit', fillcolor='#C8E6C9')
+        c.node('ORD', 'Stabile Weltordnung', fillcolor='#A5D6A7')
+
+    # Pfad der Macht (Rechts)
+    with dot.subgraph(name='cluster_power') as p:
+        p.attr(label='Pfad der Machtbehauptung', style='dashed', color='#C62828')
+        p.node('HF', 'Uneingeschränkte\nHandlungsfreiheit', fillcolor='#FFCDD2')
+        p.node('INS', 'Selektive\nRechtsanwendung', fillcolor='#FFCDD2')
+        p.node('ETH', 'Ethisierung als\nDeckmantel', fillcolor='#EF9A9A')
+
+    # Krisen-Knoten (Bottom)
+    dot.node('KRI', 'LEGITIMITÄTSKRISE\n(Systemversagen)', fillcolor='#FFAB91', shape='doubleoctagon')
+
+    # Standard-Verbindungen (tragen zum Layout bei)
+    dot.edge('H', 'RL')
+    dot.edge('RL', 'STA')
+    dot.edge('STA', 'ORD')
+    dot.edge('ORD', 'KRI', style='dotted')
+
+    dot.edge('H', 'HF')
+    dot.edge('HF', 'INS')
+    dot.edge('INS', 'ETH')
+    dot.edge('ETH', 'KRI')
+
+    # DER GEWÜNSCHTE PFEIL:
+    # constraint='false' bewirkt, dass der Pfeil die Position von KRI und H nicht beeinflusst.
+    # tailport='w' und headport='w' zwingen ihn auf die linke Außenseite.
+    dot.edge('KRI:w', 'H:w',
+             label='   Rückkopplung:\n   Glaubwürdigkeitsverlust',
+             constraint='false',
+             color='#546E7A',
+             style='dashed',
+             fontcolor='#546E7A',
+             dir='forward')
+
+    # Zusätzliche Antinomie-Linie
+    dot.edge('RL', 'HF', label='ANTINOMIE', color='#1565C0', dir='both', penwidth='2', constraint='false')
+
+    return dot
+
+graph = create_hegemon_dilemma_graph_v2()
+display(graph)
+```
+

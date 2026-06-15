@@ -1,24 +1,22 @@
 # Anwendungsfälle
 
-## Klimaschutz 
+## Klimaschutz
 
 ### Problemlage
 
-- Treibhausgase (THG) führen zu einer Erwärmung der Atmosphäre
+-   Treibhausgase (THG) führen zu einer Erwärmung der Atmosphäre
 
-- THG sind schwer zu substituieren
+-   THG sind schwer zu substituieren
 
-- Lokales Handeln ist nicht wirksam $\rightarrow$ globales Handeln erforderlich
+-   Lokales Handeln ist nicht wirksam $\rightarrow$ globales Handeln erforderlich
 
-- Einseitige Kostenbelastungen sind problematisch
+-   Einseitige Kostenbelastungen sind problematisch
 
 ### Ziele
 
-- Begrenzung der Erderwärmung auf unter 1,5°C bzw. 2°C bis Ende des Jahrhunderts
+-   Begrenzung der Erderwärmung auf unter 1,5°C bzw. 2°C bis Ende des Jahrhunderts
 
 ### Koordinationsprobleme
-
-
 
 ## Migration
 
@@ -26,57 +24,47 @@
 
 ### Internationale Lage der Fluchtmigration (2026)
 
-* **Rekordzahlen der Vertreibung:** Weltweit sind über **117 bis 123 Millionen Menschen** auf der Flucht.
-    * Trotz vereinzelter Rückgänge bleibt das Gesamtniveau auf einem historischen Höchststand seit dem Zweiten Weltkrieg.
-    * Etwa jeder 65. Mensch auf der Erde ist gewaltsam vertrieben.
-
-* **Dominanz der Binnenvertreibung (IDPs):**
-    * Die Mehrheit der Betroffenen (ca. **68 Millionen**) flieht nicht über Staatsgrenzen, sondern bleibt als Binnenvertriebene im eigenen Land.
-
-* **Zentrale Krisenherde:**
-    * **Sudan:** Aktuell die größte Vertreibungskrise weltweit (über 14 Mio. Menschen auf der Flucht).
-    * **Syrien & Ukraine:** Langwierige Konflikte mit weiterhin Millionen Vertriebenen, wobei Syrien durch politische Umbrüche Ende 2024 verstärkte Rückkehrbewegungen verzeichnet.
-    * **Gazastreifen:** Nahezu die gesamte Bevölkerung (ca. 2 Mio. Menschen) ist intern vertrieben.
-    * **Weitere Brennpunkte:** DR Kongo, Myanmar, Afghanistan und Haiti.
-
-* **Regionale Verteilung & Lastenteilung:**
-    * **71 % der Flüchtlinge** leben in Ländern mit niedrigem oder mittlerem Einkommen, meist in direkter Nachbarschaft zu den Krisenregionen.
-    * Haupaufnahmeländer sind weiterhin der Iran, die Türkei, Kolumbien und Deutschland.
-
-* **Finanzierungs- und Verantwortungskrise:**
-    * Das UNHCR und andere Hilfswerke leiden unter massiven Mittelkürzungen durch wichtige Geberstaaten (z. B. USA).
-    * Kürzungen von bis zu 30 % bei Personalkosten und operativen Hilfen gefährden die Grundversorgung in Lagern.
-
-* **Neue Fluchtursachen:**
-    * Der **Klimawandel** wirkt zunehmend als Multiplikator für Konflikte und zwingt Millionen zur Abwanderung, ohne dass bisher ein klarer völkerrechtlicher Schutzstatus für „Klimaflüchtlinge“ existiert.
-
-* **Politische Trends:**
-    * **Externalisierung:** Industriestaaten (insb. die EU) setzen verstärkt auf Grenzverfahren an den Außengrenzen und Abkommen mit Drittstaaten, um irreguläre Migration zu reduzieren.
-    * **Instrumentalisierung:** Migration wird zunehmend als Mittel geopolitischen Drucks durch Transitstaaten eingesetzt.
+-   **Rekordzahlen der Vertreibung:** Weltweit sind über **117 bis 123 Millionen Menschen** auf der Flucht.
+    -   Trotz vereinzelter Rückgänge bleibt das Gesamtniveau auf einem historischen Höchststand seit dem Zweiten Weltkrieg.
+    -   Etwa jeder 65. Mensch auf der Erde ist gewaltsam vertrieben.
+-   **Dominanz der Binnenvertreibung (IDPs):**
+    -   Die Mehrheit der Betroffenen (ca. **68 Millionen**) flieht nicht über Staatsgrenzen, sondern bleibt als Binnenvertriebene im eigenen Land.
+-   **Zentrale Krisenherde:**
+    -   **Sudan:** Aktuell die größte Vertreibungskrise weltweit (über 14 Mio. Menschen auf der Flucht).
+    -   **Syrien & Ukraine:** Langwierige Konflikte mit weiterhin Millionen Vertriebenen, wobei Syrien durch politische Umbrüche Ende 2024 verstärkte Rückkehrbewegungen verzeichnet.
+    -   **Gazastreifen:** Nahezu die gesamte Bevölkerung (ca. 2 Mio. Menschen) ist intern vertrieben.
+    -   **Weitere Brennpunkte:** DR Kongo, Myanmar, Afghanistan und Haiti.
+-   **Regionale Verteilung & Lastenteilung:**
+    -   **71 % der Flüchtlinge** leben in Ländern mit niedrigem oder mittlerem Einkommen, meist in direkter Nachbarschaft zu den Krisenregionen.
+    -   Haupaufnahmeländer sind weiterhin der Iran, die Türkei, Kolumbien und Deutschland.
+-   **Finanzierungs- und Verantwortungskrise:**
+    -   Das UNHCR und andere Hilfswerke leiden unter massiven Mittelkürzungen durch wichtige Geberstaaten (z. B. USA).
+    -   Kürzungen von bis zu 30 % bei Personalkosten und operativen Hilfen gefährden die Grundversorgung in Lagern.
+-   **Neue Fluchtursachen:**
+    -   Der **Klimawandel** wirkt zunehmend als Multiplikator für Konflikte und zwingt Millionen zur Abwanderung, ohne dass bisher ein klarer völkerrechtlicher Schutzstatus für „Klimaflüchtlinge“ existiert.
+-   **Politische Trends:**
+    -   **Externalisierung:** Industriestaaten (insb. die EU) setzen verstärkt auf Grenzverfahren an den Außengrenzen und Abkommen mit Drittstaaten, um irreguläre Migration zu reduzieren.
+    -   **Instrumentalisierung:** Migration wird zunehmend als Mittel geopolitischen Drucks durch Transitstaaten eingesetzt.
 
 ### Völkerrechtliche Regelungen zur Fluchtmigration
 
-* **Genfer Flüchtlingskonvention (GFK) von 1951 & Protokoll von 1967:**
-    * **Kernstück:** Das wichtigste internationale Dokument zum Flüchtlingsrecht.
-    * **Flüchtlingsdefinition:** Schutz für Personen mit begründeter Furcht vor Verfolgung wegen Rasse, Religion, Nationalität, Zugehörigkeit zu einer sozialen Gruppe oder politischer Überzeugung.
-    * **Non-Refoulement-Prinzip (Art. 33):** Das absolute Verbot, Flüchtlinge in Gebiete zurückzuweisen, in denen ihnen schwere Menschenrechtsverletzungen drohen.
-
-* **Regionale Abkommen (Erweiterte Definitionen):**
-    * **OAU-Flüchtlingskonvention (Afrika, 1969):** Erweitert den Flüchtlingsbegriff auf Personen, die wegen Kriegen oder Störungen der öffentlichen Ordnung fliehen.
-    * **Cartagena-Erklärung (Lateinamerika, 1984):** Schließt auch Opfer von generalisierter Gewalt und massiven Menschenrechtsverletzungen ein.
-
-* **Europäisches Recht (EU-Ebene):**
-    * **EU-Grundrechtecharta (Art. 18):** Garantiert das Recht auf Asyl.
-    * **GEAS-Reform (2024/2026):** Das Gemeinsame Europäische Asylsystem harmonisiert die Anwendung der GFK in Europa. Es führt ab 2026 verbindliche Grenzverfahren und einen neuen Solidaritätsmechanismus ein.
-    * **Dublin-Verordnung:** Regelt die Zuständigkeit der EU-Mitgliedstaaten für Asylverfahren (ab 2026 ergänzt durch die Verordnung über Asyl- und Migrationsmanagement).
-
-* **Menschenrechtliche Garantien (Ergänzender Schutz):**
-    * **Europäische Menschenrechtskonvention (EMRK):** Insbesondere Art. 3 (Verbot von Folter) verhindert Abschiebungen in Staaten, in denen unmenschliche Behandlung droht, selbst wenn die GFK-Kriterien nicht erfüllt sind.
-    * **UN-Antifolterkonvention:** Enthält ebenfalls ein striktes Rückführungsverbot bei drohender Folter.
-
-* **Soft Law & Globale Rahmenwerke:**
-    * **Globaler Pakt für Flüchtlinge (GCR, 2018):** Ein rechtlich nicht bindender Rahmen zur besseren Lastenteilung und Unterstützung von Aufnahmeländern.
-    * **UN-Leitlinien für Binnenvertriebene:** Bieten Schutzstandards für Menschen, die innerhalb ihrer Staatsgrenzen fliehen (IDPs), da die GFK formal nur beim Überschreiten internationaler Grenzen greift.
+-   **Genfer Flüchtlingskonvention (GFK) von 1951 & Protokoll von 1967:**
+    -   **Kernstück:** Das wichtigste internationale Dokument zum Flüchtlingsrecht.
+    -   **Flüchtlingsdefinition:** Schutz für Personen mit begründeter Furcht vor Verfolgung wegen Rasse, Religion, Nationalität, Zugehörigkeit zu einer sozialen Gruppe oder politischer Überzeugung.
+    -   **Non-Refoulement-Prinzip (Art. 33):** Das absolute Verbot, Flüchtlinge in Gebiete zurückzuweisen, in denen ihnen schwere Menschenrechtsverletzungen drohen.
+-   **Regionale Abkommen (Erweiterte Definitionen):**
+    -   **OAU-Flüchtlingskonvention (Afrika, 1969):** Erweitert den Flüchtlingsbegriff auf Personen, die wegen Kriegen oder Störungen der öffentlichen Ordnung fliehen.
+    -   **Cartagena-Erklärung (Lateinamerika, 1984):** Schließt auch Opfer von generalisierter Gewalt und massiven Menschenrechtsverletzungen ein.
+-   **Europäisches Recht (EU-Ebene):**
+    -   **EU-Grundrechtecharta (Art. 18):** Garantiert das Recht auf Asyl.
+    -   **GEAS-Reform (2024/2026):** Das Gemeinsame Europäische Asylsystem harmonisiert die Anwendung der GFK in Europa. Es führt ab 2026 verbindliche Grenzverfahren und einen neuen Solidaritätsmechanismus ein.
+    -   **Dublin-Verordnung:** Regelt die Zuständigkeit der EU-Mitgliedstaaten für Asylverfahren (ab 2026 ergänzt durch die Verordnung über Asyl- und Migrationsmanagement).
+-   **Menschenrechtliche Garantien (Ergänzender Schutz):**
+    -   **Europäische Menschenrechtskonvention (EMRK):** Insbesondere Art. 3 (Verbot von Folter) verhindert Abschiebungen in Staaten, in denen unmenschliche Behandlung droht, selbst wenn die GFK-Kriterien nicht erfüllt sind.
+    -   **UN-Antifolterkonvention:** Enthält ebenfalls ein striktes Rückführungsverbot bei drohender Folter.
+-   **Soft Law & Globale Rahmenwerke:**
+    -   **Globaler Pakt für Flüchtlinge (GCR, 2018):** Ein rechtlich nicht bindender Rahmen zur besseren Lastenteilung und Unterstützung von Aufnahmeländern.
+    -   **UN-Leitlinien für Binnenvertriebene:** Bieten Schutzstandards für Menschen, die innerhalb ihrer Staatsgrenzen fliehen (IDPs), da die GFK formal nur beim Überschreiten internationaler Grenzen greift.
 
 ### EU-Regelungen zum Umgang mit Geflüchteten
 
@@ -84,31 +72,29 @@ Das Rechtssystem basiert auf dem reformierten **Gemeinsamen Europäischen Asylsy
 
 **Verpflichtende Grenzverfahren**
 
-* **Ziel:** Schnelle Entscheidung über Asylanträge von Personen mit geringer Bleibeperspektive.
-* **Anwendung:** Personen aus Ländern mit einer Anerkennungsquote von unter **20 %** müssen das Verfahren direkt in Grenzzentren durchlaufen.
-* **Fiktion der Nicht-Einreise:** Während des maximal **12-wöchigen Verfahrens** gelten die Betroffenen rechtlich als nicht eingereist, was Abschiebungen vereinfacht.
+-   **Ziel:** Schnelle Entscheidung über Asylanträge von Personen mit geringer Bleibeperspektive.
+-   **Anwendung:** Personen aus Ländern mit einer Anerkennungsquote von unter **20 %** müssen das Verfahren direkt in Grenzzentren durchlaufen.
+-   **Fiktion der Nicht-Einreise:** Während des maximal **12-wöchigen Verfahrens** gelten die Betroffenen rechtlich als nicht eingereist, was Abschiebungen vereinfacht.
 
 **Der neue Solidaritätsmechanismus**
 
-* **Abkehr von "Dublin-Zwang":** Erstaufnahmeländer werden durch einen verpflichtenden Mechanismus unterstützt.
-* **Wahlmöglichkeiten:** Mitgliedstaaten müssen entweder eine festgelegte Quote an Geflüchteten aufnehmen (**Relocation**) oder pro nicht aufgenommener Person eine Ausgleichszahlung (ca. **20.000 €**) in einen EU-Fonds leisten.
-* **Operative Hilfe:** Alternativ können Sachleistungen oder Personal für den Grenzschutz bereitgestellt werden.
+-   **Abkehr von "Dublin-Zwang":** Erstaufnahmeländer werden durch einen verpflichtenden Mechanismus unterstützt.
+-   **Wahlmöglichkeiten:** Mitgliedstaaten müssen entweder eine festgelegte Quote an Geflüchteten aufnehmen (**Relocation**) oder pro nicht aufgenommener Person eine Ausgleichszahlung (ca. **20.000 €**) in einen EU-Fonds leisten.
+-   **Operative Hilfe:** Alternativ können Sachleistungen oder Personal für den Grenzschutz bereitgestellt werden.
 
+**Konzept der sicheren Drittstaaten**
 
-
-**Konzept der sicheren Drittstaaten** 
-
-* **Flexibilisierung:** Die Anforderungen für die Einstufung eines Drittstaates als "sicher" wurden gesenkt.
-* **Externalisierung:** Es wird verstärkt geprüft, ob Asylsuchende in Transitländer zurückgebracht werden können, zu denen sie eine "Verbindung" haben.
+-   **Flexibilisierung:** Die Anforderungen für die Einstufung eines Drittstaates als "sicher" wurden gesenkt.
+-   **Externalisierung:** Es wird verstärkt geprüft, ob Asylsuchende in Transitländer zurückgebracht werden können, zu denen sie eine "Verbindung" haben.
 
 **Krisenverordnung**
 
-* **Sonderregeln:** Bei massiven Fluchtbewegungen oder der instrumentellen Nutzung von Migration durch Drittstaaten (z.B. an der Ostgrenze) dürfen Staaten Schutzstandards temporär senken und Grenzverfahren ausweiten.
+-   **Sonderregeln:** Bei massiven Fluchtbewegungen oder der instrumentellen Nutzung von Migration durch Drittstaaten (z.B. an der Ostgrenze) dürfen Staaten Schutzstandards temporär senken und Grenzverfahren ausweiten.
 
-**Zeitplan der Umsetzung** 
+**Zeitplan der Umsetzung**
 
-* **12. Juni 2026:** Inkrafttreten der Asylverfahrensverordnung (APV) und der Anerkennungsverordnung.
-* **01. Juli 2026:** Inkrafttreten der Verordnung über Asyl- und Migrationsmanagement (VAMM), die das alte Dublin-System formal ersetzt.
+-   **12. Juni 2026:** Inkrafttreten der Asylverfahrensverordnung (APV) und der Anerkennungsverordnung.
+-   **01. Juli 2026:** Inkrafttreten der Verordnung über Asyl- und Migrationsmanagement (VAMM), die das alte Dublin-System formal ersetzt.
 
 ### Deutsche Regeln zum Umgang mit Fluchtmigration
 
@@ -116,25 +102,21 @@ Deutschland kombiniert verfassungsrechtliche Garantien mit einem komplexen Syste
 
 **Der Asylanspruch nach dem Grundgesetz (Art. 16a GG)**
 
-* **Das Grundrecht:** „Politisch Verfolgte genießen Asylrecht.“ Dies ist eines der wenigen Grundrechte, die nur Ausländern zustehen.
+-   **Das Grundrecht:** „Politisch Verfolgte genießen Asylrecht.“ Dies ist eines der wenigen Grundrechte, die nur Ausländern zustehen.
 
-* **Einschränkung durch Drittstaatenregelung:** Wer aus einem sicheren Drittstaat (alle EU-Nachbarstaaten) einreist, kann sich nicht auf Art. 16a GG berufen. Da Deutschland von sicheren Drittstaaten umgeben ist, wird das Asylrecht heute meist über das Völkerrecht (Genfer Konvention) gewährt.
+-   **Einschränkung durch Drittstaatenregelung:** Wer aus einem sicheren Drittstaat (alle EU-Nachbarstaaten) einreist, kann sich nicht auf Art. 16a GG berufen. Da Deutschland von sicheren Drittstaaten umgeben ist, wird das Asylrecht heute meist über das Völkerrecht (Genfer Konvention) gewährt.
 
 **Schutzformen nach dem Asylgesetz (AsylG)**
 
 Neben dem Grundgesetz gibt es drei weitere Schutzstufen:
 
-* **Flüchtlingsschutz (§ 3 AsylG):** Schutz nach der Genfer Flüchtlingskonvention bei Verfolgung aufgrund von Rasse, Religion, Nationalität etc.
+-   **Flüchtlingsschutz (§ 3 AsylG):** Schutz nach der Genfer Flüchtlingskonvention bei Verfolgung aufgrund von Rasse, Religion, Nationalität etc.
 
-* **Subsidiärer Schutz (§ 4 AsylG):** Schutz für Personen, denen im Herkunftsland ernsthafter Schaden droht (z. B. durch Bürgerkrieg), die aber keine persönliche Verfolgung nachweisen können.
+-   **Subsidiärer Schutz (§ 4 AsylG):** Schutz für Personen, denen im Herkunftsland ernsthafter Schaden droht (z. B. durch Bürgerkrieg), die aber keine persönliche Verfolgung nachweisen können.
 
-* **Abschiebeverbote (§ 60 Abs. 5/7 AufenthG):** Greifen, wenn eine Abschiebung die Menschenrechte verletzen würde (z. B. bei schwerer Krankheit).
+-   **Abschiebeverbote (§ 60 Abs. 5/7 AufenthG):** Greifen, wenn eine Abschiebung die Menschenrechte verletzen würde (z. B. bei schwerer Krankheit).
 
-
-
-
-
-## Internationale Sicherheit 
+## Internationale Sicherheit
 
 ## NATO
 
@@ -182,8 +164,6 @@ knitr::kable(
   align = "ll" # Linksbündig für beide Spalten
 )
 ```
-
-
 
 ```{r}
 #| message: false
@@ -256,37 +236,33 @@ ggplot(data = nato_map) +
 
 ```
 
-
-
 ### Inhaltlicher Kern der Nato
 
-- Beistandspflicht nach Art. 5
+-   Beistandspflicht nach Art. 5
 
-- Politische Absichtserklärung, keine harte Verbindlichkeit
+-   Politische Absichtserklärung, keine harte Verbindlichkeit
 
-- Erst ein Anwendungsfall (nach den Anschlägen des 11. September 2001)
+-   Erst ein Anwendungsfall (nach den Anschlägen des 11. September 2001)
 
 ### Die vier Säulen der NATO
 
-- Wertegemeinschaft
+-   Wertegemeinschaft
 
-- Handlungsgemeinschaft
+-   Handlungsgemeinschaft
 
-- Kommunikationsgemeinschaft
+-   Kommunikationsgemeinschaft
 
-- Emotionale Bindung
-
-
+-   Emotionale Bindung
 
 ### Phasen der Nato-Geschichte
 
-- **Aufbau- und Konsolidierungsphase** (kalter Krieg)
+-   **Aufbau- und Konsolidierungsphase** (kalter Krieg)
 
-- **Selbstfindungsphase** (nach dem kalten Krieg)
+-   **Selbstfindungsphase** (nach dem kalten Krieg)
 
-- **Rückbesinnungsphase** (seit 2014)
+-   **Rückbesinnungsphase** (seit 2014)
 
-### Das Freifahrerproblem 
+### Das Freifahrerproblem
 
 ```{r echo=T, warning=F, message=F, cache=F}
 # Bibliotheken laden
@@ -362,3 +338,17 @@ p  <- ggplot() +
 p
 
 ```
+
+## Der Politikwechsel in den USA und die Herausforderungen für die EU
+
+Wir lesen:
+
+-   @gros_trumps_2026
+
+-   @posen_strategic_2026.
+
+- Fragen zum Text?
+
+- Was sind die jeweiligen Kernaussagen?
+
+

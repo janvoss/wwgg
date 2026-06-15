@@ -706,6 +706,87 @@ window.Quarto = {
 <li><p>Fragen zum Text?</p></li>
 <li><p>Was sind die jeweiligen Kernaussagen?</p></li>
 </ul>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> graphviz <span class="im">import</span> Digraph</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># from IPython.display import display</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Graph-Initialisierung für eine klare hierarchische Darstellung</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>dot <span class="op">=</span> Digraph(comment<span class="op">=</span><span class="st">'Neue Oekonomische Geografie 2026'</span>, <span class="bu">format</span><span class="op">=</span><span class="st">'png'</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>dot.attr(rankdir<span class="op">=</span><span class="st">'TB'</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Globale Styling-Regeln</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>dot.attr(<span class="st">'node'</span>, fontname<span class="op">=</span><span class="st">'Arial'</span>, fontsize<span class="op">=</span><span class="st">'11'</span>, shape<span class="op">=</span><span class="st">'box'</span>, style<span class="op">=</span><span class="st">'filled, rounded'</span>, fillcolor<span class="op">=</span><span class="st">'#F8F9FA'</span>, color<span class="op">=</span><span class="st">'#CED4DA'</span>)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>dot.attr(<span class="st">'edge'</span>, fontname<span class="op">=</span><span class="st">'Arial'</span>, fontsize<span class="op">=</span><span class="st">'10'</span>, color<span class="op">=</span><span class="st">'#495057'</span>)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co"># --- SUBGRAPH 1: DER US-PARADIGMENWECHSEL &amp; SEINE FOLGEN ---</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> dot.subgraph(name<span class="op">=</span><span class="st">'cluster_usa_shift'</span>) <span class="im">as</span> c:</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    c.attr(label<span class="op">=</span><span class="st">'1. US-Paradigmenwechsel &amp; Neue Marktdynamiken'</span>, bgcolor<span class="op">=</span><span class="st">'#F8D7DA'</span>, color<span class="op">=</span><span class="st">'#F5C6CB'</span>, style<span class="op">=</span><span class="st">'filled, dashed'</span>)</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    c.node(<span class="st">'A1'</span>, <span class="st">'Ende der US-Rolle als</span><span class="ch">\n</span><span class="st">globaler Sicherheits-Versicherer'</span>, fillcolor<span class="op">=</span><span class="st">'#DC3545'</span>, fontcolor<span class="op">=</span><span class="st">'white'</span>)</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    c.node(<span class="st">'A2'</span>, <span class="st">'Transaktionale Außenpolitik</span><span class="ch">\n</span><span class="st">("Schutzgeld-Modell")'</span>, fillcolor<span class="op">=</span><span class="st">'#FFF3CD'</span>)</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    c.node(<span class="st">'A3'</span>, <span class="st">'Dauerhafte Erhöhung der</span><span class="ch">\n</span><span class="st">Unsicherheit in der Weltwirtschaft'</span>, fillcolor<span class="op">=</span><span class="st">'#FFF3CD'</span>)</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    c.node(<span class="st">'A4'</span>, <span class="st">'Erosion der US-Dollar-Dominanz</span><span class="ch">\n</span><span class="st">(Entkopplung Sicherheit &amp; Stabilität)'</span>, fillcolor<span class="op">=</span><span class="st">'#F8D7DA'</span>)</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>    c.node(<span class="st">'A5'</span>, <span class="st">'Neue Marktdynamik bei US-Krisen:</span><span class="ch">\n</span><span class="st">Fallender Dollar &amp; Steigende Zinsen'</span>, fillcolor<span class="op">=</span><span class="st">'#E2E3E5'</span>)</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="co"># --- SUBGRAPH 2: DIE WARNUNG VOR FEHLREAKTIONEN ---</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> dot.subgraph(name<span class="op">=</span><span class="st">'cluster_warning'</span>) <span class="im">as</span> c:</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>    c.attr(label<span class="op">=</span><span class="st">'2. Warnung vor Fehlreaktionen (Die Sackgasse)'</span>, bgcolor<span class="op">=</span><span class="st">'#FFF3CD'</span>, color<span class="op">=</span><span class="st">'#FFEBA2'</span>, style<span class="op">=</span><span class="st">'filled'</span>)</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>    c.node(<span class="st">'W1'</span>, <span class="st">'Wirtschaftlicher Nationalismus &amp;</span><span class="ch">\n</span><span class="st">Überambitionierte Industriepolitik'</span>, fillcolor<span class="op">=</span><span class="st">'#FFC107'</span>)</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>    c.node(<span class="st">'W2'</span>, <span class="st">'Fokus auf Selbstversorgung &amp;</span><span class="ch">\n</span><span class="st">Nationale Champions'</span>, fillcolor<span class="op">=</span><span class="st">'#FFF3CD'</span>)</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>    c.node(<span class="st">'W3'</span>, <span class="st">'Gefahr: Inländische Engpässe &amp;</span><span class="ch">\n</span><span class="st">Verlust der Diversifizierung'</span>, fillcolor<span class="op">=</span><span class="st">'#DC3545'</span>, fontcolor<span class="op">=</span><span class="st">'white'</span>)</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a><span class="co"># --- SUBGRAPH 3: DER STRATEGISCHE WEG FÜR EUROPA ---</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> dot.subgraph(name<span class="op">=</span><span class="st">'cluster_eu_strategy'</span>) <span class="im">as</span> c:</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>    c.attr(label<span class="op">=</span><span class="st">'3. Strategischer Weg für Europa'</span>, bgcolor<span class="op">=</span><span class="st">'#D4EDDA'</span>, color<span class="op">=</span><span class="st">'#C3E6CB'</span>, style<span class="op">=</span><span class="st">'filled'</span>)</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>    c.node(<span class="st">'E1'</span>, <span class="st">'Chance für Europa:</span><span class="ch">\n</span><span class="st">Stärkung des Euro als Stabilitätsanker'</span>, fillcolor<span class="op">=</span><span class="st">'#28A745'</span>, fontcolor<span class="op">=</span><span class="st">'white'</span>)</span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>    c.node(<span class="st">'E2'</span>, <span class="st">'Reaktion auf Divergenz internationaler</span><span class="ch">\n</span><span class="st">Standards (Datenschutz, Green Tech)'</span>, fillcolor<span class="op">=</span><span class="st">'#D4EDDA'</span>)</span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>    c.node(<span class="st">'E3'</span>, <span class="st">'Technokratische Erfassung strategischer</span><span class="ch">\n</span><span class="st">Abhängigkeiten &amp; Lieferketten-Streuung'</span>, fillcolor<span class="op">=</span><span class="st">'#D4EDDA'</span>)</span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>    c.node(<span class="st">'E4'</span>, <span class="st">'Prinzipientreuer Plurilateralismus</span><span class="ch">\n</span><span class="st">(Offene, regelbasierte Abkommen)'</span>, fillcolor<span class="op">=</span><span class="st">'#17A2B8'</span>, fontcolor<span class="op">=</span><span class="st">'white'</span>)</span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>    c.node(<span class="st">'E5'</span>, <span class="st">'EU als "Fairer Setzer von Standards"'</span>, fillcolor<span class="op">=</span><span class="st">'#28A745'</span>, fontcolor<span class="op">=</span><span class="st">'white'</span>)</span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>    c.node(<span class="st">'E6'</span>, <span class="st">'Vorteile bei Talenten,</span><span class="ch">\n</span><span class="st">Investitionen &amp; Soft Power'</span>, fillcolor<span class="op">=</span><span class="st">'#D4EDDA'</span>)</span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>    c.node(<span class="st">'E7'</span>, <span class="st">'Harmonie: Eigene Interessen &amp;</span><span class="ch">\n</span><span class="st">Fortschritt der Weltgemeinschaft'</span>, fillcolor<span class="op">=</span><span class="st">'#17A2B8'</span>, fontcolor<span class="op">=</span><span class="st">'white'</span>)</span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a><span class="co"># --- VERBINDUNGEN (EDGES) ---</span></span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a><span class="co"># Kausalkette USA &amp; Märkte</span></span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>dot.edge(<span class="st">'A1'</span>, <span class="st">'A2'</span>, label<span class="op">=</span><span class="st">' führt zu'</span>)</span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>dot.edge(<span class="st">'A2'</span>, <span class="st">'A3'</span>, label<span class="op">=</span><span class="st">' bewirkt'</span>)</span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>dot.edge(<span class="st">'A3'</span>, <span class="st">'A4'</span>, label<span class="op">=</span><span class="st">' treibt voran'</span>)</span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a>dot.edge(<span class="st">'A4'</span>, <span class="st">'A5'</span>, label<span class="op">=</span><span class="st">' resultiert in'</span>)</span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a><span class="co"># Verbindung zu Europas Chancen und Herausforderungen</span></span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>dot.edge(<span class="st">'A3'</span>, <span class="st">'E1'</span>, label<span class="op">=</span><span class="st">' öffnet Raum für'</span>)</span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a>dot.edge(<span class="st">'A3'</span>, <span class="st">'E2'</span>, label<span class="op">=</span><span class="st">' erzwingt'</span>)</span>
+<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a>dot.edge(<span class="st">'A2'</span>, <span class="st">'W1'</span>, label<span class="op">=</span><span class="st">' verleitet zu (Imitation)'</span>)</span>
+<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a><span class="co"># Die Warnungs-Kette</span></span>
+<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a>dot.edge(<span class="st">'W1'</span>, <span class="st">'W2'</span>, label<span class="op">=</span><span class="st">' äußert sich in'</span>)</span>
+<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a>dot.edge(<span class="st">'W2'</span>, <span class="st">'W3'</span>, label<span class="op">=</span><span class="st">' erzeugt blind'</span>)</span>
+<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a><span class="co"># Der korrekte strategische Pfad der EU</span></span>
+<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a>dot.edge(<span class="st">'E2'</span>, <span class="st">'E3'</span>, label<span class="op">=</span><span class="st">' erfordert'</span>)</span>
+<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a>dot.edge(<span class="st">'W3'</span>, <span class="st">'E3'</span>, label<span class="op">=</span><span class="st">' Alternative zu'</span>, style<span class="op">=</span><span class="st">'dotted'</span>, color<span class="op">=</span><span class="st">'#DC3545'</span>)</span>
+<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a>dot.edge(<span class="st">'E3'</span>, <span class="st">'E4'</span>, label<span class="op">=</span><span class="st">' führt zu'</span>)</span>
+<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a>dot.edge(<span class="st">'E4'</span>, <span class="st">'E5'</span>, label<span class="op">=</span><span class="st">' etabliert'</span>)</span>
+<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a>dot.edge(<span class="st">'E5'</span>, <span class="st">'E6'</span>, label<span class="op">=</span><span class="st">' generiert'</span>)</span>
+<span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a>dot.edge(<span class="st">'E6'</span>, <span class="st">'E7'</span>, label<span class="op">=</span><span class="st">' mündet in'</span>)</span>
+<span id="cb3-66"><a href="#cb3-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-67"><a href="#cb3-67" aria-hidden="true" tabindex="-1"></a><span class="co"># Anzeige des Graphen im Jupyter Notebook</span></span>
+<span id="cb3-68"><a href="#cb3-68" aria-hidden="true" tabindex="-1"></a><span class="co">#display(dot)</span></span>
+<span id="cb3-69"><a href="#cb3-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-70"><a href="#cb3-70" aria-hidden="true" tabindex="-1"></a>dot.render(<span class="st">'Posen'</span>, <span class="bu">format</span><span class="op">=</span><span class="st">'svg'</span>, cleanup<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Posen.svg" class="img-fluid figure-img"></p>
+<figcaption>Zusammenfassung von <span class="citation" data-cites="posen_strategic_2026">Posen (<a href="#ref-posen_strategic_2026" role="doc-biblioref">2026</a>)</span></figcaption>
+</figure>
+</div>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">

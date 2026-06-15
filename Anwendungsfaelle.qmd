@@ -428,3 +428,81 @@ dot.render('Posen', format='svg', cleanup=True)
 
 
 ![Zusammenfassung von @posen_strategic_2026](Posen.svg)
+
+
+```{python}
+#| output: false
+
+from graphviz import Digraph
+# from IPython.display import display
+
+# Graph-Initialisierung mit modernen, sauberen Standard-Styles
+dot = Digraph(comment='Globale Handelspolitik 2025', format='png')
+dot.attr(rankdir='TB')
+dot.attr('node', fontname='Arial', fontsize='11', shape='box', style='filled, rounded', fillcolor='#F8F9FA', color='#CED4DA')
+dot.attr('edge', fontname='Arial', fontsize='10', color='#495057')
+
+# --- SUBGRAPHEN FÜR STRUKTURIERUNG ---
+
+# 1. Ausgangspunkt / USA
+with dot.subgraph(name='cluster_usa') as c:
+    c.attr(label='US-Handelspolitik 2025 (Trump)', bgcolor='#E9ECEF', color='#DEE2E6', style='filled, dashed')
+    c.node('A', 'Strategische Zölle als\ngeopolitisches Machtinstrument', fillcolor='#E63946', fontcolor='white')
+    c.node('B', 'Diskriminierender Charakter\n(Gezielte Ausrichtung)', fillcolor='#F1FAEE')
+
+# 2. Mechanismen & Drittstaaten
+with dot.subgraph(name='cluster_mechanisms') as c:
+    c.attr(label='Marktreaktionen & Drittstaaten', bgcolor='#F8F9FA', color='#DEE2E6', style='filled')
+    c.node('C', 'Kein Kollaps, sondern\nGroßflächige Handelsumlenkung', fillcolor='#A8DADC')
+    c.node('D', 'Reorganisation der Lieferketten\n(via Drittstaaten wie Mexiko/Vietnam)', fillcolor='#F1FAEE')
+    c.node('E', 'Inbound-Effekte Drittstaaten:\nProfitieren von Umlenkung', fillcolor='#457B9D', fontcolor='white')
+    c.node('F', 'Minder-Effizienz & Versteckte Kosten\n(Logistik & Compliance)', fillcolor='#F1FAEE')
+    c.node('G', 'Aggregierte Handelsvolumina\nbleiben stabil (Rekordniveau 2025)', fillcolor='#2A9D8F', fontcolor='white')
+
+# 3. Fokus EU
+with dot.subgraph(name='cluster_eu') as c:
+    c.attr(label='Die Rolle der Europäischen Union', bgcolor='#E8F5E9', color='#C8E6C9', style='filled')
+    c.node('H', 'Abkommen vom Juli 2025:\nVorteilhafte Position für EU', fillcolor='#2E7D32', fontcolor='white')
+    c.node('I', 'Niedrige effektive US-Zölle (~6%)\n(Vgl. China: ~36%)', fillcolor='#E8F5E9')
+    c.node('J', 'US-Abhängigkeit von europäischen\nInvestitionsgütern (Spezialmaschinen)', fillcolor='#E8F5E9')
+
+# 4. Historische Warnung & Strategie
+with dot.subgraph(name='cluster_history') as c:
+    c.attr(label='Historisches Risiko & Ausblick', bgcolor='#FFF3E0', color='#FFE0B2', style='filled')
+    c.node('K', 'Risiko: Verdrängte chinesische Exporte\ndrängen verstärkt nach Europa', fillcolor='#FFE0B2')
+    c.node('L', 'Historische Parallele (1930er):\nSmoot-Hawley-Effekt', fillcolor='#E63946', fontcolor='white')
+    c.node('M', 'Gefahr: Imitative Schutzpolitik der EU\n(Protektionistische Abwärtsspirale)', fillcolor='#FFB74D')
+    c.node('N', 'Rationale Wahl der EU:\nStrategische Zurückhaltung &\nOffenes Handelssystem', fillcolor='#2A9D8F', fontcolor='white')
+
+# --- VERBINDUNGEN (EDGES) ---
+
+# USA Dynamik
+dot.edge('A', 'B')
+dot.edge('B', 'C', label=' führt zu')
+
+# Handelsumlenkung & Kosten
+dot.edge('C', 'D')
+dot.edge('D', 'E', label=' Vorteil für')
+dot.edge('D', 'F', label=' Nachteil')
+dot.edge('D', 'G', label=' Resultat')
+
+# EU Sonderrolle
+dot.edge('B', 'I', label=' Differenzierung')
+dot.edge('J', 'I', label=' begründet')
+dot.edge('I', 'H', label=' ermöglicht')
+
+# Historische Warnung & Logik
+dot.edge('B', 'K', label=' Verdrängungseffekt')
+dot.edge('K', 'M', label=' Trigger für')
+dot.edge('L', 'M', label=' warnt vor')
+dot.edge('M', 'G', label=' bedroht', color='#E63946', style='dashed')
+dot.edge('M', 'N', label=' konterkariert')
+dot.edge('H', 'N', label=' Basis für')
+
+# Anzeige des Graphen im Jupyter Notebook
+# display(dot)
+
+dot.render('Gros', format='svg', cleanup=True)
+```
+
+![Zusammenfassung von @gros_trumps_2026](Gros.svg)

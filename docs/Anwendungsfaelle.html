@@ -787,6 +787,87 @@ window.Quarto = {
 <figcaption>Zusammenfassung von <span class="citation" data-cites="posen_strategic_2026">Posen (<a href="#ref-posen_strategic_2026" role="doc-biblioref">2026</a>)</span></figcaption>
 </figure>
 </div>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> graphviz <span class="im">import</span> Digraph</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># from IPython.display import display</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Graph-Initialisierung mit modernen, sauberen Standard-Styles</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>dot <span class="op">=</span> Digraph(comment<span class="op">=</span><span class="st">'Globale Handelspolitik 2025'</span>, <span class="bu">format</span><span class="op">=</span><span class="st">'png'</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>dot.attr(rankdir<span class="op">=</span><span class="st">'TB'</span>)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>dot.attr(<span class="st">'node'</span>, fontname<span class="op">=</span><span class="st">'Arial'</span>, fontsize<span class="op">=</span><span class="st">'11'</span>, shape<span class="op">=</span><span class="st">'box'</span>, style<span class="op">=</span><span class="st">'filled, rounded'</span>, fillcolor<span class="op">=</span><span class="st">'#F8F9FA'</span>, color<span class="op">=</span><span class="st">'#CED4DA'</span>)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>dot.attr(<span class="st">'edge'</span>, fontname<span class="op">=</span><span class="st">'Arial'</span>, fontsize<span class="op">=</span><span class="st">'10'</span>, color<span class="op">=</span><span class="st">'#495057'</span>)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co"># --- SUBGRAPHEN FÜR STRUKTURIERUNG ---</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Ausgangspunkt / USA</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> dot.subgraph(name<span class="op">=</span><span class="st">'cluster_usa'</span>) <span class="im">as</span> c:</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    c.attr(label<span class="op">=</span><span class="st">'US-Handelspolitik 2025 (Trump)'</span>, bgcolor<span class="op">=</span><span class="st">'#E9ECEF'</span>, color<span class="op">=</span><span class="st">'#DEE2E6'</span>, style<span class="op">=</span><span class="st">'filled, dashed'</span>)</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    c.node(<span class="st">'A'</span>, <span class="st">'Strategische Zölle als</span><span class="ch">\n</span><span class="st">geopolitisches Machtinstrument'</span>, fillcolor<span class="op">=</span><span class="st">'#E63946'</span>, fontcolor<span class="op">=</span><span class="st">'white'</span>)</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    c.node(<span class="st">'B'</span>, <span class="st">'Diskriminierender Charakter</span><span class="ch">\n</span><span class="st">(Gezielte Ausrichtung)'</span>, fillcolor<span class="op">=</span><span class="st">'#F1FAEE'</span>)</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Mechanismen &amp; Drittstaaten</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> dot.subgraph(name<span class="op">=</span><span class="st">'cluster_mechanisms'</span>) <span class="im">as</span> c:</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>    c.attr(label<span class="op">=</span><span class="st">'Marktreaktionen &amp; Drittstaaten'</span>, bgcolor<span class="op">=</span><span class="st">'#F8F9FA'</span>, color<span class="op">=</span><span class="st">'#DEE2E6'</span>, style<span class="op">=</span><span class="st">'filled'</span>)</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>    c.node(<span class="st">'C'</span>, <span class="st">'Kein Kollaps, sondern</span><span class="ch">\n</span><span class="st">Großflächige Handelsumlenkung'</span>, fillcolor<span class="op">=</span><span class="st">'#A8DADC'</span>)</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>    c.node(<span class="st">'D'</span>, <span class="st">'Reorganisation der Lieferketten</span><span class="ch">\n</span><span class="st">(via Drittstaaten wie Mexiko/Vietnam)'</span>, fillcolor<span class="op">=</span><span class="st">'#F1FAEE'</span>)</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>    c.node(<span class="st">'E'</span>, <span class="st">'Inbound-Effekte Drittstaaten:</span><span class="ch">\n</span><span class="st">Profitieren von Umlenkung'</span>, fillcolor<span class="op">=</span><span class="st">'#457B9D'</span>, fontcolor<span class="op">=</span><span class="st">'white'</span>)</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>    c.node(<span class="st">'F'</span>, <span class="st">'Minder-Effizienz &amp; Versteckte Kosten</span><span class="ch">\n</span><span class="st">(Logistik &amp; Compliance)'</span>, fillcolor<span class="op">=</span><span class="st">'#F1FAEE'</span>)</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>    c.node(<span class="st">'G'</span>, <span class="st">'Aggregierte Handelsvolumina</span><span class="ch">\n</span><span class="st">bleiben stabil (Rekordniveau 2025)'</span>, fillcolor<span class="op">=</span><span class="st">'#2A9D8F'</span>, fontcolor<span class="op">=</span><span class="st">'white'</span>)</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Fokus EU</span></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> dot.subgraph(name<span class="op">=</span><span class="st">'cluster_eu'</span>) <span class="im">as</span> c:</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>    c.attr(label<span class="op">=</span><span class="st">'Die Rolle der Europäischen Union'</span>, bgcolor<span class="op">=</span><span class="st">'#E8F5E9'</span>, color<span class="op">=</span><span class="st">'#C8E6C9'</span>, style<span class="op">=</span><span class="st">'filled'</span>)</span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>    c.node(<span class="st">'H'</span>, <span class="st">'Abkommen vom Juli 2025:</span><span class="ch">\n</span><span class="st">Vorteilhafte Position für EU'</span>, fillcolor<span class="op">=</span><span class="st">'#2E7D32'</span>, fontcolor<span class="op">=</span><span class="st">'white'</span>)</span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>    c.node(<span class="st">'I'</span>, <span class="st">'Niedrige effektive US-Zölle (~6%)</span><span class="ch">\n</span><span class="st">(Vgl. China: ~36%)'</span>, fillcolor<span class="op">=</span><span class="st">'#E8F5E9'</span>)</span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>    c.node(<span class="st">'J'</span>, <span class="st">'US-Abhängigkeit von europäischen</span><span class="ch">\n</span><span class="st">Investitionsgütern (Spezialmaschinen)'</span>, fillcolor<span class="op">=</span><span class="st">'#E8F5E9'</span>)</span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Historische Warnung &amp; Strategie</span></span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> dot.subgraph(name<span class="op">=</span><span class="st">'cluster_history'</span>) <span class="im">as</span> c:</span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>    c.attr(label<span class="op">=</span><span class="st">'Historisches Risiko &amp; Ausblick'</span>, bgcolor<span class="op">=</span><span class="st">'#FFF3E0'</span>, color<span class="op">=</span><span class="st">'#FFE0B2'</span>, style<span class="op">=</span><span class="st">'filled'</span>)</span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>    c.node(<span class="st">'K'</span>, <span class="st">'Risiko: Verdrängte chinesische Exporte</span><span class="ch">\n</span><span class="st">drängen verstärkt nach Europa'</span>, fillcolor<span class="op">=</span><span class="st">'#FFE0B2'</span>)</span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>    c.node(<span class="st">'L'</span>, <span class="st">'Historische Parallele (1930er):</span><span class="ch">\n</span><span class="st">Smoot-Hawley-Effekt'</span>, fillcolor<span class="op">=</span><span class="st">'#E63946'</span>, fontcolor<span class="op">=</span><span class="st">'white'</span>)</span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a>    c.node(<span class="st">'M'</span>, <span class="st">'Gefahr: Imitative Schutzpolitik der EU</span><span class="ch">\n</span><span class="st">(Protektionistische Abwärtsspirale)'</span>, fillcolor<span class="op">=</span><span class="st">'#FFB74D'</span>)</span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a>    c.node(<span class="st">'N'</span>, <span class="st">'Rationale Wahl der EU:</span><span class="ch">\n</span><span class="st">Strategische Zurückhaltung &amp;</span><span class="ch">\n</span><span class="st">Offenes Handelssystem'</span>, fillcolor<span class="op">=</span><span class="st">'#2A9D8F'</span>, fontcolor<span class="op">=</span><span class="st">'white'</span>)</span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a><span class="co"># --- VERBINDUNGEN (EDGES) ---</span></span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a><span class="co"># USA Dynamik</span></span>
+<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a>dot.edge(<span class="st">'A'</span>, <span class="st">'B'</span>)</span>
+<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a>dot.edge(<span class="st">'B'</span>, <span class="st">'C'</span>, label<span class="op">=</span><span class="st">' führt zu'</span>)</span>
+<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a><span class="co"># Handelsumlenkung &amp; Kosten</span></span>
+<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a>dot.edge(<span class="st">'C'</span>, <span class="st">'D'</span>)</span>
+<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a>dot.edge(<span class="st">'D'</span>, <span class="st">'E'</span>, label<span class="op">=</span><span class="st">' Vorteil für'</span>)</span>
+<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a>dot.edge(<span class="st">'D'</span>, <span class="st">'F'</span>, label<span class="op">=</span><span class="st">' Nachteil'</span>)</span>
+<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a>dot.edge(<span class="st">'D'</span>, <span class="st">'G'</span>, label<span class="op">=</span><span class="st">' Resultat'</span>)</span>
+<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a><span class="co"># EU Sonderrolle</span></span>
+<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a>dot.edge(<span class="st">'B'</span>, <span class="st">'I'</span>, label<span class="op">=</span><span class="st">' Differenzierung'</span>)</span>
+<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a>dot.edge(<span class="st">'J'</span>, <span class="st">'I'</span>, label<span class="op">=</span><span class="st">' begründet'</span>)</span>
+<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a>dot.edge(<span class="st">'I'</span>, <span class="st">'H'</span>, label<span class="op">=</span><span class="st">' ermöglicht'</span>)</span>
+<span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a><span class="co"># Historische Warnung &amp; Logik</span></span>
+<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a>dot.edge(<span class="st">'B'</span>, <span class="st">'K'</span>, label<span class="op">=</span><span class="st">' Verdrängungseffekt'</span>)</span>
+<span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a>dot.edge(<span class="st">'K'</span>, <span class="st">'M'</span>, label<span class="op">=</span><span class="st">' Trigger für'</span>)</span>
+<span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a>dot.edge(<span class="st">'L'</span>, <span class="st">'M'</span>, label<span class="op">=</span><span class="st">' warnt vor'</span>)</span>
+<span id="cb4-63"><a href="#cb4-63" aria-hidden="true" tabindex="-1"></a>dot.edge(<span class="st">'M'</span>, <span class="st">'G'</span>, label<span class="op">=</span><span class="st">' bedroht'</span>, color<span class="op">=</span><span class="st">'#E63946'</span>, style<span class="op">=</span><span class="st">'dashed'</span>)</span>
+<span id="cb4-64"><a href="#cb4-64" aria-hidden="true" tabindex="-1"></a>dot.edge(<span class="st">'M'</span>, <span class="st">'N'</span>, label<span class="op">=</span><span class="st">' konterkariert'</span>)</span>
+<span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a>dot.edge(<span class="st">'H'</span>, <span class="st">'N'</span>, label<span class="op">=</span><span class="st">' Basis für'</span>)</span>
+<span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a><span class="co"># Anzeige des Graphen im Jupyter Notebook</span></span>
+<span id="cb4-68"><a href="#cb4-68" aria-hidden="true" tabindex="-1"></a><span class="co"># display(dot)</span></span>
+<span id="cb4-69"><a href="#cb4-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-70"><a href="#cb4-70" aria-hidden="true" tabindex="-1"></a>dot.render(<span class="st">'Gros'</span>, <span class="bu">format</span><span class="op">=</span><span class="st">'svg'</span>, cleanup<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Gros.svg" class="img-fluid figure-img"></p>
+<figcaption>Zusammenfassung von <span class="citation" data-cites="gros_trumps_2026">Gros (<a href="#ref-gros_trumps_2026" role="doc-biblioref">2026</a>)</span></figcaption>
+</figure>
+</div>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">

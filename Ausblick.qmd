@@ -1,0 +1,92 @@
+# Ausblick
+
+```{python}
+
+#| warning: false
+#| message: false
+#| fig-cap: "Die Lage der Global Governance nach @patrick_rules_2023"
+
+import graphviz
+from IPython.display import display
+
+# Erstellung des Digraph-Objekts
+dot = graphviz.Digraph('GlobalOrderInstability', comment='Instabilität der Weltordnung')
+
+# Globale Attribute für ein modernes, übersichtliches Design
+dot.attr(rankdir='TB', fontname='Helvetica' #, splines='ortho'
+         )
+dot.attr('node', shape='rectangle', style='filled, rounded', fontname='Helvetica', fontsize='10')
+dot.attr('edge', arrowhead='vee', color='gray30', penwidth='1.2')
+
+# Zentraler Knoten: Die erodierende Ordnung
+dot.node('OldOrder', 'Regelbasierte Weltordnung\n(Post-1945 / UN-System)',
+         shape='doubleoctagon', fillcolor='#f2f2f2', style='filled, bold', fontsize='12')
+
+# --- CLUSTER 1: Geopolitische & Normative Erosion ---
+with dot.subgraph(name='cluster_geopol') as c:
+    c.attr(label='Geopolitische & Normative Brüche', color='#e74c3c', style='dashed')
+    c.node('G1', 'USA vs. China Rivalität\n(Taiwan-Spannungen)', fillcolor='#fadbd8')
+    c.node('G2', 'Ukraine-Krieg\n(Bruch territorialer Integrität)', fillcolor='#fadbd8')
+    c.node('G3', 'Lähmung UN-Sicherheitsrat\n(Veto-Blockaden)', fillcolor='#fadbd8')
+    c.node('G4', 'Demokratische Rezession\n(Autoritäre Anfechtung)', fillcolor='#fadbd8')
+    c.edge('G1', 'G2', style='invis')
+    c.edge('G2', 'G3', style='invis')
+    c.edge('G3', 'G4', style='invis')
+
+# --- CLUSTER 2: Ökonomische & Planetare Krisen ---
+with dot.subgraph(name='cluster_eco') as c:
+    c.attr(label='Systemische Überlastung', color='#3498db', style='dashed')
+    c.node('E1', 'Ende der Hyperglobalisierung\n(Friendshoring / Industriepolitik)', fillcolor='#d6eaf8')
+    c.node('E2', 'Reformstau Bretton-Woods\n(IWF / Weltbank)', fillcolor='#d6eaf8')
+    c.node('E3', 'Ökologische Notlage\n(Klima / Biodiversität)', fillcolor='#d5f5e3') # Grünlich für Umwelt
+    c.node('E4', 'Gerechte Lastenverteilung\n(Nord-Süd-Konflikt)', fillcolor='#d6eaf8')
+    c.edge('E1', 'E2', style='invis')
+    c.edge('E2', 'E3', style='invis')
+    c.edge('E3', 'E4', style='invis')
+
+# --- CLUSTER 3: Technologische Risiken ---
+with dot.subgraph(name='cluster_tech') as c:
+    c.attr(label='Technologische Disruption', color='#f39c12', style='dashed')
+    c.node('T1', 'KI & Biotechnologie\n(Regulierungslücke)', fillcolor='#fef9e7')
+    c.node('T2', 'Militarisierung der Commons\n(Weltraum / Meere)', fillcolor='#fef9e7')
+    c.edge('T1', 'T2', style='invis')
+
+# --- CLUSTER 4: Zukünftige Modelle (The New Norm) ---
+with dot.subgraph(name='cluster_future') as c:
+    c.attr(label='Zukünftige Kooperationsmodelle', color='#9b59b6', style='bold')
+    c.node('F1', 'Fragmentierte Subordnungen', fillcolor='#ebdef0')
+    c.node('F2', 'Clubs Gleichgesinnter', fillcolor='#ebdef0')
+    c.node('F3', 'Ad-hoc-Koalitionen', fillcolor='#ebdef0')
+    c.node('F4', 'Multi-Akteur-Governance\n(Unternehmen / Zivilgesellschaft)', fillcolor='#ebdef0')
+    c.edge('F1', 'F2', style='invis')
+    c.edge('F2', 'F3', style='invis')
+    c.edge('F3', 'F4', style='invis')
+
+# Verbindungen: Von der alten Ordnung zu den Erosionsfaktoren
+for branch in ['G1', 'E1', 'T1', 'E3']:
+    dot.edge('OldOrder', branch, label=' Zentrifugalkräfte')
+
+# Verbindung zu den künftigen Lösungen
+dot.edge('G3', 'F3', label=' Reaktion auf Lähmung', style='dotted')
+dot.edge('E1', 'F2', label=' Geo-Ökonomik', style='dotted')
+dot.edge('T1', 'F4', label=' Expertise-Bedarf', style='dotted')
+
+# Anzeige des Diagramms
+display(dot)
+```
+
+:::{.callout-important 
+    icon=false 
+    collapse=true }
+
+# Zusammenfassung  @patrick_rules_2023 {.unnumbered}
+
+Die gegenwärtige globale Ordnung befindet sich in einer Phase tiefgreifender Instabilität, die durch eine zunehmende normative Anfechtung grundlegender Regeln und Prinzipien gekennzeichnet ist. Vorfälle wie die militärischen Spannungen in der Taiwanstraße oder die Warnungen vor den existenziellen Risiken künstlicher Intelligenz verdeutlichen die wachsende Diskrepanz zwischen globalem Regelungsbedarf und politischem Handeln. Der nach 1945 etablierte regelbasierte internationale Rahmen, der wesentlich von den Vereinigten Staaten und ihren Verbündeten geprägt wurde, erodiert unter dem Druck geopolitischer Rivalitäten, insbesondere zwischen den USA und China, sowie durch Russlands völkerrechtswidrigen Angriff auf die Ukraine. Diese Aggression stellt einen fundamentalen Bruch mit dem Prinzip der Souveränität und der territorialen Integrität dar, wie sie in der UN-Charta verankert sind. Gleichzeitig leidet das zentrale Sicherheitsorgan der Vereinten Nationen unter einer zunehmenden Lähmung durch Vetos der ständigen Mitglieder und einer mangelnden Repräsentativität, die aufstrebende Mächte wie Indien bisher unberücksichtigt lässt.
+
+Auch die Weltwirtschaft durchläuft einen Prozess der Fragmentierung, wobei die Ära der Hyperglobalisierung zunehmend durch Bestrebungen zur Rückgewinnung nationaler Autonomie abgelöst wird. Staaten nutzen verstärkt industriepolitische Maßnahmen und Konzepte wie das Friendshoring, was das multilaterale Handelssystem der Welthandelsorganisation schwächt. In den Bretton-Woods-Institutionen wie dem Internationalen Währungsfonds und der Weltbank wird die Forderung nach Reformen lauter, um den Stimmen ärmerer Nationen mehr Gewicht zu verleihen und neue Herausforderungen wie die Klimafinanzierung oder die Pandemievorsorge zu bewältigen. Bei planetaren Herausforderungen wie dem Klimawandel oder dem Verlust der biologischen Vielfalt zeigt sich eine deutliche Kluft zwischen einem einheitlichen Erdsystem und einer politisch in fast zweihundert Jurisdiktionen zersplitterten Weltordnung. Differenzen über historische Verantwortlichkeiten und die gerechte Lastenverteilung blockieren dabei konsequente Maßnahmen zum Schutz der globalen Gemeinschaftsgüter.
+
+Im Bereich der technologischen Entwicklung, insbesondere bei der künstlichen Intelligenz und der Biotechnologie, übertrifft das Innovationstempo die menschliche Fähigkeit zur Regulierung bei weitem. Da diese Technologien sowohl zivil als auch militärisch nutzbar sind, entstehen neue Sicherheitsrisiken, die eine internationale Aufsicht erforderlich machen, für die es jedoch bisher keinen globalen Konsens gibt. Auch in den globalen Gemeingütern wie dem Weltraum und den Weltmeeren nehmen die Spannungen durch zunehmende Militarisierung und territoriale Ansprüche zu, was bestehende völkerrechtliche Verträge wie das Weltraumabkommen oder das Seerechtsübereinkommen unter Druck setzt. Die Förderung liberaler Werte wie Demokratie und Menschenrechte stößt ebenfalls auf Widerstand durch autoritäre Mächte und wird durch eine globale demokratische Rezession erschwert.
+
+Angesichts dieser zentrifugalen Tendenzen erscheint die Rückkehr zu einer einheitlichen Weltordnung kurzfristig unwahrscheinlich. Stattdessen zeichnet sich die Entstehung verschiedener Subordnungen ab, die innerhalb eines dünneren globalen Rahmens nebeneinander existieren könnten. Für die künftige Gestaltung multilateraler Zusammenarbeit bieten sich verschiedene Modelle an, die von einem Fokus auf die Vereinten Nationen über Gemeinschaften Gleichgesinnter bis hin zu flexiblen Ad-hoc-Koalitionen für spezifische Probleme reichen. Neben souveränen Nationalstaaten gewinnen zudem nichtstaatliche Akteure wie Unternehmen, zivilgesellschaftliche Netzwerke und subnationale Einheiten an Bedeutung für die Bearbeitung globaler Problemlagen. Die Gestaltung der künftigen Weltordnung bleibt somit ein hochgradig umkämpfter Prozess, in dem verschiedene Akteure versuchen, ihre jeweiligen normativen Vorstellungen und materiellen Interessen durchzusetzen.
+
+:::
